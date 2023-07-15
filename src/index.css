@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 主题色配置 */
+body {
+  background-color: var(--color-bg-1);
+  color: var(--color-text-1);
+}
+
+/* 响应式的背景 */
+.ref-bgc {
+  background-color: var(--color-menu-light-bg);
+}
+
+/* 覆盖组件库样式 */
+.arco-typography {
+  margin-top: 0 !important;
+}
+
+/* 标题字体 */
+/* @font-face {
+  font-family: "阿里妈妈东方大楷 Regular";
+  font-weight: 400;
+  src: url(./assets/font/title.woff2) format("woff2"),
+    url(./assets/font/title.woff) format("woff");
+  font-display: swap;
+} */
