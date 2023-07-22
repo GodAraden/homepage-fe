@@ -11,6 +11,12 @@ import i18n from './locale'
 import './index.css'
 import './api/interceptor'
 
+// 测试代码
+import axios from 'axios'
+axios.get('/api').then((val) => {
+  console.log(val)
+})
+
 const app = createApp(App)
 
 app.use(ArcoVue, {})
