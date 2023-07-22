@@ -13,13 +13,7 @@ const createHistory = import.meta.env.PROD
 
 const router = createRouter({
   history: createHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      component: h('div')
-    },
-    ...appRoutes
-  ],
+  routes: [...appRoutes],
   scrollBehavior() {
     return { top: 0 }
   }
