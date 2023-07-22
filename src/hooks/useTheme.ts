@@ -1,28 +1,32 @@
 import { useColorMode, useCycleList } from '@vueuse/core'
+import { theme } from '@/config/settings.json'
 
 // 将 主题变量 和 切换这个变量的函数 封装
 export default function useTheme() {
-  const themes = ['light', 'dark'] as const
+  const themes = ['light', 'dark', 'auto'] as const
+  const initialValue = localStorage.getItem('arco-theme') || theme
 
-  const currentTheme = useColorMode({
+  const modes = useColorMode({
     selector: 'body',
     attribute: 'arco-theme',
     storageKey: 'arco-theme',
+    initialValue,
     modes: {
       light: '',
-      dark: 'dark'
+      dark: 'dark',
+      auto: ''
     }
   })
 
-  const { next } = useCycleList([...themes], { initialValue: currentTheme })
+  const { next, state } = useCycleList([...themes], { initialValue: modes })
 
   const changeTheme = () => {
     const newVal = next()
-    currentTheme.value = newVal
+    modes.value = newVal
   }
 
   return {
-    currentTheme,
+    currentTheme: state,
     changeTheme
   }
 }
