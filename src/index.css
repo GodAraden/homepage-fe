@@ -13,6 +13,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: no-repeat url(~/images/background1.jpeg);
+  background-size: cover;
 }
 
 @media (min-width: 768px) {
@@ -52,13 +54,13 @@ body {
 }
 
 /* 标题字体 */
-/* @font-face {
-  font-family: "阿里妈妈东方大楷 Regular";
+@font-face {
+  font-family: 'DaKai_For_Title';
   font-weight: 400;
-  src: url(./assets/font/title.woff2) format("woff2"),
-    url(./assets/font/title.woff) format("woff");
+  src: url(~/font/title.woff2) format('woff2'),
+    url(~/font/title.woff) format('woff');
   font-display: swap;
-} */
+}
 
 /* 页面过渡效果 */
 .page-enter-active,
