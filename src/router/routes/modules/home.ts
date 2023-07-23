@@ -3,7 +3,7 @@ import { AppRouteRecordRaw } from '../types'
 const HOMEPAGE: AppRouteRecordRaw = {
   path: '/',
   name: 'HomePage',
-  component: () => import('@/view/home/index.vue'),
+  component: () => import('@/view/home/Index.vue'),
   meta: {
     requiresAuth: false,
     icon: 'icon-home',

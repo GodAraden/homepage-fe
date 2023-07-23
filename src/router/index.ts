@@ -5,7 +5,6 @@ import {
 } from 'vue-router'
 import { appRoutes } from './routes'
 import { createRouteGuard } from './guard'
-import { h } from 'vue'
 
 const createHistory = import.meta.env.PROD
   ? createWebHistory

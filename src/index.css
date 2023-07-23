@@ -8,6 +8,39 @@ body {
   color: var(--color-text-1);
 }
 
+/* 整体布局：内容居中 + 绝对底部 */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  #app {
+    padding: 0 calc(50vw - 480px);
+  }
+}
+
+@media (min-width: 1280px) {
+  #app {
+    padding: 0 calc(50vw - 520px);
+  }
+}
+
+@media (min-width: 1536px) {
+  #app {
+    padding: 0 calc(50vw - 660px);
+    @apply text-lg;
+  }
+}
+
+@media (min-width: 1920px) {
+  #app {
+    padding: 0 calc(50vw - 760px);
+    @apply text-xl;
+  }
+}
+
 /* 响应式的背景 */
 .ref-bgc {
   background-color: var(--color-menu-light-bg);
@@ -26,3 +59,15 @@ body {
     url(./assets/font/title.woff) format("woff");
   font-display: swap;
 } */
+
+/* 页面过渡效果 */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.5s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
