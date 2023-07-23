@@ -6,7 +6,7 @@ const HOMEPAGE: AppRouteRecordRaw = {
   component: () => import('@/view/home/Index.vue'),
   meta: {
     requiresAuth: false,
-    icon: 'icon-home',
+    icon: 'icon-zhuye',
     order: 0
   }
 }

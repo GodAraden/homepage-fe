@@ -6,7 +6,7 @@ const BLOG: AppRouteRecordRaw = {
   component: () => import('@/view/blog/Index.vue'),
   meta: {
     requiresAuth: false,
-    icon: 'icon-blog',
+    icon: 'icon-wenzhang1',
     order: 1
   }
 }

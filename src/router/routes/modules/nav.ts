@@ -6,7 +6,7 @@ const NAV: AppRouteRecordRaw = {
   component: () => import('@/view/nav/Index.vue'),
   meta: {
     requiresAuth: false,
-    icon: 'icon-Nav',
+    icon: 'icon-daohang',
     order: 2
   }
 }

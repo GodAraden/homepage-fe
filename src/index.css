@@ -16,26 +16,26 @@ body {
 }
 
 @media (min-width: 768px) {
-  #app {
+  #app > * {
     padding: 0 calc(50vw - 480px);
   }
 }
 
 @media (min-width: 1280px) {
-  #app {
+  #app > * {
     padding: 0 calc(50vw - 520px);
   }
 }
 
 @media (min-width: 1536px) {
-  #app {
+  #app > * {
     padding: 0 calc(50vw - 660px);
     @apply text-lg;
   }
 }
 
 @media (min-width: 1920px) {
-  #app {
+  #app > * {
     padding: 0 calc(50vw - 760px);
     @apply text-xl;
   }

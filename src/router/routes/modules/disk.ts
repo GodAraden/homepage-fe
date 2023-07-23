@@ -5,8 +5,8 @@ const DISK: AppRouteRecordRaw = {
   name: 'Disk',
   component: () => import('@/view/disk/Index.vue'),
   meta: {
-    requiresAuth: false,
-    icon: 'icon-disk',
+    requiresAuth: true,
+    icon: 'icon-wangpan',
     order: 3
   }
 }
