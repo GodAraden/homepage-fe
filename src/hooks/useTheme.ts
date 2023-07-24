@@ -18,7 +18,9 @@ export default function useTheme() {
     }
   })
 
-  const { next, state } = useCycleList([...themes], { initialValue: modes })
+  const { next, state } = useCycleList([...themes], {
+    initialValue: modes.store.value
+  })
 
   const changeTheme = () => {
     const newVal = next()

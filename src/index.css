@@ -8,13 +8,22 @@ body {
   color: var(--color-text-1);
 }
 
+/* 不同主题下的首屏背景 */
+body[arco-theme=''] #app {
+  background: no-repeat url(~/images/homepage-bg-light.jpeg);
+  background-size: cover;
+}
+
+body[arco-theme='dark'] #app {
+  background: no-repeat url(~/images/homepage-bg-dark.jpeg);
+  background-size: cover;
+}
+
 /* 整体布局：内容居中 + 绝对底部 */
 #app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: no-repeat url(~/images/homepage-bg-light.jpeg);
-  background-size: cover;
 }
 
 @media (min-width: 768px) {
@@ -53,12 +62,11 @@ body {
   margin-top: 0 !important;
 }
 
-/* 标题字体 */
+/* 字体 */
 @font-face {
-  font-family: 'DaKai_For_Title';
-  font-weight: 400;
-  src: url(~/font/title.woff2) format('woff2'),
-    url(~/font/title.woff) format('woff');
+  font-family: 'Alimama_DaoLiTi';
+  src: url(~/font/Alimama_DaoLiTi.woff2) format('woff2'),
+    url(~/font/Alimama_DaoLiTi.woff) format('woff');
   font-display: swap;
 }
 

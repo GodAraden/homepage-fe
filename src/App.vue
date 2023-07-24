@@ -15,7 +15,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
-import zhTW from '@arco-design/web-vue/es/locale/lang/zh-tw'
 import enUS from '@arco-design/web-vue/es/locale/lang/en-us'
 
 import TheHeader from '@/components/TheHeader.vue'
@@ -28,8 +27,6 @@ const locale = computed(() => {
   switch (currentLocale.value) {
     case 'zh-CN':
       return zhCN
-    case 'zh-TW':
-      return zhTW
     case 'en-US':
       return enUS
   }
