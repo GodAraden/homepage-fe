@@ -1,20 +1,23 @@
 <template>
   <div
-    class="h-16 flex backdrop-blur bg-slate-700 bg-opacity-20 shadow-md"
+    class="g-vertical-center h-16 backdrop-blur bg-slate-700 bg-opacity-20 shadow-md"
     style="font-family: Alimama_DaoLiTi"
   >
-    <a href="/" class="flex items-center w-80">
+    <a href="/" class="g-vertical-center w-80">
       <img src="/logo.svg" alt="" class="h-12" />
       <a-typography-title :heading="4" class="!mb-0 !font-black ml-2">
         {{ $t(`header.title`) }}
       </a-typography-title>
     </a>
 
-    <ul class="flex flex-1 justify-evenly items-center text-lg font-bold">
+    <ul class="flex justify-center flex-1 gap-6 text-lg font-bold">
       <li
         v-for="item in appRoutes.filter((route) => !route.meta.requiresAuth)"
         :key="item.path"
-        class="g-button py-1 px-3"
+        :class="
+          'g-button relative py-1 px-3 ' +
+          ($route.name === item.name ? 'navbar-route-active' : '')
+        "
       >
         <router-link :to="item.path">
           <span :class="'iconfont ' + item.meta.icon"></span>
@@ -23,7 +26,7 @@
       </li>
     </ul>
 
-    <ul class="flex gap-2 w-80 items-center justify-end">
+    <ul class="flex justify-end w-80 gap-2">
       <li class="g-button navbar-btn" @click="changeTheme">
         <icon-computer v-if="currentTheme === 'auto'" :size="ICON_SIZE" />
         <icon-sun-fill v-if="currentTheme === 'light'" :size="ICON_SIZE" />
@@ -54,10 +57,24 @@ const { currentLocale, changeLocale } = useLocale()
 @navbar-btn-size: 36.5px;
 
 .navbar-btn {
-  display: flex;
+  @apply flex items-center justify-center;
   width: @navbar-btn-size;
   height: @navbar-btn-size;
-  align-items: center;
-  justify-content: center;
+}
+
+.navbar-route-active::before {
+  @apply block absolute -left-1;
+  content: '> ';
+  animation: flicker 1s steps(1) infinite;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 </style>

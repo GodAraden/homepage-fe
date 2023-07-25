@@ -8,17 +8,6 @@ body {
   color: var(--color-text-1);
 }
 
-/* 不同主题下的首屏背景 */
-body[arco-theme=''] #app {
-  background: no-repeat url(~/images/homepage-bg-light.jpeg);
-  background-size: cover;
-}
-
-body[arco-theme='dark'] #app {
-  background: no-repeat url(~/images/homepage-bg-dark.jpeg);
-  background-size: cover;
-}
-
 /* 整体布局：内容居中 + 绝对底部 */
 #app {
   display: flex;

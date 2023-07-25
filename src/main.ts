@@ -9,7 +9,7 @@ import store from './store'
 import i18n from './locale'
 
 import './index.css'
-import './global.css'
+import '~/style/global.less'
 import './api/interceptor'
 
 const app = createApp(App)
