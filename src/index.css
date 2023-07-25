@@ -6,6 +6,8 @@
 body {
   background-color: var(--color-bg-1);
   color: var(--color-text-1);
+  font-family: 'Source Han Serif SC', '宋体', sans-serif;
+  font-weight: 900;
 }
 
 /* 整体布局：内容居中 + 绝对底部 */
@@ -47,11 +49,6 @@ body {
     @apply text-xl;
   }
 } */
-
-/* 响应式的背景 */
-.ref-bgc {
-  background-color: var(--color-menu-light-bg);
-}
 
 /* 覆盖组件库样式 */
 .arco-typography {
