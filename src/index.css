@@ -15,7 +15,14 @@ body {
   min-height: 100vh;
 }
 
-@media (min-width: 768px) {
+#header,
+#main,
+#footer {
+  padding-left: calc(50vw - 520px);
+  padding-right: calc(50vw - 520px);
+}
+
+/* @media (min-width: 768px) {
   #app > * {
     padding: 0 calc(50vw - 480px);
   }
@@ -39,7 +46,7 @@ body {
     padding: 0 calc(50vw - 760px);
     @apply text-xl;
   }
-}
+} */
 
 /* 响应式的背景 */
 .ref-bgc {

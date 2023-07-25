@@ -3,28 +3,13 @@
   @apply cursor-pointer;
 }
 
-/* 全局样式：flex 交叉轴居中 */
-.g-vertical-center {
-  @apply flex items-center;
-}
-
 body[arco-theme=''] {
-  #app {
-    background: no-repeat url(~/images/homepage-bg-light.jpeg);
-    background-size: cover;
-  }
-
   .g-button {
     @apply hover:bg-opacity-10 hover:bg-black;
   }
 }
 
 body[arco-theme='dark'] {
-  #app {
-    background: no-repeat url(~/images/homepage-bg-dark.jpeg);
-    background-size: cover;
-  }
-
   .g-button {
     @apply hover:bg-opacity-10 hover:bg-white;
   }

@@ -1,9 +1,10 @@
 <template>
   <div
-    class="g-vertical-center h-16 backdrop-blur bg-slate-700 bg-opacity-20 shadow-md"
+    id="header"
+    class="flex items-center h-16 backdrop-blur bg-slate-700 bg-opacity-20 shadow-md"
     style="font-family: Alimama_DaoLiTi"
   >
-    <a href="/" class="g-vertical-center w-80">
+    <a href="/" class="flex items-center w-80">
       <img src="/logo.svg" alt="" class="h-12" />
       <a-typography-title :heading="4" class="!mb-0 !font-black ml-2">
         {{ $t(`header.title`) }}
@@ -55,6 +56,12 @@ const { currentLocale, changeLocale } = useLocale()
 
 <style lang="less">
 @navbar-btn-size: 36.5px;
+
+#header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
 
 .navbar-btn {
   @apply flex items-center justify-center;

@@ -2,13 +2,15 @@
   <a-config-provider :locale="locale">
     <the-header />
 
-    <router-view class="main" v-slot="{ Component, route }">
+    <router-view
+      id="main"
+      class="bg-cover bg-no-repeat overflow-y-scroll"
+      v-slot="{ Component, route }"
+    >
       <transition name="page" mode="out-in" appear>
         <component :is="Component" :key="route.fullPath" />
       </transition>
     </router-view>
-
-    <the-footer />
   </a-config-provider>
 </template>
 
@@ -18,7 +20,7 @@ import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
 import enUS from '@arco-design/web-vue/es/locale/lang/en-us'
 
 import TheHeader from '@/components/TheHeader.vue'
-import TheFooter from '@/components/TheFooter.vue'
+// import TheFooter from '@/components/TheFooter.vue'
 import useLocale from '@/hooks/useLocale'
 
 const { currentLocale } = useLocale()
@@ -32,9 +34,3 @@ const locale = computed(() => {
   }
 })
 </script>
-
-<style>
-.main {
-  flex: 1;
-}
-</style>
