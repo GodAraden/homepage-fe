@@ -1,15 +1,15 @@
 <template>
-  <div class="flex flex-col items-center justify-evenly">
+  <div class="flex flex-col items-center justify-evenly select-none">
     <div
       id="welcome"
       style="font-family: Alimama_DaoLiTi"
       class="relative flex flex-col items-center justify-center w-2/3 h-64 p-2 bg-black bg-opacity-10 bg-clip-content"
     >
       <a-typography-title :heading="1" class="!font-black">
-        {{ $t('home.page1.welcome') }}
+        {{ $t('home.welcome.title') }}
       </a-typography-title>
       <a-typography-title :heading="2">
-        {{ $t('home.page1.description') }}
+        {{ $t('home.welcome.description') }}
       </a-typography-title>
     </div>
     <div class="center text-5xl text-amber-100 animate-bounce">

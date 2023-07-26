@@ -1,5 +1,5 @@
 <template>
-  <div class="text-lg">
+  <div class="mt-24 text-center text-lg select-none">
     <icon-caret-right class="left-float" />
     {{ title }}
     <icon-caret-left class="right-float" />

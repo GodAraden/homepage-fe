@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col items-center justify-center gap-4">
-    <page-title :title="$t('home.page2.about')"></page-title>
+  <div class="overflow-hidden">
+    <page-title :title="$t('home.about.title')" />
     <div
       id="about"
-      class="g-ref-bgc grid w-2/3 h-fit p-2 shadow bg-clip-content rounded-2xl"
+      class="g-ref-bgc mt-6 mx-auto grid w-2/3 p-2 shadow-2xl rounded-2xl"
     >
       <div class="relative w-36 h-36 mx-auto mt-12">
         <div class="avatar-frame avatar-frame-lt"></div>
@@ -14,8 +14,8 @@
       </div>
       <div id="info" class="grid grid-cols-2 my-6 gap-y-1">
         <template v-for="item in PersonalInfo" :key="item.key">
-          <span>{{ $t(`home.page2.col.${item.key}`) }}</span>
-          <span>{{ item.value || $t(`home.page2.val.${item.key}`) }}</span>
+          <span>{{ $t(`home.about.col.${item.key}`) }}</span>
+          <span>{{ item.value || $t(`home.about.val.${item.key}`) }}</span>
         </template>
       </div>
     </div>

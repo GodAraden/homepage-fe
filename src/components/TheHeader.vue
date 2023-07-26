@@ -1,7 +1,7 @@
 <template>
   <div
     id="header"
-    class="flex items-center h-16 backdrop-blur bg-slate-700 bg-opacity-20 shadow-md"
+    class="flex items-center h-16 backdrop-blur bg-slate-700 bg-opacity-20 shadow-md select-none"
     style="font-family: Alimama_DaoLiTi"
   >
     <a href="/" class="flex items-center w-80">
