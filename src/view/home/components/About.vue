@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import PageTitle from './PageTitle.vue'
+import PageTitle from './Base/Title.vue'
 import avatar from '~/images/avatar.jpg'
 import { PersonalInfo } from '@/utils/constants'
 </script>
