@@ -3,6 +3,14 @@ interface KeyValuePair<Value = string> {
   value: Value
 }
 
+interface FriendLink {
+  title: string // 网站标题
+  description: string // 网站描述
+  logo: string // Logo URL，如 https://www.gravatar.com/avatar/0011681f8b59101b59a4234213975308
+  link: string // 网站 URL
+  color: string // rgb 格式的自定义的背景色，渲染时会被转换成 rgba 以添加透明度，如：rgb(0, 0, 0) -> rgba(0, 0, 0, 0.2)
+}
+
 export const PersonalInfo: KeyValuePair<any>[] = [
   {
     key: 'nickname',
@@ -150,5 +158,15 @@ export const SkillProficiency: (KeyValuePair<number> & { color: string })[] = [
     key: 'abutment',
     value: 0.8,
     color: '#ffaa31'
+  }
+]
+
+export const FriendLinks: FriendLink[] = [
+  {
+    title: 'GodAraden 的主页',
+    description: '24 年毕业的前端程序猿，正在准备今年下半年的秋招',
+    logo: 'https://www.gravatar.com/avatar/0011681f8b59101b59a4234213975308',
+    link: 'http://araden.top/',
+    color: 'rgba(0, 0, 0, 0.2)'
   }
 ]

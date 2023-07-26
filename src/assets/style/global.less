@@ -3,8 +3,11 @@
   @apply cursor-pointer;
 }
 
-/* 响应式的背景 */
-.g-ref-bgc {
+/* 单行文本溢出省略 */
+.g-single-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 body[arco-theme=''] {
@@ -12,6 +15,7 @@ body[arco-theme=''] {
     @apply hover:bg-opacity-10 hover:bg-black;
   }
 
+  /* 响应式的背景 */
   .g-ref-bgc {
     @apply bg-white bg-opacity-80;
   }

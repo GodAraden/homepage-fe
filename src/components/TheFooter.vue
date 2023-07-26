@@ -1,7 +1,7 @@
 <template>
   <div
     id="footer"
-    class="bg-slate-900 bg-opacity-70 py-2 text-white absolute text-center"
+    class="absolute w-screen py-2 bg-slate-900 bg-opacity-70 text-white text-center"
   >
     <p class="select-none">
       &copy; 2023 - {{ new Date().getFullYear() }} By GodAraden
@@ -55,7 +55,6 @@ onBeforeUnmount(() => {
 
 <style>
 #footer {
-  width: 100vw;
   transform: translateX(calc(-50vw + 520px));
 }
 </style>

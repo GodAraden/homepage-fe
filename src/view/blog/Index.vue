@@ -1,3 +1,7 @@
 <template>
-  <div> 这是博客 </div>
+  <div> </div>
 </template>
+
+<script setup lang="ts"></script>
+
+<style scoped></style>
