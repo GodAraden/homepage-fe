@@ -24,5 +24,10 @@ export default {
   'home.about.val.games': '偶尔玩，偏向于沙盒生存类：饥荒、我的世界、缺氧...',
   'home.about.val.singer': '（有且仅有）河图',
 
-  'home.stack.title': '技术栈'
+  'home.stack.title': '技术栈',
+  'home.stack.col.engineering': '前端工程',
+  'home.stack.col.ecosystem': 'Vue 生态',
+  'home.stack.col.frontend': '前端领域',
+  'home.stack.col.backend': '后端领域',
+  'home.stack.col.abutment': '前后对接'
 }
