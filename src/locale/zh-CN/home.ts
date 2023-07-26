@@ -29,5 +29,14 @@ export default {
   'home.stack.col.ecosystem': 'Vue 生态',
   'home.stack.col.frontend': '前端领域',
   'home.stack.col.backend': '后端领域',
-  'home.stack.col.abutment': '前后对接'
+  'home.stack.col.abutment': '前后对接',
+
+  'home.recent.title': '最新博客',
+
+  'home.friend.title': '友情链接',
+  'home.friend.description':
+    '添加友链可以发送个人网站信息至我的邮箱，要求：能够正常访问、含本站友链、网站类型为个人博客',
+
+  'home.support.title': '赞助名单',
+  'home.support.description': '感谢各位大佬的支持'
 }

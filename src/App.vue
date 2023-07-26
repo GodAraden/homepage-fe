@@ -4,7 +4,7 @@
 
     <router-view
       id="main"
-      class="bg-cover bg-no-repeat overflow-y-scroll"
+      class="bg-cover bg-no-repeat overflow-y-scroll overflow-x-hidden"
       v-slot="{ Component, route }"
     >
       <transition name="page" mode="out-in" appear>
@@ -20,7 +20,6 @@ import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
 import enUS from '@arco-design/web-vue/es/locale/lang/en-us'
 
 import TheHeader from '@/components/TheHeader.vue'
-// import TheFooter from '@/components/TheFooter.vue'
 import useLocale from '@/hooks/useLocale'
 
 const { currentLocale } = useLocale()

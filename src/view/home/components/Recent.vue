@@ -1,7 +1,9 @@
 <template>
-  <div id="page4">第四页 </div>
+  <div class="overflow-hidden">
+    <page-title :title="$t('home.recent.title')" />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
-
-<style></style>
+<script setup lang="ts">
+import PageTitle from './Base/Title.vue'
+</script>
