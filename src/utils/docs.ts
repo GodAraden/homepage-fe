@@ -14,7 +14,7 @@ export const zhAddFlinkDescription = `
 {
   "title": "GodAraden 的主页",
   "description": "24 年毕业的前端程序猿，正在准备今年下半年的秋招",
-  "logo": "https://www.gravatar.com/avatar/0011681f8b59101b59a4234213975308",
+  "logo": "https://cravatar.cn/avatar/0011681f8b59101b59a4234213975308",
   "link": "http://araden.top/",
   "color": "rgba(255, 125, 0, 0.2)"
 }
@@ -53,7 +53,7 @@ My friend link:
 {
   "title": "GodAraden's homepage",
   "description": "The front-end programmer who graduated in 24 years is preparing for the autumn recruitment in the second half of this year",
-  "logo": "https://www.gravatar.com/avatar/0011681f8b59101b59a4234213975308",
+  "logo": "https://cravatar.cn/avatar/0011681f8b59101b59a4234213975308",
   "link": "http://araden.top/",
   "color": "rgba(255, 125, 0, 0.2)"
 }

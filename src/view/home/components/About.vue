@@ -10,7 +10,7 @@
         <div class="avatar-frame avatar-frame-rt"></div>
         <div class="avatar-frame avatar-frame-lb"></div>
         <div class="avatar-frame avatar-frame-rb"></div>
-        <img :src="avatar" alt="avatar" />
+        <img src="/avatar.jpg" alt="avatar" />
       </div>
       <div id="info" class="grid grid-cols-2 my-6 gap-y-1">
         <template v-for="item in PersonalInfo" :key="item.key">
@@ -24,7 +24,6 @@
 
 <script setup lang="ts">
 import PageTitle from './Base/Title.vue'
-import avatar from '~/images/avatar.jpg'
 import { PersonalInfo } from '@/utils/constants'
 </script>
 

@@ -6,7 +6,7 @@ interface KeyValuePair<Value = string> {
 interface FriendLink {
   title: string // 网站标题
   description: string // 网站描述
-  logo: string // Logo URL，如 https://www.gravatar.com/avatar/0011681f8b59101b59a4234213975308
+  logo: string // Logo URL
   link: string // 网站 URL
   color: string // rgb 格式的自定义的背景色，如：rgba(0, 0, 0)
 }
@@ -165,7 +165,7 @@ export const FriendLinks: FriendLink[] = [
   {
     title: 'GodAraden 的主页',
     description: '24 年毕业的前端程序猿，正在准备今年下半年的秋招',
-    logo: 'https://www.gravatar.com/avatar/0011681f8b59101b59a4234213975308',
+    logo: '/avatar.jpg',
     link: 'http://araden.top/',
     color: 'rgba(255, 125, 0, 0.2)'
   }
