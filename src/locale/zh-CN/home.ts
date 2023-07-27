@@ -35,8 +35,46 @@ export default {
   'home.tags.title': '博客标签',
 
   'home.friend.title': '友情链接',
-  'home.friend.description':
-    '添加友链可以发送个人网站信息至我的邮箱，要求：能够正常访问、含本站友链、网站类型为个人博客',
+  'home.friend.add': '互换友链',
+  'home.friend.add.title': '欢迎互换友链！',
+  'home.friend.add.description': `
+::: warning 加入本站友链要求：
+(一) 能够正常访问
+
+(二) 含本站友链
+
+(三) 网站类型为个人博客
+:::
+
+我的友链：
+
+\`\`\`json 
+{
+  "title": "GodAraden 的主页",
+  "description": "24 年毕业的前端程序猿，正在准备今年下半年的秋招",
+  "logo": "https://www.gravatar.com/avatar/0011681f8b59101b59a4234213975308",
+  "link": "http://araden.top/",
+  "color": "rgba(255, 125, 0, 0.2)"
+}
+\`\`\`
+
+添加友链可以发送个人网站信息至我的邮箱：\`hitwh_gyh@qq.com\`
+
+::: tip 提交信息
+
+格式参考同上，字段说明如下：
+
+\`\`\`typescript []
+interface FriendLink {
+  title: string // 网站标题
+  description: string // 网站描述
+  logo: string // Logo URL
+  link: string // 网站 URL
+  color: string // rgb 格式的自定义的背景色，如：rgba(0, 0, 0)
+}
+\`\`\`
+:::
+`,
 
   'home.support.title': '赞助名单',
   'home.support.description': '感谢各位大佬的支持'
