@@ -71,7 +71,7 @@
         </span>
       </template>
       <v-md-preview
-        :text="$t('home.friend.add.description')"
+        :text="addFlinkDescription"
         :style="{ height: '72vh' }"
         class="overflow-y-scroll"
       ></v-md-preview>
@@ -80,12 +80,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import TheFooter from '@/components/TheFooter.vue'
+import { computed, ref } from 'vue'
 import PageTitle from './Base/Title.vue'
+import TheFooter from '@/components/TheFooter.vue'
 import { FriendLinks } from '@/utils/constants'
+import { zhAddFlinkDescription, enAddFlinkDescription } from '@/utils/docs'
+import useLocale from '@/hooks/useLocale'
 
 const visible = ref(false)
+const { currentLocale } = useLocale()
+
+const addFlinkDescription = computed(() => {
+  switch (currentLocale.value) {
+    case 'zh-CN':
+      return zhAddFlinkDescription
+    case 'en-US':
+      return enAddFlinkDescription
+  }
+})
 </script>
 
 <style lang="less">
