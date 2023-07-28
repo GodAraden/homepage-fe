@@ -1,0 +1,35 @@
+/* markdown 编辑器适应深色主题 */
+body[arco-theme='dark'] {
+  .v-md-editor,
+  .v-md-editor-preview {
+    background-color: transparent !important;
+  }
+  .v-md-editor.v-md-editor--edit {
+    background-color: transparent;
+  }
+  .v-md-editor__toolbar {
+    background-color: transparent;
+    color: white;
+  }
+  .v-md-textarea-editor textarea {
+    background-color: transparent;
+    color: white !important;
+  }
+  .vuepress-markdown-body {
+    background-color: transparent !important;
+    color: white !important;
+  }
+  .v-md-plugin-tip.tip {
+    background-color: #33624c;
+  }
+  .v-md-plugin-tip.warning {
+    color: #e7c72e;
+    .v-md-plugin-tip-title {
+      color: #ffd300;
+    }
+  }
+  .v-md-pre-wrapper,
+  .v-md-pre-wrapper::after {
+    background-color: #ddd !important;
+  }
+}

@@ -11,6 +11,7 @@ import i18n from './locale'
 
 import './index.css'
 import '~/style/global.less'
+import '~/style/md-editor.less'
 import './api/interceptor'
 
 const app = createApp(App)
