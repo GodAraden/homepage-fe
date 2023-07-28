@@ -37,21 +37,71 @@
         <icon-chinese-fill v-if="currentLocale === 'zh-CN'" :size="ICON_SIZE" />
         <icon-english-fill v-if="currentLocale === 'en-US'" :size="ICON_SIZE" />
       </li>
-      <li class="g-button navbar-btn ml-1 gap-0.5">
+      <li class="g-button navbar-btn ml-1 gap-0.5" @click="visible = !visible">
         <icon-user :size="ICON_SIZE" /><icon-down :size="12" />
       </li>
+
+      <div
+        v-if="visible"
+        class="absolute z-50 flex flex-col top-16 w-80 h-56 p-4 gap-4 backdrop-blur bg-slate-300 bg-opacity-20 shadow-md rounded-lg text-white"
+      >
+        <template v-if="!userStore.user.role">
+          <div class="flex flex-col">
+            <span> {{ $t(`header.login.username`) }}</span>
+            <input type="text" class="g-custom-input" v-model="username" />
+          </div>
+          <div class="flex flex-col">
+            <span> {{ $t(`header.login.password`) }}</span>
+            <input type="password" class="g-custom-input" v-model="password" />
+          </div>
+          <button
+            style="background: linear-gradient(45deg, #f59e0b, #fde68a)"
+            class="py-2 rounded-full text-sm"
+            @click="onUserLogin"
+          >
+            {{ $t(`header.login.submit`) }}
+          </button>
+        </template>
+        <template v-else-if="userStore.user.role === 'admin'">
+          <img
+            src="/avatar.jpg"
+            alt="avatar"
+            class="rounded-full w-16 h-16 mx-auto"
+          />
+
+          <button
+            style="background: linear-gradient(45deg, #f59e0b, #fde68a)"
+            class="py-2 rounded-full text-sm"
+            @click="userStore.logout"
+          >
+            {{ $t(`header.user.logout`) }}
+          </button>
+        </template>
+        <template v-else> error: {{ userStore.user }} </template>
+      </div>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { appRoutes } from '@/router/routes'
 import useTheme from '@/hooks/useTheme'
 import useLocale from '@/hooks/useLocale'
+import { useUserStore } from '@/store'
 
 const ICON_SIZE = 24
+const visible = ref(false)
+const username = ref('')
+const password = ref('')
+
 const { currentTheme, changeTheme } = useTheme()
 const { currentLocale, changeLocale } = useLocale()
+const userStore = useUserStore()
+
+const onUserLogin = () => {
+  userStore.login({ username: username.value, password: password.value })
+}
 </script>
 
 <style lang="less">
