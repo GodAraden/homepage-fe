@@ -49,6 +49,7 @@ export type CatListItem = {
 
 export async function getCatList(count: number): Promise<CatListItem[]> {
   const data = await axios.get('/cat/images/search', {
+    withCredentials: false,
     headers: { 'x-api-key': import.meta.env.VITE_X_API_KEY },
     params: {
       limit: count,
