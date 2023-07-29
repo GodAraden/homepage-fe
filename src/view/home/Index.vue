@@ -15,7 +15,8 @@ const { currentPage, onWheel } = provideWheelPage()
 </script>
 
 <style>
-.home {
+.home,
+.home-content {
   height: 100vh;
 }
 
@@ -25,9 +26,5 @@ body[arco-theme=''] .home {
 
 body[arco-theme='dark'] .home {
   background-image: url(~/images/home-dark.jpeg);
-}
-
-.home-content {
-  height: 100vh;
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div class="overflow-hidden">
     <page-title :title="$t('home.stack.title')" />
-    <div class="flex flex-col mt-8">
+    <!-- 技术栈 Logo 展示 -->
+    <div class="flex flex-col mt-8 max-sm:gap-1 max-sm:justify-center">
       <div class="stack-grid-5">
         <stack-item
           v-for="item in TechStack.slice(BreakPoints[0], BreakPoints[1])"
@@ -35,8 +36,8 @@
         />
       </div>
     </div>
-
-    <div class="flex justify-evenly mt-16">
+    <!-- 技能熟练度展示 -->
+    <div class="flex flex-wrap justify-evenly mt-20">
       <a-progress
         v-for="item in SkillProficiency"
         :key="item.key"
@@ -74,7 +75,7 @@ const BreakPoints = [0, 5, 9, 14, TechStack.length]
 
 .stack-grid-4,
 .stack-grid-5 {
-  @apply grid mx-auto;
+  @apply grid mx-auto max-sm:!gap-1 max-sm:!w-auto;
   gap: @stack-grid-item-gap;
 }
 

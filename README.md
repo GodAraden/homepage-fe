@@ -21,3 +21,9 @@ QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'，的主页个人博客编
 # 语法命名规范
 
 1. CSS 全局样式类使用 g- 开头
+
+# 编码规范
+
+1. 在书写 HTML 类的时候，总体遵循：全局类 - 组件类 - tailwindcss 类 - tailwindcss 响应式类
+
+2. 每种类的书写顺序同 CSS，即布局宽高在前、文本背景在后

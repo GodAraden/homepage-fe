@@ -35,11 +35,13 @@ export interface GetBlogListParams {
   order?: 'asc' | 'desc'
 }
 
+export type BlogListItem = Omit<Blog, 'content'> & { tag: Tag[] }
+
 export type CreateBlogRes = Blog
 export type UpdateBlogRes = Blog
 export type DeleteBlogRes = Blog
 export type GetBlogListRes = {
-  data: (Omit<Blog, 'content'> & { tag: Tag[] })[]
+  data: BlogListItem[]
   total: number
 }
 export type GetBlogByIdRes = Blog

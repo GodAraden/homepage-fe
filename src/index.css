@@ -23,15 +23,33 @@ body {
   padding-right: calc(50vw - 520px);
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 1px) {
+  #app > * {
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
   #app > * {
     padding: 0 calc(50vw - 480px);
+  }
+}
+
+@media (min-width: 960px) {
+  #app > * {
+    padding: 0 calc(50vw - 480px);
+  }
+  #footer {
+    transform: translateX(calc(-50vw + 480px));
   }
 }
 
 @media (min-width: 1280px) {
   #app > * {
     padding: 0 calc(50vw - 520px);
+  }
+  #footer {
+    transform: translateX(calc(-50vw + 520px));
   }
 }
 
@@ -40,6 +58,9 @@ body {
     padding: 0 calc(50vw - 660px);
     @apply text-lg;
   }
+  #footer {
+    transform: translateX(calc(-50vw + 660px));
+  }
 }
 
 @media (min-width: 1920px) {
@@ -47,7 +68,10 @@ body {
     padding: 0 calc(50vw - 760px);
     @apply text-xl;
   }
-} */
+  #footer {
+    transform: translateX(calc(-50vw + 760px));
+  }
+}
 
 /* 覆盖组件库样式 */
 .arco-typography {

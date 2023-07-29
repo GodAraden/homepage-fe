@@ -1,17 +1,21 @@
 <template>
   <div
     id="header"
-    class="g-cross-center h-16 backdrop-blur bg-slate-700 bg-opacity-20 shadow-md select-none"
+    class="g-cross-center g-ground-glass h-16 select-none"
     style="font-family: Alimama_DaoLiTi"
   >
+    <!-- Logo & 标题 -->
     <a href="/" class="g-cross-center w-80">
-      <img src="/logo.svg" alt="" class="h-12" />
-      <a-typography-title :heading="4" class="!mb-0 !font-black ml-2">
+      <img src="/logo.svg" alt="logo" class="h-12" />
+      <a-typography-title
+        :heading="4"
+        class="!mb-0 !font-black ml-2 max-sm:!hidden"
+      >
         {{ $t(`header.title`) }}
       </a-typography-title>
     </a>
-
-    <ul class="flex justify-center flex-1 gap-6 text-lg font-bold">
+    <!-- 导航栏 -->
+    <ul class="flex justify-evenly flex-1 text-lg font-bold">
       <li
         v-for="item in appRoutes"
         :key="item.path"
@@ -21,11 +25,13 @@
         "
         @click="() => $router.push(item.path)"
       >
-        <span :class="'iconfont ' + item.meta.icon"></span>
-        <span class="ml-1"> {{ $t(`header.navbar.${item.name}`) }} </span>
+        <span :class="'iconfont ' + item.meta.icon + ' max-sm:text-xl'"></span>
+        <span class="max-sm:!hidden ml-1">
+          {{ $t(`header.navbar.${item.name}`) }}
+        </span>
       </li>
     </ul>
-
+    <!-- 功能栏 -->
     <ul class="flex justify-end w-80 gap-2">
       <li class="g-text-button navbar-btn" @click="changeTheme">
         <icon-computer v-if="currentTheme === 'auto'" :size="ICON_SIZE" />
@@ -45,7 +51,7 @@
       <!-- 登陆面板 -->
       <div
         v-if="visible"
-        class="absolute z-50 flex flex-col top-16 w-80 h-fit p-4 gap-4 backdrop-blur bg-slate-300 bg-opacity-20 shadow-md rounded-lg text-white"
+        class="g-ground-glass-light absolute z-50 flex flex-col top-16 w-80 h-fit p-4 gap-4 rounded-lg text-white"
       >
         <template v-if="!userStore.user.role">
           <div class="flex flex-col">

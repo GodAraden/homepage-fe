@@ -18,5 +18,5 @@ import { useUserStore } from '@/store'
 
 const { login } = useUserStore()
 
-login({})
+login({}) // cookie - session Login
 </script>

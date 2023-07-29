@@ -1,10 +1,16 @@
 <template>
   <div
     id="footer"
-    class="absolute w-screen py-2 bg-slate-900 bg-opacity-70 text-white text-center"
+    class="g-ground-glass-dark absolute w-screen py-2 text-white text-center"
   >
     <p class="select-none">
-      &copy; 2023 - {{ new Date().getFullYear() }} By GodAraden
+      &copy;
+      {{
+        new Date().getFullYear() === 2023
+          ? 2023
+          : 2023 + ' - ' + new Date().getFullYear()
+      }}
+      By GodAraden
     </p>
     <p class="select-none">
       <!-- 本站已运行时长 -->
@@ -52,9 +58,3 @@ onBeforeUnmount(() => {
   clearInterval(timer)
 })
 </script>
-
-<style>
-#footer {
-  transform: translateX(calc(-50vw + 520px));
-}
-</style>

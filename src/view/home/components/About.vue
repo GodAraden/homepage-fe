@@ -3,7 +3,7 @@
     <page-title :title="$t('home.about.title')" />
     <div
       id="about"
-      class="g-ref-bgc mt-4 mx-auto grid w-2/3 p-2 shadow-2xl rounded-2xl leading-tight"
+      class="g-ref-bgc mt-4 mx-auto grid w-2/3 p-2 shadow-2xl rounded-2xl leading-tight max-sm:flex max-sm:flex-col max-sm:w-11/12"
     >
       <div class="relative w-36 h-36 mx-auto mt-12">
         <div class="avatar-frame avatar-frame-lt"></div>
