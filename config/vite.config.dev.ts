@@ -1,12 +1,12 @@
 import { UserConfig, mergeConfig } from 'vite'
 import baseConfig from './vite.config.base'
-import { devServerPort, devServerProxy } from './utils'
+import { devServerProxy } from './utils'
 
 export default mergeConfig(
   {
     mode: 'development',
     server: {
-      port: devServerPort,
+      port: 8080,
       proxy: devServerProxy
     }
   } as UserConfig,

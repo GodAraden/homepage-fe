@@ -12,7 +12,7 @@ if (import.meta.env.PROD) {
 // 拦截 request，在生产环境下替换请求的前缀
 axios.interceptors.request.use((config) => {
   if (import.meta.env.PROD) {
-    const proxy = import.meta.env.VITE_APP_PROXY.split(';').map((value) => {
+    const proxy = import.meta.env.VITE_APP_PROXY.split('~').map((value) => {
       return value.split(',')
     })
     for (const [regStr, baseUrl, target] of proxy) {

@@ -2,7 +2,7 @@ import { ProxyOptions, loadEnv } from 'vite'
 
 const envs = loadEnv(process.env.NODE_ENV || 'development', '')
 
-const proxy = envs.VITE_APP_PROXY.split(';').map((value) => value.split(','))
+const proxy = envs.VITE_APP_PROXY.split('~').map((value) => value.split(','))
 const parseDevProxy = (proxy: string[][]) => {
   const output: Record<string, ProxyOptions> = {}
   for (const entries of proxy) {
@@ -15,5 +15,4 @@ const parseDevProxy = (proxy: string[][]) => {
   return output
 }
 
-export const devServerPort = Number(envs.VITE_APP_PORT)
 export const devServerProxy = parseDevProxy(proxy)

@@ -32,6 +32,8 @@ export default {
   'home.stack.col.abutment': '前后对接',
 
   'home.recent.title': '最新博客',
+  'home.recent.col.postAt': '发表于 ',
+  'home.recent.col.updateAt': '更新于 ',
   'home.tags.title': '博客标签',
 
   'home.friend.title': '友情链接',

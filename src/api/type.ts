@@ -7,9 +7,15 @@ export interface UpdateTypeParams {
   typeName: string
 }
 
+export type FindAllTypeRes = Type[]
 export type CreateTypeRes = Type
 export type UpdateTypeRes = Type
 export type DeleteTypeRes = Type
+
+export async function findAllType() {
+  const { data } = await axios.get<FindAllTypeRes>('/api/type')
+  return data
+}
 
 export async function createType(params: CreateTypeParams) {
   const { data } = await axios.post<CreateTypeRes>('/api/type', params)

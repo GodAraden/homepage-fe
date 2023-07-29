@@ -7,9 +7,15 @@ export interface UpdateTagParams {
   tagName: string
 }
 
+export type FindAllTagRes = Tag[]
 export type CreateTagRes = Tag
 export type UpdateTagRes = Tag
 export type DeleteTagRes = Tag
+
+export async function findAllTag() {
+  const { data } = await axios.get<FindAllTagRes>('/api/tag')
+  return data
+}
 
 export async function createTag(params: CreateTagParams) {
   const { data } = await axios.post<CreateTagRes>('/api/tag', params)

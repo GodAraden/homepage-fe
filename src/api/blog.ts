@@ -38,7 +38,10 @@ export interface GetBlogListParams {
 export type CreateBlogRes = Blog
 export type UpdateBlogRes = Blog
 export type DeleteBlogRes = Blog
-export type GetBlogListRes = { data: Blog[]; total: number }
+export type GetBlogListRes = {
+  data: (Omit<Blog, 'content'> & { tag: Tag[] })[]
+  total: number
+}
 export type GetBlogByIdRes = Blog
 export type LikeBlogRes = { likeNum: number }
 
