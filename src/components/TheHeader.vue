@@ -13,37 +13,39 @@
 
     <ul class="flex justify-center flex-1 gap-6 text-lg font-bold">
       <li
-        v-for="item in appRoutes.filter((route) => !route.meta.requiresAuth)"
+        v-for="item in appRoutes"
         :key="item.path"
         :class="
-          'g-button relative py-1 px-3 ' +
+          'g-text-button relative py-1 px-3 ' +
           ($route.name === item.name ? 'navbar-route-active' : '')
         "
+        @click="() => $router.push(item.path)"
       >
-        <router-link :to="item.path">
-          <span :class="'iconfont ' + item.meta.icon"></span>
-          <span class="ml-1"> {{ $t(`header.navbar.${item.name}`) }} </span>
-        </router-link>
+        <span :class="'iconfont ' + item.meta.icon"></span>
+        <span class="ml-1"> {{ $t(`header.navbar.${item.name}`) }} </span>
       </li>
     </ul>
 
     <ul class="flex justify-end w-80 gap-2">
-      <li class="g-button navbar-btn" @click="changeTheme">
+      <li class="g-text-button navbar-btn" @click="changeTheme">
         <icon-computer v-if="currentTheme === 'auto'" :size="ICON_SIZE" />
         <icon-sun-fill v-if="currentTheme === 'light'" :size="ICON_SIZE" />
         <icon-moon-fill v-if="currentTheme === 'dark'" :size="ICON_SIZE" />
       </li>
-      <li class="g-button navbar-btn" @click="changeLocale">
+      <li class="g-text-button navbar-btn" @click="changeLocale">
         <icon-chinese-fill v-if="currentLocale === 'zh-CN'" :size="ICON_SIZE" />
         <icon-english-fill v-if="currentLocale === 'en-US'" :size="ICON_SIZE" />
       </li>
-      <li class="g-button navbar-btn ml-1 gap-0.5" @click="visible = !visible">
+      <li
+        class="g-text-button navbar-btn ml-1 gap-0.5"
+        @click="visible = !visible"
+      >
         <icon-user :size="ICON_SIZE" /><icon-down :size="12" />
       </li>
-
+      <!-- 登陆面板 -->
       <div
         v-if="visible"
-        class="absolute z-50 flex flex-col top-16 w-80 h-56 p-4 gap-4 backdrop-blur bg-slate-300 bg-opacity-20 shadow-md rounded-lg text-white"
+        class="absolute z-50 flex flex-col top-16 w-80 h-fit p-4 gap-4 backdrop-blur bg-slate-300 bg-opacity-20 shadow-md rounded-lg text-white"
       >
         <template v-if="!userStore.user.role">
           <div class="flex flex-col">
@@ -63,12 +65,30 @@
           </button>
         </template>
         <template v-else-if="userStore.user.role === 'admin'">
-          <img
-            src="/avatar.jpg"
-            alt="avatar"
-            class="rounded-full w-16 h-16 mx-auto"
-          />
-
+          <div class="flex">
+            <img
+              src="/avatar.jpg"
+              alt="avatar"
+              class="rounded-full w-16 h-16 mx-auto"
+            />
+            <span class="flex flex-1 items-center justify-center text-2xl">
+              {{ $t(`header.user.welcome`) }}
+            </span>
+          </div>
+          <ul class="flex flex-col w-full text-lg">
+            <li
+              v-for="item in adminRoutes"
+              :key="item.path"
+              :class="
+                'g-text-button relative py-1 px-3 ' +
+                ($route.name === item.name ? 'navbar-route-active' : '')
+              "
+              @click="() => $router.push(item.path)"
+            >
+              <span :class="'iconfont ' + item.meta.icon"></span>
+              <span class="ml-1"> {{ $t(`header.navbar.${item.name}`) }} </span>
+            </li>
+          </ul>
           <button
             style="background: linear-gradient(45deg, #f59e0b, #fde68a)"
             class="py-2 rounded-full text-sm"
@@ -85,7 +105,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { appRoutes } from '@/router/routes'
+import { appRoutes, adminRoutes } from '@/router/routes'
 import useTheme from '@/hooks/useTheme'
 import useLocale from '@/hooks/useLocale'
 import { useUserStore } from '@/store'

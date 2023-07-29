@@ -15,4 +15,6 @@ function formatModules(_modules: any) {
   return result.sort((a, b) => a.meta.order - b.meta.order)
 }
 
-export const appRoutes = formatModules(modules)
+const allRoutes = formatModules(modules)
+export const appRoutes = allRoutes.filter((route) => !route.meta.requiresAuth)
+export const adminRoutes = allRoutes.filter((route) => route.meta.requiresAuth)

@@ -9,5 +9,6 @@ export default {
   'header.login.password': '密码',
   'header.login.submit': '登录',
 
-  'header.user.logout': '退出登录'
+  'header.user.logout': '退出登录',
+  'header.user.welcome': '欢迎, GodAraden'
 }
