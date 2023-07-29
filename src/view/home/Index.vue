@@ -1,5 +1,10 @@
 <template>
-  <div class="home" @wheel="onWheel">
+  <div
+    class="home"
+    v-touch:swipeup="onWheel"
+    v-touch:swipedown="onWheel"
+    @wheel="onWheel"
+  >
     <transition name="page" mode="out-in" appear>
       <keep-alive>
         <component :is="currentPage" class="home-content" />
