@@ -3,6 +3,8 @@ import { Message } from '@arco-design/web-vue'
 
 const BaseUrl = import.meta.env.VITE_BASE_URL
 
+axios.defaults.withCredentials = true
+
 if (import.meta.env.PROD) {
   axios.defaults.baseURL = BaseUrl
 }

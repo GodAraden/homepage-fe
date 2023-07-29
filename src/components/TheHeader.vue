@@ -1,10 +1,10 @@
 <template>
   <div
     id="header"
-    class="flex items-center h-16 backdrop-blur bg-slate-700 bg-opacity-20 shadow-md select-none"
+    class="g-cross-center h-16 backdrop-blur bg-slate-700 bg-opacity-20 shadow-md select-none"
     style="font-family: Alimama_DaoLiTi"
   >
-    <a href="/" class="flex items-center w-80">
+    <a href="/" class="g-cross-center w-80">
       <img src="/logo.svg" alt="" class="h-12" />
       <a-typography-title :heading="4" class="!mb-0 !font-black ml-2">
         {{ $t(`header.title`) }}
@@ -71,7 +71,7 @@
               alt="avatar"
               class="rounded-full w-16 h-16 mx-auto"
             />
-            <span class="flex flex-1 items-center justify-center text-2xl">
+            <span class="g-perfect-center flex-1 text-2xl">
               {{ $t(`header.user.welcome`) }}
             </span>
           </div>
@@ -130,7 +130,7 @@ const onUserLogin = () => {
 #header {
   position: fixed;
   width: 100%;
-  z-index: 999;
+  z-index: 99;
 }
 
 .navbar-btn {
