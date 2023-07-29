@@ -5,7 +5,7 @@
       <page-title :title="$t('home.friend.title')" />
       <div
         style="height: 64vh"
-        class="g-ref-bgc grid grid-cols-3 mt-2 mx-auto w-5/6 p-4 gap-2 shadow-2xl rounded-2xl overflow-y-scroll"
+        class="g-ref-bgc grid grid-cols-3 mt-4 mx-auto w-5/6 p-4 gap-2 shadow-2xl rounded-2xl overflow-y-scroll"
       >
         <!-- 添加友链的说明 -->
         <div

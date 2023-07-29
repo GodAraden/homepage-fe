@@ -3,7 +3,7 @@
     <page-title :title="$t('home.about.title')" />
     <div
       id="about"
-      class="g-ref-bgc mt-6 mx-auto grid w-2/3 p-2 shadow-2xl rounded-2xl"
+      class="g-ref-bgc mt-4 mx-auto grid w-2/3 p-2 shadow-2xl rounded-2xl leading-tight"
     >
       <div class="relative w-36 h-36 mx-auto mt-12">
         <div class="avatar-frame avatar-frame-lt"></div>
@@ -12,7 +12,7 @@
         <div class="avatar-frame avatar-frame-rb"></div>
         <img src="/avatar.jpg" alt="avatar" />
       </div>
-      <div id="info" class="grid grid-cols-2 my-6 gap-y-1">
+      <div id="info" class="grid grid-cols-2 my-6 gap-y-2">
         <template v-for="item in PersonalInfo" :key="item.key">
           <span>{{ $t(`home.about.col.${item.key}`) }}</span>
           <span>{{ item.value || $t(`home.about.val.${item.key}`) }}</span>

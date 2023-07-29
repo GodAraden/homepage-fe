@@ -47,7 +47,11 @@
         :percent="item.value"
       >
         <template v-slot:text="{ percent }">
-          <span :style="{ color: item.color }" class="font-black text-xs">
+          <span
+            :style="{ color: item.color }"
+            :title="$t(`home.stack.col.${item.key}`)"
+            class="font-black text-xs cursor-default"
+          >
             {{ $t(`home.stack.col.${item.key}`) }}:{{ percent * 100 }}%
           </span>
         </template>

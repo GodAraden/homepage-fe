@@ -1,7 +1,7 @@
 <template>
   <div class="overflow-hidden">
     <page-title :title="$t('home.recent.title')" />
-    <div class="grid grid-cols-2 w-full mt-2 gap-4">
+    <div class="grid grid-cols-2 w-full mt-4 gap-4">
       <div
         v-for="(item, idx) in blogList"
         :key="item.id"
