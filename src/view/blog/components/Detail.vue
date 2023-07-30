@@ -1,6 +1,6 @@
 <template>
   <div class="g-ref-bgc flex-1 h-screen select-none overflow-y-scroll">
-    <article class="g-ref-deep-bgc min-h-screen px-4 pt-20">
+    <article class="g-ref-deep-bgc flex flex-col px-4 pt-20 min-h-screen">
       <div class="flex flex-col cursor-default">
         <p class="text-4xl mt-1 mb-2">
           {{ blog?.title }}
@@ -44,7 +44,7 @@
         </p>
       </div>
 
-      <v-md-preview :text="blog?.content"></v-md-preview>
+      <v-md-preview class="flex-1" :text="blog?.content"></v-md-preview>
 
       <div class="g-main-center gap-16 pb-4">
         <div
