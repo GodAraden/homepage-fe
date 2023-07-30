@@ -76,3 +76,19 @@ interface FriendLink {
 \`\`\`
 :::
 `
+
+export const zhSupportDescription = `
+::: tip 题外话
+本来想做一个感谢页面的，但是感觉一时半会也不会有人打赏，所以就先鸽掉了
+
+（等什么时候收到第一笔打赏再做吧）
+:::
+`
+
+export const enSupportDescription = `
+::: tip Digression
+I originally wanted to make a thank you page, but I felt that no one would reward me for a while, so I dropped it first
+
+(Wait until the first tip is received)
+:::
+`

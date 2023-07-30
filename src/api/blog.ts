@@ -35,7 +35,10 @@ export interface GetBlogListParams {
   order?: 'asc' | 'desc'
 }
 
-export type BlogListItem = Omit<Blog, 'content'> & { tag: Tag[] }
+export type BlogListItem = Omit<Blog, 'content'> & {
+  tag: Tag[]
+  _count: { comments: number }
+}
 
 export type CreateBlogRes = Blog
 export type UpdateBlogRes = Blog
@@ -44,7 +47,10 @@ export type GetBlogListRes = {
   data: BlogListItem[]
   total: number
 }
-export type GetBlogByIdRes = Blog
+export type GetBlogByIdRes = Omit<Blog, 'description'> & {
+  tag: Tag[]
+  _count: { comments: number }
+}
 export type LikeBlogRes = { likeNum: number }
 
 export async function createBlog(params: CreateBlogParams) {

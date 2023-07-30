@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="footer"
-    class="g-ground-glass-dark absolute w-screen py-2 text-white text-center"
-  >
+  <div class="g-ground-glass-dark py-2 text-white text-center">
     <p class="select-none">
       &copy;
       {{

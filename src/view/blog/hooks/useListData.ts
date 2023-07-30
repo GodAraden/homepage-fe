@@ -8,6 +8,7 @@ import useBlogList from '@/hooks/useBlogList'
 const ListDataKey = Symbol('ListDataKey')
 
 export interface ListData {
+  filter: Ref<Partial<GetBlogListParams>>
   renderData: Ref<BlogListItem[]>
   catList: Ref<CatListItem[]>
   pagination: Ref<Pagination>
@@ -40,6 +41,7 @@ export function provideListData(): ListData {
   )
 
   const result = {
+    filter,
     renderData,
     catList,
     pagination,

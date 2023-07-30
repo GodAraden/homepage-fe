@@ -17,8 +17,7 @@ body {
 }
 
 #header,
-#main,
-#footer {
+#main {
   padding-left: calc(50vw - 520px);
   padding-right: calc(50vw - 520px);
 }

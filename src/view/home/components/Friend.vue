@@ -51,7 +51,10 @@
         </a>
       </div>
     </div>
-    <the-footer class="bottom-0" />
+
+    <div id="footer" class="absolute bottom-0 w-screen">
+      <the-footer />
+    </div>
 
     <!-- 模态框，Arco 自带 Teleport -->
     <a-modal

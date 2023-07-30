@@ -34,7 +34,7 @@
           <span
             class="g-ref-bgc w-8 h-4 mr-2 rounded-full text-center text-xs font-black"
           >
-            {{ typeList.reduce((prev, curr) => prev + curr._count.blogs, 0) }}
+            {{ typeList?.reduce((prev, curr) => prev + curr._count.blogs, 0) }}
           </span>
         </div>
         <div

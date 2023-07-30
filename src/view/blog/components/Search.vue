@@ -1,6 +1,14 @@
 <template>
   <div class="g-ref-bgc flex-1 h-screen overflow-y-scroll">
     <article class="g-ref-deep-bgc min-h-screen p-4 pt-20">
+      <p class="text-3xl mb-4">
+        <template v-if="filter.type">
+          {{ $t('blog.search.type.result', { typeName: filter.type }) }}
+        </template>
+        <template v-if="filter.tags">
+          {{ $t('blog.search.tag.result', { typeName: filter.tags }) }}
+        </template>
+      </p>
       <blog
         v-for="(item, idx) in renderData"
         :key="item.id"
@@ -17,6 +25,7 @@
         />
       </div>
     </article>
+    <the-footer></the-footer>
   </div>
 
   <aside
@@ -33,7 +42,7 @@
             class="rounded"
           />
         </div>
-        <div class="g-main-center flex-col p-1">
+        <div class="g-main-center flex-col p-1 flex-1">
           <p
             class="g-single-ellipsis g-link"
             @click="
@@ -45,10 +54,13 @@
           >
             {{ item.title }}
           </p>
-          <p>
-            <icon-eye /> {{ item.readNum }}
-            &nbsp;
-            <icon-heart /> {{ item.likeNum }}
+          <p class="grid grid-cols-3 gap-2">
+            <span> <icon-eye /> {{ item.readNum }} </span>
+            <span> <icon-heart /> {{ item.likeNum }} </span>
+            <span>
+              <icon-message />
+              {{ item._count?.comments }}
+            </span>
           </p>
         </div>
       </li>
@@ -74,11 +86,13 @@
 
 <script setup lang="ts">
 import Blog from '@/components/Blog.vue'
+import TheFooter from '@/components/TheFooter.vue'
 import { injectCommonData } from '../hooks/useCommonData'
 import { provideListData } from '../hooks/useListData'
 
 const { tagList, recommendList, initSearchAside } = injectCommonData()
-const { renderData, catList, pagination, onPageChange } = provideListData()
+const { filter, renderData, catList, pagination, onPageChange } =
+  provideListData()
 
 initSearchAside()
 </script>
