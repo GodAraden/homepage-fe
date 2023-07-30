@@ -53,7 +53,7 @@ defineProps<{
 }>()
 </script>
 
-<style lang="less">
+<style>
 .blog-card:hover .blog-abstract:last-of-type {
   @apply h-5/6 !rounded-xl;
 }
@@ -65,7 +65,7 @@ defineProps<{
 }
 
 .blog-abstract {
-  @apply h-1/3  rounded-xl rounded-t-none;
+  @apply h-2/5 rounded-xl rounded-t-none;
   transition: all 0.5s ease-in-out;
 }
 </style>

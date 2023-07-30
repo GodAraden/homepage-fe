@@ -15,6 +15,12 @@ interface User {
   role?: Role
 }
 
+interface Pagination {
+  current: number
+  pageSize: number
+  total?: number
+}
+
 interface Tag {
   id: number
   tagName: string

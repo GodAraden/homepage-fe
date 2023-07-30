@@ -1,8 +1,6 @@
 <template>
   <div class="g-ref-bgc flex-1 h-screen overflow-y-scroll">
-    <article class="g-ref-deep-bgc min-h-screen pt-16">
-      {{ $route }}
-    </article>
+    <article class="g-ref-deep-bgc min-h-screen pt-16">1234 </article>
   </div>
 
   <aside

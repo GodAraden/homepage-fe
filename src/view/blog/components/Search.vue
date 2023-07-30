@@ -1,7 +1,21 @@
 <template>
   <div class="g-ref-bgc flex-1 h-screen overflow-y-scroll">
-    <article class="g-ref-deep-bgc min-h-screen pt-16">
-      {{ type }}
+    <article class="g-ref-deep-bgc min-h-screen p-4 pt-20">
+      <blog
+        v-for="(item, idx) in renderData"
+        :key="item.id"
+        :url="catList?.[idx]?.url"
+        :blog="item"
+        class="h-80 mb-2"
+      />
+      <div class="g-main-center">
+        <a-pagination
+          simple
+          :total="pagination.total"
+          :page-size="pagination.pageSize"
+          @change="onPageChange"
+        />
+      </div>
     </article>
   </div>
 
@@ -32,8 +46,9 @@
             {{ item.title }}
           </p>
           <p>
-            <icon-heart /> {{ item.likeNum }} &nbsp; <icon-eye />
-            {{ item.readNum }}
+            <icon-eye /> {{ item.readNum }}
+            &nbsp;
+            <icon-heart /> {{ item.likeNum }}
           </p>
         </div>
       </li>
@@ -58,23 +73,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { findAllTag } from '@/api/tag'
-import { BlogListItem, getBlogList } from '@/api/blog'
+import Blog from '@/components/Blog.vue'
+import { injectCommonData } from '../hooks/useCommonData'
+import { provideListData } from '../hooks/useListData'
 
-defineProps<{
-  type: string
-}>()
+const { tagList, recommendList, initSearchAside } = injectCommonData()
+const { renderData, catList, pagination, onPageChange } = provideListData()
 
-const tagList = ref<Tag[]>([])
-const recommendList = ref<BlogListItem[]>([])
-
-const init = async () => {
-  tagList.value = await findAllTag()
-  recommendList.value = (
-    await getBlogList({ current: 1, pageSize: 5, orderBy: 'readNum' })
-  ).data
-}
-
-init()
+initSearchAside()
 </script>

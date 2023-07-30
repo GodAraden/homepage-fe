@@ -38,7 +38,7 @@
           <span
             class="g-ref-bgc w-8 h-4 mr-2 rounded-full text-center text-xs font-black"
           >
-            {{ item._count.blogs }}
+            {{ item._count?.blogs }}
           </span>
         </div>
       </div>
@@ -49,16 +49,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { FindAllTypeRes, findAllType } from '@/api/type'
-
-const typeList = ref<FindAllTypeRes>([])
-
-const init = async () => {
-  typeList.value = await findAllType()
-}
-
-init()
+import { provideCommonData } from './hooks/useCommonData'
+const { typeList } = provideCommonData()
 </script>
 
 <style lang="less">
@@ -98,3 +90,4 @@ body[arco-theme='dark'] {
   }
 }
 </style>
+./hooks/useCommonData ./hooks/useCommonData
