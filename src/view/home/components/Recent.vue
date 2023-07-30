@@ -5,7 +5,7 @@
       class="grid grid-cols-2 w-full mt-4 gap-4 max-sm:grid-cols-1 max-sm:p-2"
     >
       <blog
-        v-for="(item, idx) in blogList"
+        v-for="(item, idx) in renderData"
         :key="item.id"
         :url="catList?.[idx]?.url"
         :blog="item"
@@ -16,19 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import Blog from '@/components/Blog.vue'
 import PageTitle from './Base/Title.vue'
-import { getBlogList, BlogListItem } from '@/api/blog'
-import { CatListItem, getCatList } from '@/api/cat'
+import useBlogList from '@/hooks/useBlogList'
 
-const blogList = ref<BlogListItem[]>()
-const catList = ref<CatListItem[]>()
+const { renderData, catList, fetchData } = useBlogList(2)
 
-const init = async (blogCount: number = 2) => {
-  blogList.value = (await getBlogList({ current: 1, pageSize: blogCount })).data
-  catList.value = await getCatList(blogCount)
-}
-
-init(2)
+fetchData()
 </script>

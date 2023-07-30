@@ -1,7 +1,9 @@
 import { provide, inject, ref, Ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { BlogListItem, GetBlogListParams, getBlogList } from '@/api/blog'
-import { CatListItem, getCatList } from '@/api/cat'
+import { watchDebounced } from '@vueuse/core'
+import { CatListItem } from '@/api/cat'
+import { BlogListItem, GetBlogListParams } from '@/api/blog'
+import useBlogList from '@/hooks/useBlogList'
 
 const ListDataKey = Symbol('ListDataKey')
 
@@ -13,43 +15,29 @@ export interface ListData {
 }
 
 export function provideListData(): ListData {
+  const { renderData, catList, fetchData, pagination } = useBlogList(6)
+
   const route = useRoute()
 
-  const renderData = ref<BlogListItem[]>()
-  const catList = ref<CatListItem[]>()
-  const pagination = ref({
-    current: 1,
-    pageSize: 12,
-    total: 0
-  })
   const filter = ref<Partial<GetBlogListParams>>({})
-
-  const fetchData = async (params?: Partial<GetBlogListParams>) => {
-    catList.value = null
-    renderData.value = null
-
-    const mergedParams = Object.assign({}, pagination.value, params)
-    delete mergedParams.total
-
-    const res = await getBlogList(mergedParams)
-    renderData.value = res.data
-    pagination.value.total = res.total
-
-    catList.value = await getCatList(renderData.value.length)
-  }
-
-  if (route.query.type) {
-    filter.value.type = route.query.type as string
-  }
-  if (route.query.tag) {
-    filter.value.tags = (route.query.tag as string).split(',')
-  }
-
-  fetchData(filter.value)
 
   const onPageChange = (current: number) => {
     fetchData({ current })
   }
+
+  watchDebounced(
+    route,
+    () => {
+      if (route.query.type) {
+        filter.value.type = route.query.type as string
+      }
+      if (route.query.tag) {
+        filter.value.tags = (route.query.tag as string).split(',')
+      }
+      fetchData(filter.value)
+    },
+    { immediate: true }
+  )
 
   const result = {
     renderData,

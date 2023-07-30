@@ -27,6 +27,17 @@
           {{ $t('blog.aside.type.title') }}
         </p>
         <div
+          @click="$router.replace({ path: 'search' })"
+          class="g-ref-gradient-bgc g-cross-center pl-10 pr-1 py-3 hover:border-r-4 hover:pr-0 border-amber-100 cursor-pointer"
+        >
+          <span class="flex-1"> {{ $t('blog.aside.type.total') }} </span>
+          <span
+            class="g-ref-bgc w-8 h-4 mr-2 rounded-full text-center text-xs font-black"
+          >
+            {{ typeList.reduce((prev, curr) => prev + curr._count.blogs, 0) }}
+          </span>
+        </div>
+        <div
           v-for="item in typeList"
           :key="item.typeName"
           @click="
