@@ -1,7 +1,21 @@
 <template>
-  <div> </div>
+  <div class="blog">
+    <aside> </aside>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
-<style scoped></style>
+<style>
+.blog {
+  @apply h-screen;
+}
+
+body[arco-theme=''] .blog {
+  background-image: url(~/images/blog-light.jpeg);
+}
+
+body[arco-theme='dark'] .blog {
+  background-image: url(~/images/blog-dark.jpg);
+}
+</style>

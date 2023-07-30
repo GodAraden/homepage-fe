@@ -46,7 +46,9 @@
         class="g-text-button navbar-btn ml-1 gap-0.5"
         @click="visible = !visible"
       >
-        <icon-user :size="ICON_SIZE" /><icon-down :size="12" />
+        <icon-user :size="ICON_SIZE" />
+        <icon-down v-if="!visible" :size="12" />
+        <icon-up v-if="visible" :size="12" />
       </li>
       <!-- 登陆面板 -->
       <div
