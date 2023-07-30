@@ -7,7 +7,7 @@
     v-slot="{ Component, route }"
   >
     <transition name="page" mode="out-in" appear>
-      <component :is="Component" :key="route.fullPath" />
+      <component :is="Component" :key="route.meta.routerViewKey" />
     </transition>
   </router-view>
 </template>

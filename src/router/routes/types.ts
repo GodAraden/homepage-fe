@@ -2,9 +2,10 @@ import { Component } from 'vue'
 import { NavigationGuard, RouteMeta, RouteRecordNormalized } from 'vue-router'
 
 export interface CustomRouteMeta extends RouteMeta {
-  order: number
-  icon: string
+  order?: number
+  icon?: string
   requiresAuth?: boolean
+  routerViewKey?: string
 }
 
 export interface AppRouteRecordRaw {

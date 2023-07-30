@@ -21,7 +21,9 @@
         :key="item.path"
         :class="
           'g-text-button relative py-1 px-3 ' +
-          ($route.name === item.name ? 'navbar-route-active' : '')
+          ($route.meta.routerViewKey === item.meta.routerViewKey
+            ? 'navbar-route-active'
+            : '')
         "
         @click="() => $router.push(item.path)"
       >

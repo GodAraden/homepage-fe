@@ -7,7 +7,7 @@ export interface UpdateTypeParams {
   typeName: string
 }
 
-export type FindAllTypeRes = Type[]
+export type FindAllTypeRes = (Type & { _count: { blogs: number } })[]
 export type CreateTypeRes = Type
 export type UpdateTypeRes = Type
 export type DeleteTypeRes = Type

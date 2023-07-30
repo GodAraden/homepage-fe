@@ -2,12 +2,12 @@
   <div
     class="blog-card relative rounded-xl bg-cover bg-no-repeat cursor-pointer"
     :style="{ backgroundImage: `url(${url})` }"
-    @click="$router.push(`/blog/${blog?.id}`)"
+    @click="$router.push(`/blog/detail?id=${blog?.id}`)"
   >
     <!-- 左上角的分类标签 -->
     <div
-      class="g-perfect-center absolute top-3 left-3 px-1 rounded text-white font-black bg-slate-700 bg-opacity-60 cursor-pointer hover:bg-amber-500"
-      @click.stop="$router.push(`/blog?type=${blog?.typeName}`)"
+      class="g-tag absolute top-3 left-3"
+      @click.stop="$router.push(`/blog/search?type=${blog?.typeName}`)"
     >
       <icon-apps />{{ blog?.typeName }}
     </div>
@@ -33,8 +33,8 @@
           <span
             v-for="item in blog?.tag"
             :key="item.id"
-            class="hover:text-amber-500 whitespace-nowrap"
-            @click.stop="$router.push(`/blog?tag=${item.tagName}`)"
+            class="g-link"
+            @click.stop="$router.push(`/blog/search?tag=${item.tagName}`)"
           >
             <icon-tag /> {{ item.tagName }}
           </span>

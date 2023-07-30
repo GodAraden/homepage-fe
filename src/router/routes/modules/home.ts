@@ -7,7 +7,8 @@ const HOMEPAGE: AppRouteRecordRaw = {
   meta: {
     requiresAuth: false,
     icon: 'icon-zhuye',
-    order: 0
+    order: 0,
+    routerViewKey: 'home'
   }
 }
 

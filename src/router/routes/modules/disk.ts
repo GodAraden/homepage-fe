@@ -7,7 +7,8 @@ const DISK: AppRouteRecordRaw = {
   meta: {
     requiresAuth: true,
     icon: 'icon-wangpan',
-    order: 3
+    order: 3,
+    routerViewKey: 'disk'
   }
 }
 

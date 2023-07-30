@@ -7,7 +7,8 @@ const NAV: AppRouteRecordRaw = {
   meta: {
     requiresAuth: false,
     icon: 'icon-daohang',
-    order: 2
+    order: 2,
+    routerViewKey: 'nav'
   }
 }
 

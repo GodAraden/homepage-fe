@@ -3,6 +3,14 @@
   @apply cursor-pointer;
 }
 
+.g-tag {
+  @apply flex justify-center items-center px-1 rounded text-white font-black bg-slate-700 bg-opacity-60 cursor-pointer hover:bg-amber-500;
+}
+
+.g-link {
+  @apply hover:text-amber-500 whitespace-nowrap cursor-pointer;
+}
+
 /* 单行文本溢出省略 */
 .g-single-ellipsis {
   @apply whitespace-nowrap overflow-hidden text-ellipsis;
@@ -44,6 +52,19 @@ body[arco-theme=''] {
   .g-ref-bgc {
     @apply bg-white bg-opacity-80;
   }
+
+  .g-ref-deep-bgc {
+    background-color: rgba(255, 244, 233, 0.6);
+  }
+
+  .g-ref-gradient-bgc {
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 244, 233, 0.6) 2rem,
+      rgba(255, 244, 233, 0.8) 4rem
+    );
+  }
 }
 
 body[arco-theme='dark'] {
@@ -53,5 +74,18 @@ body[arco-theme='dark'] {
 
   .g-ref-bgc {
     @apply bg-black bg-opacity-80;
+  }
+
+  .g-ref-deep-bgc {
+    background-color: rgba(48, 48, 48, 0.6);
+  }
+
+  .g-ref-gradient-bgc {
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(48, 48, 48, 0.6) 2rem,
+      rgba(48, 48, 48, 0.8) 4rem
+    );
   }
 }
