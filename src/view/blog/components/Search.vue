@@ -6,7 +6,7 @@
           {{ $t('blog.search.type.result', { typeName: filter.type }) }}
         </template>
         <template v-if="filter.tags">
-          {{ $t('blog.search.tag.result', { typeName: filter.tags }) }}
+          {{ $t('blog.search.tag.result', { tagName: filter.tags.join(';') }) }}
         </template>
       </p>
       <blog
@@ -29,22 +29,23 @@
   </div>
 
   <aside
-    class="g-ref-bgc w-64 h-full flex-shrink-0 select-none overflow-y-scroll"
+    class="g-ref-bgc w-1/4 h-full flex-shrink-0 select-none overflow-y-scroll"
   >
     <div class="h-16"> <!-- 占位用 --> </div>
     <!-- 文章推荐 -->
-    <ul class="h-80 p-4">
+    <ul class="w-full p-4 overflow-x-hidden">
       <li> {{ $t('blog.aside.recommend.title') }} </li>
       <li v-for="item in recommendList" :key="item.id" class="flex">
-        <div class="w-14 h-14 p-1">
+        <div class="flex-shrink-0 w-14 h-14 p-1">
           <img
             :src="`https://cravatar.cn/avatar/${item.id}?d=robohash`"
             class="rounded"
           />
         </div>
-        <div class="g-main-center flex-col p-1 flex-1">
+        <div class="g-main-center flex-col p-1 w-40 flex-1">
           <p
             class="g-single-ellipsis g-link"
+            :title="item.title"
             @click="
               $router.push({
                 path: 'detail',
@@ -54,7 +55,7 @@
           >
             {{ item.title }}
           </p>
-          <p class="grid grid-cols-3 gap-2">
+          <p class="grid grid-cols-3 gap-2 whitespace-nowrap">
             <span> <icon-eye /> {{ item.readNum }} </span>
             <span> <icon-heart /> {{ item.likeNum }} </span>
             <span>

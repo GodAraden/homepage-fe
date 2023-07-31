@@ -1,7 +1,7 @@
 <template>
   <div class="blog">
     <aside
-      class="g-ref-gradient-bgc w-64 h-full flex-shrink-0 select-none overflow-y-scroll"
+      class="g-ref-gradient-bgc w-1/4 h-full flex-shrink-0 select-none overflow-y-scroll"
     >
       <div class="h-16"> <!-- 占位用 --> </div>
       <!-- 个人信息 -->
@@ -34,7 +34,7 @@
           <span
             class="g-ref-bgc w-8 h-4 mr-2 rounded-full text-center text-xs font-black"
           >
-            {{ typeList?.reduce((prev, curr) => prev + curr._count.blogs, 0) }}
+            {{ typeList?.reduce?.((p, c) => p + c._count.blogs, 0) ?? -1 }}
           </span>
         </div>
         <div

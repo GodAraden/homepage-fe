@@ -31,10 +31,15 @@ axios.interceptors.response.use(
     return response.data
   },
   async (error: AxiosError<any>) => {
-    const { statusCode = 'unknown', message = 'unknown' } = error.response.data
+    const { statusCode = error.response.status, message = error.message } =
+      error.response.data
+    if (statusCode === 500) {
+      Message.error('服务端异常，请联系管理员')
+      return {}
+    }
     Message.error('Error: ' + statusCode + ' ' + message)
     // `${statusCode}: ${i18n.global.t('tips.http.error.' + message)}`
-    return error.response
+    return error.response.data
   }
 )
 

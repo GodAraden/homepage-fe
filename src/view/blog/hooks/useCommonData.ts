@@ -27,7 +27,7 @@ export function provideCommonData(): CommonData {
     tagList.value = await findAllTag()
     recommendList.value = (
       await getBlogList({ current: 1, pageSize: 5, orderBy: 'readNum' })
-    ).data
+    )?.data
   }
 
   initTypeList()

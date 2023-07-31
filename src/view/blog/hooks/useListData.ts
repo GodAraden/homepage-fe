@@ -31,9 +31,13 @@ export function provideListData(): ListData {
     () => {
       if (route.query.type) {
         filter.value.type = route.query.type as string
+      } else {
+        delete filter.value.type
       }
       if (route.query.tag) {
         filter.value.tags = (route.query.tag as string).split(',')
+      } else {
+        delete filter.value.tags
       }
       fetchData(filter.value)
     },

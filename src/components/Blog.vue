@@ -14,7 +14,7 @@
     <!-- 下方的博客摘要 -->
     <div class="g-ref-bgc blog-abstract absolute bottom-0 w-full">
       <div class="flex flex-col py-4 px-9">
-        <span class="text-xl font-black">
+        <span class="g-single-ellipsis text-xl font-black" :title="blog?.title">
           {{ blog?.title }}
         </span>
         <p class="g-single-ellipsis" :title="blog?.description">

@@ -20,10 +20,14 @@ export default function useLoading(pageSize: number) {
     delete mergedParams.total
 
     const res = await getBlogList(mergedParams)
+    if (!res) return
+
     renderData.value = res.data
     pagination.value.total = res.total
 
-    catList.value = await getCatList(renderData.value.length)
+    if (renderData.value) {
+      catList.value = await getCatList(renderData.value.length)
+    }
   }
 
   return {
