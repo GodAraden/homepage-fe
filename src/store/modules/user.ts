@@ -8,6 +8,7 @@ export const useUserStore = defineStore('user', () => {
 
   const login = async (loginForm: LoginParams) => {
     const data = await userLogin(loginForm)
+    if (!data) return
     user.value = data
   }
 

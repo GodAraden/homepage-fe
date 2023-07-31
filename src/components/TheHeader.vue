@@ -115,6 +115,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { MD5 } from 'crypto-js'
 import { appRoutes, adminRoutes } from '@/router/routes'
 import useTheme from '@/hooks/useTheme'
 import useLocale from '@/hooks/useLocale'
@@ -130,7 +131,10 @@ const { currentLocale, changeLocale } = useLocale()
 const userStore = useUserStore()
 
 const onUserLogin = () => {
-  userStore.login({ username: username.value, password: password.value })
+  userStore.login({
+    username: username.value,
+    password: MD5(password.value).toString()
+  })
 }
 </script>
 
