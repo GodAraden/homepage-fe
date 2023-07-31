@@ -10,10 +10,17 @@
         <component :is="currentPage" class="home-content" />
       </keep-alive>
     </transition>
+
+    <div
+      class="g-ref-bgc g-perfect-center fixed flex-col w-12 h-12 bottom-6 right-6 rounded-full"
+    >
+      {{ PageMap.indexOf(currentPage) + 1 }} / {{ PageMap.length }}
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { PageMap } from './components'
 import { provideWheelPage } from './useWheelPage'
 
 const { currentPage, onWheel } = provideWheelPage()

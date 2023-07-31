@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden">
+  <div class="overflow-hidden select-none">
     <page-title :title="$t('home.stack.title')" />
     <!-- 技术栈 Logo 展示 -->
     <div class="flex flex-col mt-8 max-sm:gap-1 max-sm:justify-center">
