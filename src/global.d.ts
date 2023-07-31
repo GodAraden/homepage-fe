@@ -54,3 +54,9 @@ interface Blog {
   readNum: number
   likeNum: number
 }
+
+interface BookmarkItem {
+  title: string
+  uri?: string
+  children?: BookmarkItem[]
+}

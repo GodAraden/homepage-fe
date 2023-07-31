@@ -25,7 +25,7 @@ export default function useLoading(pageSize: number) {
     renderData.value = res.data
     pagination.value.total = res.total
 
-    if (renderData.value) {
+    if (renderData.value?.length) {
       catList.value = await getCatList(renderData.value.length)
     }
   }
