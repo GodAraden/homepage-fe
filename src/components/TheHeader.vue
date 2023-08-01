@@ -55,7 +55,7 @@
       <!-- 登陆面板 -->
       <div
         v-if="visible"
-        class="g-ground-glass-light absolute z-50 flex flex-col top-16 w-80 h-fit p-4 gap-4 rounded-lg text-white"
+        class="g-ground-glass-light absolute z-50 flex flex-col top-16 w-80 h-fit p-4 gap-4 rounded-lg"
       >
         <template v-if="!userStore.user.role">
           <div class="flex flex-col">
@@ -68,7 +68,7 @@
           </div>
           <button
             style="background: linear-gradient(45deg, #f59e0b, #fde68a)"
-            class="py-2 rounded-full text-sm"
+            class="py-2 rounded-full text-sm text-white"
             @click="onUserLogin"
           >
             {{ $t(`header.login.submit`) }}
@@ -101,7 +101,7 @@
           </ul>
           <button
             style="background: linear-gradient(45deg, #f59e0b, #fde68a)"
-            class="py-2 rounded-full text-sm"
+            class="py-2 rounded-full text-sm text-white"
             @click="userStore.logout"
           >
             {{ $t(`header.user.logout`) }}

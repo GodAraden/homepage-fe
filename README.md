@@ -1,6 +1,6 @@
-# Araden 的前端项目模板
+# Araden 的个人主页 - 前端
 
-技术栈：Vue3 + TypeScript；组件库：Arco Design Vue
+技术栈：Vue3 + TypeScript；组件库：Arco Design Vue（主要用于后台管理）
 
 已预装：pinia，vue-router，vue-i18n，@vueuse/core，tailwindcss，less
 
@@ -15,7 +15,7 @@
 目前的文字有：
 
 ```
-QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'，的主页个人博客编程导航网盘(自用)欢迎来访寒舍简陋不足恭迎还望海涵关于我技术栈友情链接最新博客博客标签
+QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'，的主页个人博客编程导航私网盘欢迎来访寒舍简陋不足恭迎还望海涵关于我技术栈友情链接最新标签管理写
 ```
 
 # 语法命名规范

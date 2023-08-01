@@ -3,7 +3,9 @@ export default {
   'header.navbar.HomePage': 'Home',
   'header.navbar.Blog': 'Blog',
   'header.navbar.Nav': 'Coding Navi',
-  'header.navbar.Disk': 'Network disk (For Personal)',
+  'header.navbar.Disk': "Araden's network disk",
+  'header.navbar.Write': 'Write a blog',
+  'header.navbar.Manage': 'Blog Management',
 
   'header.login.username': 'Username',
   'header.login.password': 'Password',
