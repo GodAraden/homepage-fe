@@ -67,7 +67,7 @@
   </div>
 
   <aside
-    class="g-ref-bgc w-64 h-full flex-shrink-0 select-none overflow-y-scroll"
+    class="g-ref-bgc w-64 h-full flex-shrink-0 select-none overflow-y-scroll max-md:hidden"
   >
     <div class="h-16"> <!-- 占位用 --> </div>
     <div class="text-center mt-10 text-xl">目录正在施工中...</div>
@@ -129,6 +129,7 @@ getBlogById(route.query.id as string).then((val) => {
 })
 
 const onLikeBlog = async () => {
+  if (!blog.value) return
   blog.value.likeNum++
   await likeBlog(blog.value.id)
 }

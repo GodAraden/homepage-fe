@@ -4,7 +4,7 @@ const BLOG: AppRouteRecordRaw = {
   path: '/blog',
   name: 'Blog',
   component: () => import('@/view/blog/Index.vue'),
-  redirect: 'blog/search',
+  redirect: '/blog/search',
   meta: {
     requiresAuth: false,
     icon: 'icon-wenzhang1',

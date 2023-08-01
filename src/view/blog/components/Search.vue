@@ -29,7 +29,7 @@
   </div>
 
   <aside
-    class="g-ref-bgc w-1/4 h-full flex-shrink-0 select-none overflow-y-scroll"
+    class="g-ref-bgc w-1/4 h-full flex-shrink-0 select-none overflow-y-scroll max-md:hidden"
   >
     <div class="h-16"> <!-- 占位用 --> </div>
     <!-- 文章推荐 -->
