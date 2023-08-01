@@ -2,7 +2,7 @@
   <div
     class="blog-card relative rounded-xl bg-cover bg-no-repeat cursor-pointer"
     :style="{ backgroundImage: `url(${url})` }"
-    @click="$router.push(`/blog/detail?id=${blog?.id}`)"
+    @click="$router.push(`/blog/${blog?.id}`)"
   >
     <!-- 左上角的分类标签 -->
     <div

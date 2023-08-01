@@ -3,7 +3,7 @@ import {
   createWebHistory,
   createWebHashHistory
 } from 'vue-router'
-import { appRoutes } from './routes'
+import { appRoutes, adminRoutes } from './routes'
 import { createRouteGuard } from './guard'
 
 const createHistory = import.meta.env.PROD
@@ -12,7 +12,19 @@ const createHistory = import.meta.env.PROD
 
 const router = createRouter({
   history: createHistory(import.meta.env.BASE_URL),
-  routes: [...appRoutes],
+  routes: [
+    ...appRoutes,
+    ...adminRoutes,
+
+    {
+      path: '/result',
+      component: () => import('@/view/result/Index.vue'),
+      meta: {
+        requiresAuth: false,
+        routerViewKey: 'Result'
+      }
+    }
+  ],
   scrollBehavior() {
     return { top: 0 }
   }

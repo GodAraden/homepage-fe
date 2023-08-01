@@ -124,7 +124,7 @@ const { isMobile } = useScreenSize()
 const { currentLocale } = useLocale()
 const visible = ref(false)
 
-getBlogById(route.query.id as string).then((val) => {
+getBlogById(route.params.blogId as string).then((val) => {
   blog.value = val
 })
 

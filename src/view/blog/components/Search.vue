@@ -46,12 +46,7 @@
           <p
             class="g-single-ellipsis g-link"
             :title="item.title"
-            @click="
-              $router.push({
-                path: 'detail',
-                query: { id: item.id }
-              })
-            "
+            @click="$router.push(`/blog/${item.id}`)"
           >
             {{ item.title }}
           </p>

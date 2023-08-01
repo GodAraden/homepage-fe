@@ -12,11 +12,7 @@
       >
         {{ item.title }}
       </a>
-      <navigator
-        :data="item.children"
-        :path="[...path, item.title]"
-        class="g-ref-bgc navigation-card"
-      />
+      <navigator :data="item.children" :path="[...path, item.title]" />
     </div>
     <!-- 如果这是个链接 -->
     <div v-if="item.uri" class="g-ref-bgc navigation-card flex flex-col">
