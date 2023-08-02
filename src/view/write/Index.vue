@@ -48,7 +48,7 @@
 
         <a-col flex="84px" class="flex flex-col justify-evenly">
           <a-button type="primary" @click="onPostBlog">
-            <template #icon> <icon-search /> </template>
+            <template #icon> <icon-share-external /></template>
             {{ isUpdate ? '更新' : '发表' }}
           </a-button>
           <a-popconfirm

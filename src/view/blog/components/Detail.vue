@@ -44,7 +44,14 @@
         </p>
       </div>
 
-      <v-md-preview class="flex-1" :text="blog?.content"></v-md-preview>
+      <div class="blog-description">
+        {{ blog?.description }}
+      </div>
+
+      <v-md-preview
+        class="blog-preview flex-1 select-text"
+        :text="blog?.content"
+      ></v-md-preview>
 
       <div class="g-main-center gap-16 pb-4">
         <div
@@ -143,3 +150,26 @@ const supportDescription = computed(() => {
   }
 })
 </script>
+
+<style lang="less">
+.blog-description {
+  @apply relative px-6 py-4 text-center mt-2;
+  &::before,
+  &::after {
+    @apply block absolute text-2xl;
+  }
+  &::before {
+    @apply left-0 top-0;
+    content: '“';
+  }
+  &::after {
+    @apply right-0 -bottom-2;
+    content: '”';
+  }
+}
+
+.blog-preview .github-markdown-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+</style>
