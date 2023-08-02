@@ -31,7 +31,7 @@
         </span>
         <span class="flex gap-2 cursor-pointer">
           <span
-            v-for="item in blog?.tag"
+            v-for="item in blog?.tags"
             :key="item.id"
             class="g-link"
             @click.stop="$router.push(`/blog/search?tag=${item.tagName}`)"

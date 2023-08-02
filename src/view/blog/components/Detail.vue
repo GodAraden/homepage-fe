@@ -16,7 +16,7 @@
         </p>
         <span class="flex text-base gap-4">
           <span> <icon-apps /> {{ blog?.typeName }} </span>
-          <span v-for="item in blog?.tag" :key="item.id">
+          <span v-for="item in blog?.tags" :key="item.id">
             <icon-tag /> {{ item.tagName }}
           </span>
         </span>

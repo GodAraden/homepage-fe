@@ -14,9 +14,4 @@
 
 <script setup lang="ts">
 import TheHeader from '@/components/TheHeader.vue'
-import { useUserStore } from '@/store'
-
-const { login } = useUserStore()
-
-login({}) // cookie - session Login
 </script>

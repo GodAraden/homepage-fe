@@ -5,10 +5,10 @@ export interface CreateBlogParams {
   description: string
   author: string
   content: string
-  type: string
+  typeName: string
   tags: string[]
   postAt?: Date
-  updatedAt?: Date
+  updateAt?: Date
 }
 
 export interface UpdateBlogParams {
@@ -16,17 +16,17 @@ export interface UpdateBlogParams {
   description?: string
   author?: string
   content?: string
-  type?: string
+  typeName?: string
   createTags?: string[]
   deleteTags?: string[]
   postAt?: Date
-  updatedAt?: Date
+  updateAt?: Date
 }
 
 export interface GetBlogListParams {
   current: number
   pageSize: number
-  type?: string
+  typeName?: string
   tags?: string[]
   keyword?: string
   startDate?: Date
@@ -36,7 +36,7 @@ export interface GetBlogListParams {
 }
 
 export type BlogListItem = Omit<Blog, 'content'> & {
-  tag: Tag[]
+  tags: Tag[]
   _count: { comments: number }
 }
 
@@ -47,8 +47,8 @@ export type GetBlogListRes = {
   data: BlogListItem[]
   total: number
 }
-export type GetBlogByIdRes = Omit<Blog, 'description'> & {
-  tag: Tag[]
+export type GetBlogByIdRes = Blog & {
+  tags: Tag[]
   _count: { comments: number }
 }
 export type LikeBlogRes = { likeNum: number }

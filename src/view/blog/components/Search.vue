@@ -2,8 +2,8 @@
   <div class="g-ref-bgc flex-1 h-screen overflow-y-scroll">
     <article class="g-ref-deep-bgc min-h-screen p-4 pt-20">
       <p class="text-3xl mb-4">
-        <template v-if="filter.type">
-          {{ $t('blog.search.type.result', { typeName: filter.type }) }}
+        <template v-if="filter.typeName">
+          {{ $t('blog.search.type.result', { typeName: filter.typeName }) }}
         </template>
         <template v-if="filter.tags">
           {{ $t('blog.search.tag.result', { tagName: filter.tags.join(';') }) }}

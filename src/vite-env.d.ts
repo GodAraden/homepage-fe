@@ -4,6 +4,7 @@ interface ImportMetaEnv {
   //  BASIC ENV
   readonly VITE_APP_TITLE: string
   readonly VITE_RUN_BEGIN: string
+  readonly VITE_APP_AUTHOR: string
   // LOCAL ENV
   readonly VITE_X_API_KEY: string
   // DEV & PROD ENV
