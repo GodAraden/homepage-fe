@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4179511 */
-  src: url('iconfont.woff2?t=1690864344988') format('woff2'),
-       url('iconfont.woff?t=1690864344988') format('woff'),
-       url('iconfont.ttf?t=1690864344988') format('truetype');
+  src: url('iconfont.woff2?t=1691058359836') format('woff2'),
+       url('iconfont.woff?t=1691058359836') format('woff'),
+       url('iconfont.ttf?t=1691058359836') format('truetype');
 }
 
 .iconfont {
@@ -31,10 +31,6 @@
 
 .icon-wenzhang1:before {
   content: "\e6a9";
-}
-
-.icon-wangpan:before {
-  content: "\e643";
 }
 
 .icon-zhuye:before {
