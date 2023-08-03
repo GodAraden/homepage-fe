@@ -1,5 +1,5 @@
 <template>
-  <div class="write">
+  <main class="write">
     <a-card class="w-full rounded-2xl">
       <div class="write-header">
         <div class="write-form">
@@ -67,10 +67,12 @@
         <v-md-editor v-model="blog.content" height="58vh"></v-md-editor>
       </div>
     </a-card>
-  </div>
+  </main>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import {
   CreateBlogParams,
   UpdateBlogParams,
@@ -78,17 +80,13 @@ import {
   updateBlog,
   getBlogById
 } from '@/api/blog'
-import { findAllType } from '@/api/type'
-import { findAllTag } from '@/api/tag'
-import { ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import useCategory from '@/hooks/useCategory'
 import { Message } from '@arco-design/web-vue'
 
-const typeList = ref<Type[]>()
-const tagList = ref<Tag[]>()
 const blog = ref({} as CreateBlogParams)
 const route = useRoute()
 const router = useRouter()
+const { typeList, tagList, initTagList, initTypeList } = useCategory()
 
 let originalBlog: CreateBlogParams = null
 const author = import.meta.env.VITE_APP_AUTHOR.split(',')
@@ -128,8 +126,7 @@ const onResetBlog = () => {
 }
 
 const init = async () => {
-  typeList.value = await findAllType()
-  tagList.value = await findAllTag()
+  await Promise.all([initTagList(), initTypeList()])
   if (isUpdate) {
     const res = await getBlogById(route.query.id as string)
     const tags = res.tags.map((v) => v.tagName)

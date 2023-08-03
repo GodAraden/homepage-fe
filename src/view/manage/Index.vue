@@ -1,5 +1,5 @@
 <template>
-  <div class="manage">
+  <main class="manage">
     <a-card class="w-full h-full rounded-2xl">
       <a-tabs
         lazy-load
@@ -23,7 +23,7 @@
         </a-tab-pane>
       </a-tabs>
     </a-card>
-  </div>
+  </main>
 </template>
 
 <script lang="ts" setup>

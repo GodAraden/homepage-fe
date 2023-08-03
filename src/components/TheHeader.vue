@@ -1,5 +1,5 @@
 <template>
-  <div
+  <header
     id="header"
     class="g-cross-center g-ground-glass h-16 select-none"
     style="font-family: Alimama_DaoLiTi"
@@ -15,24 +15,24 @@
       </a-typography-title>
     </a>
     <!-- 导航栏 -->
-    <ul class="flex justify-evenly flex-1 text-lg font-bold">
-      <li
+    <div class="flex justify-evenly flex-1 text-lg font-bold">
+      <router-link
         v-for="item in appRoutes"
         :key="item.path"
+        :to="item.path"
         :class="
           'g-text-button relative py-1 px-3 ' +
           ($route.meta.routerViewKey === item.meta.routerViewKey
             ? 'navbar-route-active'
             : '')
         "
-        @click="() => $router.push(item.path)"
       >
         <span :class="'iconfont ' + item.meta.icon + ' max-sm:text-xl'"></span>
         <span class="max-sm:!hidden ml-1">
           {{ $t(`header.navbar.${item.name}`) }}
         </span>
-      </li>
-    </ul>
+      </router-link>
+    </div>
     <!-- 功能栏 -->
     <ul class="flex justify-end w-80 gap-2">
       <li class="g-text-button navbar-btn" @click="changeTheme">
@@ -85,20 +85,20 @@
               {{ $t(`header.user.welcome`) }}
             </span>
           </div>
-          <ul class="flex flex-col w-full text-lg">
-            <li
+          <div class="flex flex-col w-full text-lg">
+            <router-link
               v-for="item in adminRoutes"
               :key="item.path"
+              :to="item.path"
               :class="
                 'g-text-button relative py-1 px-3 ' +
                 ($route.name === item.name ? 'navbar-route-active' : '')
               "
-              @click="() => $router.push(item.path)"
             >
               <span :class="'iconfont ' + item.meta.icon"></span>
               <span class="ml-1"> {{ $t(`header.navbar.${item.name}`) }} </span>
-            </li>
-          </ul>
+            </router-link>
+          </div>
           <button
             style="background: linear-gradient(45deg, #f59e0b, #fde68a)"
             class="py-2 rounded-full text-sm text-white"
@@ -110,7 +110,7 @@
         <template v-else> error: {{ userStore.user }} </template>
       </div>
     </ul>
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">

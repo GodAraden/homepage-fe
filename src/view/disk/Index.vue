@@ -1,3 +1,3 @@
 <template>
-  <div> 这是网盘 </div>
+  <main> 这是网盘 </main>
 </template>

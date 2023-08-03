@@ -1,5 +1,5 @@
 <template>
-  <div class="g-ref-bgc flex-1 h-screen select-none overflow-y-scroll">
+  <section class="g-ref-bgc flex-1 h-screen select-none overflow-y-scroll">
     <article class="g-ref-deep-bgc flex flex-col px-4 pt-20 min-h-screen">
       <div class="flex flex-col cursor-default">
         <p class="text-4xl mt-1 mb-2">
@@ -74,7 +74,7 @@
 
     <div class="g-ref-bgc text-center p-4 text-xl"> 评论区正在施工中... </div>
     <the-footer></the-footer>
-  </div>
+  </section>
 
   <aside
     class="g-ref-bgc w-64 h-full flex-shrink-0 select-none overflow-y-scroll max-md:hidden"

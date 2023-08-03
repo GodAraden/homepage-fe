@@ -1,5 +1,5 @@
 <template>
-  <div class="blog">
+  <main class="blog">
     <aside
       class="g-ref-gradient-bgc w-1/4 h-full flex-shrink-0 select-none overflow-y-scroll max-sm:hidden"
     >
@@ -56,7 +56,7 @@
     </aside>
 
     <router-view></router-view>
-  </div>
+  </main>
 </template>
 
 <script lang="ts" setup>

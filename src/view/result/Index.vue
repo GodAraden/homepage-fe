@@ -1,5 +1,5 @@
 <template>
-  <div class="result h-screen !py-24">
+  <main class="result h-screen !py-24">
     <a-result :status="status" class="g-ref-bgc rounded-xl">
       <template #subtitle>
         {{ $t(`result.${status}.subtitle`) }} {{ $route.query.path }}
@@ -20,7 +20,7 @@
         </ul>
       </a-typography>
     </a-result>
-  </div>
+  </main>
 </template>
 
 <script lang="ts" setup>

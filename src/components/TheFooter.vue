@@ -1,5 +1,5 @@
 <template>
-  <div class="g-ground-glass-dark py-2 text-white text-center">
+  <footer class="g-ground-glass-dark py-2 text-white text-center">
     <p class="select-none">
       &copy;
       {{
@@ -19,7 +19,7 @@
         <icon-link /> 吉ICP备2022007937号-1
       </a>
     </p>
-  </div>
+  </footer>
 </template>
 
 <script setup lang="ts">

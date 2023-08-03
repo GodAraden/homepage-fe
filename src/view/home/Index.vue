@@ -1,5 +1,5 @@
 <template>
-  <div
+  <main
     class="home"
     v-touch:swipeup="onWheel"
     v-touch:swipedown="onWheel"
@@ -16,7 +16,7 @@
     >
       {{ PageMap.indexOf(currentPage) + 1 }} / {{ PageMap.length }}
     </div>
-  </div>
+  </main>
 </template>
 
 <script lang="ts" setup>

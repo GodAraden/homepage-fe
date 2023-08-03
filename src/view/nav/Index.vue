@@ -1,10 +1,8 @@
 <template>
-  <div class="navigation">
+  <main class="navigation">
     <!-- 根据 settings 中的变量，渲染每一组导航及其内部 -->
-    <div>
-      <navigator :data="navigator" :path="['/navigator']" />
-    </div>
-  </div>
+    <navigator :data="navigator" :path="['/navigator']" />
+  </main>
 </template>
 
 <script lang="ts" setup>
