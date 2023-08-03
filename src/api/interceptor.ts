@@ -31,6 +31,7 @@ axios.interceptors.response.use(
     return response.data
   },
   async (error: AxiosError<any>) => {
+    if (!error.response) return {}
     const { statusCode = error.response.status, message = error.message } =
       error.response.data
     if (statusCode === 500) {
