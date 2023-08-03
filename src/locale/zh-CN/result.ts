@@ -8,5 +8,5 @@ export default {
 
   'result.403.subtitle': 'Error 403: 请求被禁止',
   'result.403.tip1': '如果你是普通游客，请点击 “回到首页”',
-  'result.403.tip2': '这个页面要登录才能访问呢'
+  'result.403.tip2': '如果你是我，请登录'
 }

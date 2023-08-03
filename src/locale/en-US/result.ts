@@ -9,5 +9,5 @@ export default {
   'result.403.subtitle': 'Error 403: Request Forbidden',
   'result.403.tip1':
     'If you are an ordinary tourist, please click "Back to the homepage"',
-  'result.403.tip2': 'This page needs to be logged in to access'
+  'result.403.tip2': 'If you are me, please login'
 }

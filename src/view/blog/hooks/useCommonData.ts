@@ -1,7 +1,7 @@
 import { Ref, inject, provide, ref } from 'vue'
-import { FindAllTypeRes, findAllType } from '@/api/type'
-import { findAllTag } from '@/api/tag'
+import { FindAllTypeRes } from '@/api/type'
 import { BlogListItem, getBlogList } from '@/api/blog'
+import useCategory from '@/hooks/useCategory'
 
 interface CommonData {
   typeList: Ref<FindAllTypeRes>
@@ -14,17 +14,13 @@ interface CommonData {
 const CommonDataKey = Symbol('CommonDataKey')
 
 export function provideCommonData(): CommonData {
-  const typeList = ref<FindAllTypeRes>()
-  const tagList = ref<Tag[]>()
-  const recommendList = ref<BlogListItem[]>()
+  const { typeList, tagList, initTypeList, initTagList } = useCategory()
 
-  const initTypeList = async () => {
-    typeList.value = await findAllType()
-  }
+  const recommendList = ref<BlogListItem[]>()
 
   const initSearchAside = async () => {
     if (typeList.value && recommendList.value) return
-    tagList.value = await findAllTag()
+    await initTagList()
     recommendList.value = (
       await getBlogList({ current: 1, pageSize: 5, orderBy: 'readNum' })
     )?.data

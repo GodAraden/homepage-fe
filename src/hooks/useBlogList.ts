@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { BlogListItem, GetBlogListParams, getBlogList } from '@/api/blog'
 import { CatListItem, getCatList } from '@/api/cat'
 
-export default function useLoading(pageSize: number) {
+export default function useBlogList(pageSize: number, fetchCatList = true) {
   const renderData = ref<BlogListItem[]>()
   const catList = ref<CatListItem[]>()
 
@@ -25,7 +25,7 @@ export default function useLoading(pageSize: number) {
     renderData.value = res.data
     pagination.value.total = res.total
 
-    if (renderData.value?.length) {
+    if (fetchCatList && renderData.value?.length) {
       catList.value = await getCatList(renderData.value.length)
     }
   }
