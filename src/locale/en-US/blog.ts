@@ -18,6 +18,8 @@ export default {
   'blog.detail.title.likeNum': 'Likes',
   'blog.detail.title.commentNum': 'Comments',
 
+  'blog.detail.directory.title': 'Directory',
+
   'blog.detail.support.title': 'Thanks for your support! ',
   'blog.detail.support.description':
     'If you think my article is helpful to you, please feel free to donate! ',

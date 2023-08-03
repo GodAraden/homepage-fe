@@ -5,22 +5,25 @@
         <p class="text-4xl mt-1 mb-2">
           {{ blog?.title }}
         </p>
-        <p class="text-xl">
-          <span class="iconfont icon-rili"></span>
-          {{ $t('blog.detail.title.postAt') }}
-          {{ new Date(blog?.postAt).toLocaleDateString() }}
-          &nbsp;
-          <span class="iconfont icon-app_icons--"></span>
-          {{ $t('blog.detail.title.updateAt') }}
-          {{ new Date(blog?.updateAt).toLocaleDateString() }}
+        <p class="flex flex-wrap gap-x-6 text-xl">
+          <span>
+            <span class="iconfont icon-rili"></span>
+            {{ $t('blog.detail.title.postAt') }}
+            {{ new Date(blog?.postAt).toLocaleDateString() }}
+          </span>
+          <span>
+            <span class="iconfont icon-app_icons--"></span>
+            {{ $t('blog.detail.title.updateAt') }}
+            {{ new Date(blog?.updateAt).toLocaleDateString() }}
+          </span>
         </p>
-        <span class="flex text-base gap-4">
+        <span class="flex flex-wrap gap-x-4 text-base">
           <span> <icon-apps /> {{ blog?.typeName }} </span>
           <span v-for="item in blog?.tags" :key="item.id">
             <icon-tag /> {{ item.tagName }}
           </span>
         </span>
-        <p class="flex gap-5">
+        <p class="flex flex-wrap gap-x-5">
           <span>
             <icon-user />
             {{ $t('blog.detail.title.author') }}
@@ -76,8 +79,22 @@
   <aside
     class="g-ref-bgc w-64 h-full flex-shrink-0 select-none overflow-y-scroll max-md:hidden"
   >
-    <div class="h-16"> <!-- 占位用 --> </div>
-    <div class="text-center mt-10 text-xl">目录正在施工中...</div>
+    <div class="h-16 pl-2 pl-4 pl-6 pl-8 pl-10 pl-12">
+      <!-- 占位符，同时添加一堆 pl-x 保证 tailwind 打包产物中有这些，不会让下面的动态类名失效 -->
+    </div>
+    <ul class="mt-4 p-1">
+      <li class="mb-1 text-lg font-black">
+        {{ $t('blog.detail.directory.title') }}
+      </li>
+      <li
+        v-for="item in directory"
+        :key="item.id"
+        :class="`mb-1 pl-${2 * item.tab} cursor-pointer hover:text-amber-500`"
+        @click="item.onClick"
+      >
+        {{ item.title }}
+      </li>
+    </ul>
   </aside>
 
   <a-modal
@@ -116,7 +133,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { zhSupportDescription, enSupportDescription } from '@/utils/docs'
 import { GetBlogByIdRes, getBlogById, likeBlog } from '@/api/blog'
@@ -124,15 +141,35 @@ import TheFooter from '@/components/TheFooter.vue'
 import useScreenSize from '@/hooks/useScreenSize'
 import useLocale from '@/hooks/useLocale'
 
+interface DirectoryItem {
+  id: string
+  title: string
+  tab: number
+  onClick: () => void
+}
+
 const route = useRoute()
 const blog = ref<GetBlogByIdRes>()
 
 const { isMobile } = useScreenSize()
 const { currentLocale } = useLocale()
 const visible = ref(false)
+const directory = ref<DirectoryItem[]>([])
 
 getBlogById(route.params.blogId as string).then((val) => {
   blog.value = val
+  nextTick(() => {
+    for (const title of document.querySelectorAll(
+      '.github-markdown-body *[data-v-md-heading]'
+    )) {
+      directory.value.push({
+        id: title.getAttribute('data-v-md-line'),
+        title: title.innerHTML,
+        tab: parseInt(title.tagName.split('H')[1]),
+        onClick: () => title.scrollIntoView({ behavior: 'smooth' })
+      })
+    }
+  })
 })
 
 const onLikeBlog = async () => {

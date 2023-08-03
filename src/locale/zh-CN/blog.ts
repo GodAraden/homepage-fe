@@ -17,6 +17,8 @@ export default {
   'blog.detail.title.likeNum': '点赞数',
   'blog.detail.title.commentNum': '评论数',
 
+  'blog.detail.directory.title': '目录',
+
   'blog.detail.support.title': '感谢支持！',
   'blog.detail.support.description': '如果感觉我的文章对你有帮助，请随意打赏！',
   'blog.detail.support.alipay': '我的支付宝收款码',

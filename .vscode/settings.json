@@ -1,5 +1,6 @@
 {
   "css.lint.unknownAtRules": "ignore",
   "less.lint.unknownAtRules": "ignore",
-  "less.compile": { "out": false }
+  "less.compile": { "out": false },
+  "tailwindCSS.lint.cssConflict": "ignore"
 }
