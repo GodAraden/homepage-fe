@@ -86,6 +86,9 @@
       <li class="mb-1 text-lg font-black">
         {{ $t('blog.detail.directory.title') }}
       </li>
+      <li v-if="directory.length === 0" class="pl-2">
+        {{ $t('blog.detail.directory.none') }}
+      </li>
       <li
         v-for="item in directory"
         :key="item.id"

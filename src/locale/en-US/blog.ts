@@ -19,6 +19,7 @@ export default {
   'blog.detail.title.commentNum': 'Comments',
 
   'blog.detail.directory.title': 'Directory',
+  'blog.detail.directory.none': 'There is no directory to display',
 
   'blog.detail.support.title': 'Thanks for your support! ',
   'blog.detail.support.description':

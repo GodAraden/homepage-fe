@@ -18,6 +18,7 @@ export default {
   'blog.detail.title.commentNum': '评论数',
 
   'blog.detail.directory.title': '目录',
+  'blog.detail.directory.none': '本文章暂时还没有目录',
 
   'blog.detail.support.title': '感谢支持！',
   'blog.detail.support.description': '如果感觉我的文章对你有帮助，请随意打赏！',
