@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import { PageMap } from './components'
-import { provideWheelPage } from './useWheelPage'
+import { provideWheelPage } from './hooks/useWheelPage'
 
 const { currentPage, onWheel } = provideWheelPage()
 </script>

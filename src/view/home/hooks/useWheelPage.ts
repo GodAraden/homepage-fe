@@ -1,5 +1,5 @@
 import { ComputedRef, computed, inject, provide, ref } from 'vue'
-import { PageMap } from './components'
+import { PageMap } from '../components'
 
 interface WheelPage {
   currentPage: ComputedRef
