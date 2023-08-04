@@ -21,6 +21,14 @@ const BLOG: AppRouteRecordRaw = {
       }
     },
     {
+      path: 'stat',
+      name: 'BlogStat',
+      component: () => import('@/view/blog/components/Stat.vue'),
+      meta: {
+        routerViewKey: 'blog'
+      }
+    },
+    {
       path: ':blogId([a-f\\d]{8}-[a-f\\d]{4}-[a-f\\d]{4}-[a-f\\d]{4}-[a-f\\d]{12})',
       name: 'BlogDetail',
       component: () => import('@/view/blog/components/Detail.vue'),

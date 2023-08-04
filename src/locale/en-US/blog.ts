@@ -3,6 +3,8 @@ export default {
   'blog.aside.description':
     "This person hasn't figured out how to introduce himself...",
   'blog.aside.description.hidden': 'No details here',
+  'blog.aside.nav.title': 'Navigation',
+  'blog.aside.nav.stat': 'Statistics',
   'blog.aside.type.title': 'Blog Categorization',
   'blog.aside.type.total': 'Total',
   'blog.aside.tag.title': 'Tag Cloud',
@@ -10,6 +12,12 @@ export default {
 
   'blog.search.type.result': 'Blogs categorized as {typeName}',
   'blog.search.tag.result': 'Blog with tag {tagName}',
+
+  'blog.stat.heatMapOption.title': 'Dynamic Calendar',
+  'blog.stat.radarOption.title': 'Classified Radar Chart',
+  'blog.stat.lineOption.title': 'Publish Statistical Chart',
+  'blog.stat.pieOption.title': 'Classification Statistical Chart',
+  'blog.stat.directOption.title': 'Classification Statistical Chart',
 
   'blog.detail.title.postAt': 'Published on',
   'blog.detail.title.updateAt': 'Updated at',

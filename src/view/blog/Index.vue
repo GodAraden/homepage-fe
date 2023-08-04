@@ -53,6 +53,18 @@
           </span>
         </div>
       </div>
+      <!-- 导航栏 -->
+      <div>
+        <p class="pl-4 py-2">
+          {{ $t('blog.aside.nav.title') }}
+        </p>
+        <div
+          @click="$router.push('/blog/stat')"
+          class="g-ref-gradient-bgc g-cross-center pl-10 pr-1 py-3 hover:border-r-4 hover:pr-0 border-amber-100 cursor-pointer"
+        >
+          <span class="flex-1"> {{ $t('blog.aside.nav.stat') }} </span>
+        </div>
+      </div>
     </aside>
 
     <router-view></router-view>

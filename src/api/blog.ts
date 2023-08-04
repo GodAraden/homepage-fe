@@ -47,6 +47,22 @@ export type GetBlogListRes = {
   data: BlogListItem[]
   total: number
 }
+export type GetBlogStatRes = {
+  radarOption: {
+    indicator: { name: string; max: number }[]
+    value: number[]
+  }
+  lineOption: {
+    xAxis: string[]
+    value: number[]
+  }
+  heatMapOption: [string, number][]
+  pieOption: { name: string; value: number }[]
+  directOption: {
+    xAxis: string[]
+    value: number[]
+  }
+}
 export type GetBlogByIdRes = Blog & {
   tags: Tag[]
   _count: { comments: number }
@@ -70,6 +86,11 @@ export async function deleteBlog(id: string) {
 
 export async function getBlogById(id: string) {
   const { data } = await axios.get<GetBlogByIdRes>(`/api/blog/${id}`)
+  return data
+}
+
+export async function getBlogStats() {
+  const { data } = await axios.get<GetBlogStatRes>('/api/blog/stat')
   return data
 }
 

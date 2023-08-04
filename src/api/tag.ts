@@ -7,7 +7,9 @@ export interface UpdateTagParams {
   tagName: string
 }
 
-export type FindAllTagRes = Tag[]
+export type TagItem = Tag & { _count: { blogs: number } }
+
+export type FindAllTagRes = TagItem[]
 export type CreateTagRes = Tag
 export type UpdateTagRes = Tag
 export type DeleteTagRes = Tag

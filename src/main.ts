@@ -9,6 +9,7 @@ import { router } from './router'
 import store from './store'
 import i18n from './locale'
 import directive from './directive'
+import globalComponents from './components'
 
 import './index.css'
 import '~/style/global.less'
@@ -24,6 +25,7 @@ app.use(router)
 app.use(store)
 app.use(i18n)
 app.use(directive)
+app.use(globalComponents)
 
 app.use(VueMarkdownEditor)
 app.use(VMdPreview)
