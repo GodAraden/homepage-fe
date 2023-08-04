@@ -37,6 +37,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { getBlogStats } from '@/api/blog'
+import { getStartOfDayString } from '@/utils/parse'
 
 const heatMapOption = ref({})
 const radarOption = ref({})
@@ -63,7 +64,7 @@ getBlogStats().then((res) => {
       right: 30,
       top: 'center',
       cellSize: 16,
-      range: [res.heatMapOption[0][0], res.heatMapOption[179][0]],
+      range: [getStartOfDayString(179), getStartOfDayString(0)],
       itemStyle: {
         borderWidth: 0.5
       },
