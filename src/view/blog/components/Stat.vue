@@ -34,153 +34,176 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
+<script lang="ts" setup>
 import { getBlogStats } from '@/api/blog'
 import { getStartOfDayString } from '@/utils/parse'
+import useChartOptions from '@/hooks/useChartOptions'
+// FIXME: 切换显示模式时 用 ComputedRef 配置的样式不会随之改变
+const res = await getBlogStats()
 
-const heatMapOption = ref({})
-const radarOption = ref({})
-const lineOption = ref({})
-const pieOption = ref({})
-const directOption = ref({})
-
-getBlogStats().then((res) => {
-  if (!res) return
-  heatMapOption.value = {
-    tooltip: {
-      trigger: 'item',
-      formatter: ({ data }) => `${data[0]} 共发表：${data[1]} 篇博客`
+const { chartOption: heatMapOption } = useChartOptions((isDark) => ({
+  darkMode: isDark,
+  tooltip: {
+    trigger: 'item',
+    formatter: (params: any) =>
+      `${params.data[0]} 共发表：${params.data[1]} 篇博客`
+  },
+  visualMap: {
+    min: 1,
+    max: 6,
+    type: 'piecewise',
+    orient: 'horizontal',
+    left: 'center',
+    textStyle: {
+      color: isDark ? '#9C9DA0' : '#000'
     },
-    visualMap: {
-      min: 1,
-      max: 11,
-      type: 'piecewise',
-      orient: 'horizontal',
-      left: 'center'
-    },
-    calendar: {
-      left: 30,
-      right: 30,
-      top: 'center',
-      cellSize: 16,
-      range: [getStartOfDayString(179), getStartOfDayString(0)],
-      itemStyle: {
-        borderWidth: 0.5
-      },
-      yearLabel: { show: false },
-      dayLabel: { firstDay: 1 }
-    },
-    series: {
-      type: 'heatmap',
-      coordinateSystem: 'calendar',
-      data: res.heatMapOption
+    inRange: {
+      color: ['#C7DBFF', '#5291FF']
     }
+  },
+  calendar: {
+    left: 30,
+    right: 30,
+    top: 'center',
+    cellSize: 16,
+    range: [getStartOfDayString(179), getStartOfDayString(0)],
+    itemStyle: {
+      borderWidth: 0.5,
+      color: isDark ? '#777' : '#fff'
+    },
+    yearLabel: { show: false },
+    dayLabel: { firstDay: 1 }
+  },
+  series: {
+    type: 'heatmap',
+    coordinateSystem: 'calendar',
+    data: res.heatMapOption
   }
+}))
 
-  radarOption.value = {
-    tooltip: {
-      trigger: 'item'
-    },
-    radar: {
-      indicator: res.radarOption.indicator
-    },
-    series: [
-      {
-        type: 'radar',
-        tooltip: {
-          trigger: 'item'
-        },
-        areaStyle: {},
-        data: [
-          {
-            value: res.radarOption.value,
-            name: '分类 / 博客数'
-          }
-        ]
-      }
-    ]
-  }
-
-  lineOption.value = {
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {
-        type: 'shadow'
-      }
-    },
-    grid: {
-      left: '3%',
-      right: '3%',
-      bottom: '10%',
-      top: '12%',
-      containLabel: true
-    },
-    xAxis: {
-      type: 'category',
-      data: res.lineOption.xAxis
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [
-      {
-        data: res.lineOption.value,
-        type: 'line',
-        smooth: true
-      }
-    ]
-  }
-
-  pieOption.value = {
-    tooltip: {
-      trigger: 'item'
-    },
-    series: [
-      {
-        type: 'pie',
-        data: res.pieOption
-      }
-    ]
-  }
-
-  directOption.value = {
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {
-        type: 'shadow'
-      }
-    },
-    grid: {
-      left: '3%',
-      right: '3%',
-      bottom: '10%',
-      top: '12%',
-      containLabel: true
-    },
-    xAxis: [
-      {
-        type: 'category',
-        data: res.directOption.xAxis,
-        axisTick: {
-          alignWithLabel: true
+const { chartOption: radarOption } = useChartOptions((isDark) => ({
+  tooltip: {
+    trigger: 'item'
+  },
+  radar: {
+    indicator: res.radarOption.indicator,
+    axisName: {
+      color: isDark ? '#9C9DA0' : '#000'
+    }
+  },
+  series: [
+    {
+      type: 'radar',
+      tooltip: {
+        trigger: 'item'
+      },
+      areaStyle: {},
+      data: [
+        {
+          value: res.radarOption.value,
+          name: '分类 / 博客数'
         }
+      ]
+    }
+  ]
+}))
+
+const { chartOption: lineOption } = useChartOptions(() => ({
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '3%',
+    bottom: '10%',
+    top: '12%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'category',
+    data: res.lineOption.xAxis
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: res.lineOption.value,
+      type: 'line',
+      smooth: true
+    }
+  ]
+}))
+
+const { chartOption: pieOption } = useChartOptions((isDark) => ({
+  tooltip: {
+    trigger: 'item'
+  },
+  visualMap: {
+    show: false,
+    min: 0,
+    max: 2 * Math.max(...res.pieOption.map((item) => item.value)),
+    padding: 1,
+    inRange: {
+      colorLightness: [1, 0]
+    }
+  },
+  series: [
+    {
+      type: 'pie',
+      radius: '61.8%',
+      data: res.pieOption,
+      label: {
+        color: isDark ? '#9C9DA0' : '#000'
+      },
+      itemStyle: {
+        opacity: 0.8,
+        borderWidth: 1,
+        borderColor: '#B5ADE0'
       }
-    ],
-    yAxis: [
-      {
-        type: 'value'
+    }
+  ]
+}))
+
+const { chartOption: directOption } = useChartOptions(() => ({
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '3%',
+    bottom: '10%',
+    top: '12%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: res.directOption.xAxis,
+      axisTick: {
+        alignWithLabel: true
       }
-    ],
-    series: [
-      {
-        type: 'bar',
-        barWidth: '60%',
-        data: res.directOption.value
-      }
-    ]
-  }
-})
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      type: 'bar',
+      barWidth: '60%',
+      data: res.directOption.value
+    }
+  ]
+}))
 </script>
 
 <style>

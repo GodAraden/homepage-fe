@@ -16,7 +16,7 @@ export default {
   'blog.stat.radarOption.title': '分类雷达图',
   'blog.stat.lineOption.title': '发布统计图',
   'blog.stat.pieOption.title': '分类统计图',
-  'blog.stat.directOption.title': '分类统计图',
+  'blog.stat.directOption.title': '标签统计图',
 
   'blog.detail.title.postAt': '发表于',
   'blog.detail.title.updateAt': '更新于',

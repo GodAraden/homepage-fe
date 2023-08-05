@@ -67,7 +67,10 @@
       </div>
     </aside>
 
-    <router-view></router-view>
+    <Suspense>
+      <router-view></router-view>
+      <template #fallback> Loading... </template>
+    </Suspense>
   </main>
 </template>
 

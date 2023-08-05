@@ -16,8 +16,8 @@ export default {
   'blog.stat.heatMapOption.title': 'Dynamic Calendar',
   'blog.stat.radarOption.title': 'Classified Radar Chart',
   'blog.stat.lineOption.title': 'Publish Statistical Chart',
-  'blog.stat.pieOption.title': 'Classification Statistical Chart',
-  'blog.stat.directOption.title': 'Classification Statistical Chart',
+  'blog.stat.pieOption.title': 'Type Statistical Chart',
+  'blog.stat.directOption.title': 'Tag Statistical Chart',
 
   'blog.detail.title.postAt': 'Published on',
   'blog.detail.title.updateAt': 'Updated at',
