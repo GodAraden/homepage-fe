@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 import PageTitle from './Base/Title.vue'
-import { PersonalInfo } from '@/utils/constants'
+import { PersonalInfo } from '@/config/personalInfo'
 </script>
 
 <style>

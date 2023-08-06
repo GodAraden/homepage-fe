@@ -69,7 +69,11 @@
 
     <Suspense>
       <router-view></router-view>
-      <template #fallback> Loading... </template>
+      <template #fallback>
+        <div class="g-ref-bgc g-perfect-center w-full h-full text-xl">
+          数据加载失败，可能是服务器坏掉了...
+        </div>
+      </template>
     </Suspense>
   </main>
 </template>

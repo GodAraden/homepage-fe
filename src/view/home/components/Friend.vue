@@ -80,8 +80,8 @@
 import { computed, ref } from 'vue'
 import PageTitle from './Base/Title.vue'
 import TheFooter from '@/components/TheFooter.vue'
-import { FriendLinks } from '@/utils/constants'
-import { zhAddFlinkDescription, enAddFlinkDescription } from '@/utils/docs'
+import { FriendLinks } from '@/config/friendLink'
+import { zhAddFlinkDescription, enAddFlinkDescription } from '@/locale/docs'
 import useLocale from '@/hooks/useLocale'
 import useScreenSize from '@/hooks/useScreenSize'
 

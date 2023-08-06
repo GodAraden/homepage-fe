@@ -64,7 +64,8 @@
 <script setup lang="ts">
 import PageTitle from './Base/Title.vue'
 import StackItem from './Base/StackItem.vue'
-import { TechStack, SkillProficiency } from '@/utils/constants'
+import { TechStack } from '@/config/techStack'
+import { SkillProficiency } from '@/config/skillProficiency'
 
 const BreakPoints = [0, 5, 9, 14, TechStack.length]
 </script>

@@ -138,7 +138,7 @@
 <script setup lang="ts">
 import { computed, ref, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
-import { zhSupportDescription, enSupportDescription } from '@/utils/docs'
+import { zhSupportDescription, enSupportDescription } from '@/locale/docs'
 import { GetBlogByIdRes, getBlogById, likeBlog } from '@/api/blog'
 import TheFooter from '@/components/TheFooter.vue'
 import useScreenSize from '@/hooks/useScreenSize'

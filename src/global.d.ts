@@ -60,3 +60,16 @@ interface BookmarkItem {
   uri?: string
   children?: BookmarkItem[]
 }
+
+interface KeyValuePair<Value = string> {
+  key: string
+  value: Value
+}
+
+interface FriendLink {
+  title: string // 网站标题
+  description: string // 网站描述
+  logo: string // Logo URL
+  link: string // 网站 URL
+  color: string // rgb 格式的自定义的背景色，如：rgba(0, 0, 0)
+}

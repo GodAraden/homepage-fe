@@ -89,7 +89,7 @@ const router = useRouter()
 const { typeList, tagList, initTagList, initTypeList } = useCategory()
 
 let originalBlog: CreateBlogParams = null
-const author = import.meta.env.VITE_APP_AUTHOR.split(',')
+const author = import.meta.env.VITE_BLOG_AUTHOR.split(',')
 
 const isUpdate = !!route.query.id
 
