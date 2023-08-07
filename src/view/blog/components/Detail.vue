@@ -117,39 +117,17 @@
         {{ $t('blog.detail.support.title') }}
       </span>
     </template>
-    <div class="overflow-y-scroll" style="height: 72vh">
-      <div class="grid grid-cols-2 gap-x-16 gap-y-2 mb-4">
-        <div class="g-main-center">
-          <img class="w-5/6" src="/alipay.png" alt="支付宝收款码" />
-        </div>
-        <div class="g-main-center">
-          <img class="w-5/6" src="/wechatpay.png" alt="支付宝收款码" />
-        </div>
-        <span class="text-center">
-          <icon-alipay-circle />
-          {{ $t('blog.detail.support.alipay') }}
-        </span>
-        <span class="text-center">
-          <icon-wechatpay />
-          {{ $t('blog.detail.support.wechatpay') }}
-        </span>
-      </div>
-      <p class="text-2xl text-center mb-2">
-        {{ $t('blog.detail.support.description') }}
-      </p>
-      <v-md-preview :text="supportDescription"></v-md-preview>
-    </div>
+    <support />
   </a-modal>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, nextTick } from 'vue'
+import { ref, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
-import { zhSupportDescription, enSupportDescription } from '@/locale/docs'
 import { GetBlogByIdRes, getBlogById, likeBlog } from '@/api/blog'
 import TheFooter from '@/components/TheFooter.vue'
+import Support from '@/components/article/Support.vue'
 import useScreenSize from '@/hooks/useScreenSize'
-import useLocale from '@/hooks/useLocale'
 
 interface DirectoryItem {
   id: string
@@ -160,9 +138,8 @@ interface DirectoryItem {
 
 const route = useRoute()
 const blog = ref<GetBlogByIdRes>()
-
 const { isMobile } = useScreenSize()
-const { currentLocale } = useLocale()
+
 const visible = ref(false)
 const directory = ref<DirectoryItem[]>([])
 
@@ -187,15 +164,6 @@ const onLikeBlog = async () => {
   blog.value.likeNum++
   await likeBlog(blog.value.id)
 }
-
-const supportDescription = computed(() => {
-  switch (currentLocale.value) {
-    case 'zh-CN':
-      return zhSupportDescription
-    case 'en-US':
-      return enSupportDescription
-  }
-})
 </script>
 
 <style lang="less">
