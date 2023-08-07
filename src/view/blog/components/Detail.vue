@@ -4,6 +4,13 @@
       <div class="flex flex-col cursor-default">
         <p class="text-4xl mt-1 mb-2">
           {{ blog?.title }}
+          <span
+            v-permission="['admin']"
+            class="text-2xl cursor-pointer"
+            @click="$router.push(`/write?id=${blog?.id}`)"
+          >
+            <icon-pen-fill />
+          </span>
         </p>
         <p class="flex flex-wrap gap-x-6 text-xl">
           <span>

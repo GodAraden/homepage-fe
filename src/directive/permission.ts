@@ -1,19 +1,28 @@
-import { DirectiveBinding } from 'vue'
-// import { useUserStore } from '@/store';
+import { DirectiveBinding, watch } from 'vue'
+import { useUserStore } from '@/store'
 
 function checkPermission(el: HTMLElement, binding: DirectiveBinding) {
   const { value } = binding
-  // const userStore = useUserStore();
-  // const { role } = userStore;
+  const userStore = useUserStore()
+  const parent = el.parentNode
 
   if (Array.isArray(value)) {
     if (value.length > 0) {
       const permissionValues = value
 
-      // const hasPermission = permissionValues.includes(role);
-      // if (!hasPermission && el.parentNode) {
-      //   el.parentNode.removeChild(el);
-      // }
+      watch(
+        userStore,
+        () => {
+          const hasPermission = permissionValues.includes(userStore.user?.role)
+
+          if (!hasPermission && parent) {
+            parent.removeChild(el)
+          } else {
+            parent?.appendChild(el)
+          }
+        },
+        { immediate: true }
+      )
     }
   } else {
     throw new Error(`need roles! Like v-permission="['admin','user']"`)
