@@ -64,6 +64,16 @@
         >
           <span class="flex-1"> {{ $t('blog.aside.nav.stat') }} </span>
         </div>
+        <div class="g-ref-gradient-bgc pl-10 py-2">
+          <a-input-search
+            type="text"
+            :style="{ width: '88%' }"
+            class="h-8 !bg-transparent !outline-none focus:border-b focus:border-amber-500"
+            :placeholder="$t('blog.aside.nav.search')"
+            @search="onSearch"
+            @change="onSearch"
+          />
+        </div>
       </div>
     </aside>
 
@@ -79,8 +89,17 @@
 </template>
 
 <script lang="ts" setup>
+import { useRouter } from 'vue-router'
 import { provideCommonData } from './hooks/useCommonData'
 const { typeList } = provideCommonData()
+const router = useRouter()
+const onSearch = (keyword: string) => {
+  if (keyword) {
+    router.replace({ path: 'search', query: { keyword } })
+  } else {
+    router.replace({ path: 'search' })
+  }
+}
 </script>
 
 <style lang="less">

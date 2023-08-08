@@ -5,6 +5,7 @@ export default {
   'blog.aside.description.hidden': 'No details here',
   'blog.aside.nav.title': 'Navigation',
   'blog.aside.nav.stat': 'Statistics',
+  'blog.aside.nav.search': 'Input&Enter for Search',
   'blog.aside.type.title': 'Blog Categorization',
   'blog.aside.type.total': 'Total',
   'blog.aside.tag.title': 'Tag Cloud',
@@ -12,6 +13,7 @@ export default {
 
   'blog.search.type.result': 'Blogs categorized as {typeName}',
   'blog.search.tag.result': 'Blog with tag {tagName}',
+  'blog.search.keyword.result': 'Blog with keyword {keyword}',
 
   'blog.stat.heatMapOption.title': 'Dynamic Calendar',
   'blog.stat.radarOption.title': 'Classified Radar Chart',

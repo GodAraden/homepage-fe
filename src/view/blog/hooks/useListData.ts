@@ -39,6 +39,11 @@ export function provideListData(): ListData {
       } else {
         delete filter.value.tags
       }
+      if (route.query.keyword) {
+        filter.value.keyword = route.query.keyword as string
+      } else {
+        delete filter.value.keyword
+      }
       fetchData(filter.value)
     },
     { immediate: true }
@@ -57,6 +62,6 @@ export function provideListData(): ListData {
   return result
 }
 
-export function useListData(): ListData {
+export function useListData() {
   return inject(ListDataKey) as ListData
 }

@@ -4,6 +4,7 @@ export default {
   'blog.aside.description.hidden': '这里没有详细信息',
   'blog.aside.nav.title': '导航',
   'blog.aside.nav.stat': '统计',
+  'blog.aside.nav.search': '输入关键词回车检索',
   'blog.aside.type.title': '博文分类',
   'blog.aside.type.total': '总计',
   'blog.aside.tag.title': '标签云',
@@ -11,6 +12,7 @@ export default {
 
   'blog.search.type.result': '分类为 {typeName} 的博客',
   'blog.search.tag.result': '标签为 {tagName} 的博客',
+  'blog.search.keyword.result': '关键词为 {keyword} 的博客',
 
   'blog.stat.heatMapOption.title': '动态日历',
   'blog.stat.radarOption.title': '分类雷达图',

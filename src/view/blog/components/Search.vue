@@ -8,6 +8,9 @@
         <template v-if="filter.tags">
           {{ $t('blog.search.tag.result', { tagName: filter.tags.join(';') }) }}
         </template>
+        <template v-if="filter.keyword">
+          {{ $t('blog.search.keyword.result', { keyword: filter.keyword }) }}
+        </template>
       </p>
       <blog
         v-for="(item, idx) in renderData"
