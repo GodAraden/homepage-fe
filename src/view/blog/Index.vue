@@ -115,9 +115,8 @@ const onSearch = (keyword: string) => {
   @apply w-36 h-36 mx-auto rounded-full;
   transition: all 0.5s ease-in-out;
   &:hover {
-    @apply p-1;
+    @apply shadow-2xl;
     transform: rotate(1turn) scale(1.2);
-    background-color: rgba(233, 233, 233, 0.8);
   }
 }
 
