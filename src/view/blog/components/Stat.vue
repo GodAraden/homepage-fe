@@ -46,19 +46,22 @@ const { chartOption: heatMapOption } = useChartOptions((isDark) => ({
   tooltip: {
     trigger: 'item',
     formatter: (params: any) =>
-      `${params.data[0]} 共发表：${params.data[1]} 篇博客`
+      params.data[1] === 0
+        ? ''
+        : `${params.data[0]} 共发表：${params.data[1]} 篇博客`
   },
   visualMap: {
-    min: 1,
-    max: 6,
+    pieces: [
+      { gte: 1, lte: 1 },
+      { gte: 2, lte: 2 },
+      { gte: 3, lte: 3 },
+      { gte: 4, lte: 4 }
+    ],
     type: 'piecewise',
-    orient: 'horizontal',
-    left: 'center',
-    textStyle: {
-      color: isDark ? '#9C9DA0' : '#000'
-    },
+    showLabel: false,
+    itemSymbol: 'none',
     inRange: {
-      color: ['#C7DBFF', '#5291FF']
+      color: ['#C7DBFF', '#4360B5']
     }
   },
   calendar: {
@@ -89,7 +92,8 @@ const { chartOption: radarOption } = useChartOptions((isDark) => ({
     indicator: res.radarOption.indicator,
     axisName: {
       color: isDark ? '#9C9DA0' : '#000'
-    }
+    },
+    radius: '50%'
   },
   series: [
     {
@@ -118,8 +122,8 @@ const { chartOption: lineOption } = useChartOptions(() => ({
   grid: {
     left: '3%',
     right: '3%',
-    bottom: '10%',
-    top: '12%',
+    bottom: '9%',
+    top: '18%',
     containLabel: true
   },
   xAxis: {
@@ -139,9 +143,6 @@ const { chartOption: lineOption } = useChartOptions(() => ({
 }))
 
 const { chartOption: pieOption } = useChartOptions((isDark) => ({
-  tooltip: {
-    trigger: 'item'
-  },
   visualMap: {
     show: false,
     min: 0,
@@ -154,10 +155,19 @@ const { chartOption: pieOption } = useChartOptions((isDark) => ({
   series: [
     {
       type: 'pie',
-      radius: '61.8%',
       data: res.pieOption,
+      radius: ['40%', '70%'],
       label: {
-        color: isDark ? '#9C9DA0' : '#000'
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 18,
+          fontWeight: 'bold',
+          formatter: '{b} 共 {c} 篇'
+        }
       },
       itemStyle: {
         opacity: 0.8,
