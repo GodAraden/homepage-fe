@@ -1,21 +1,25 @@
 <template>
-  <template v-for="item in data">
+  <template v-for="item in data" :key="item.title">
     <!-- 如果此项是个容器，我要让它的 grid 布局从 1 到 4 -->
     <div
       v-if="item.children"
-      class="g-ref-bgc col-start-1 col-end-4 grid grid-cols-3 gap-x-6 gap-y-4 mb-2 p-4 rounded-xl"
-      :id="item.title"
+      class="g-ref-bgc col-span-3 grid grid-cols-3 gap-x-6 gap-y-4 mb-2 p-4 rounded-xl"
+      :data-item-key="item.title"
     >
-      <a
+      <p
         :style="{ fontSize: (6 - path.length) * 4 + 'px' }"
-        class="col-start-1 col-end-4 !mb-0 decoration-black underline"
+        class="col-span-3 !mb-0 decoration-black underline"
       >
         {{ item.title }}
-      </a>
+      </p>
       <navigator :data="item.children" :path="[...path, item.title]" />
     </div>
     <!-- 如果这是个链接 -->
-    <div v-if="item.uri" class="g-ref-bgc navigation-card flex flex-col">
+    <div
+      v-if="item.uri"
+      class="g-ref-bgc navigation-card flex flex-col"
+      :data-item-key="`${item.title} ${item.uri}`"
+    >
       <a :href="item.uri" target="_blank" class="flex-1">
         <img
           :src="`${path.join('/')}/${item.title}.png`"

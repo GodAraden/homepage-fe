@@ -153,7 +153,9 @@ getBlogById(route.params.blogId as string).then((val) => {
         id: title.getAttribute('data-v-md-line'),
         title: title.innerHTML,
         tab: parseInt(title.tagName.split('H')[1]),
-        onClick: () => title.scrollIntoView({ behavior: 'smooth' })
+        onClick: () => {
+          title.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        }
       })
     }
   })
