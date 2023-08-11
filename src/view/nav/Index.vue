@@ -1,5 +1,5 @@
 <template>
-  <main class="navigation">
+  <main id="navigation" class="h-screen !pt-20">
     <search />
     <!-- 根据 settings 中的变量，渲染每一组导航及其内部 -->
     <navigator :data="navigator" :path="['/navigator']" />
@@ -18,18 +18,13 @@ import Search from './components/Search.vue'
 import navigator from '@/config/navigator.json'
 
 const onScrollToTop = () => {
-  document.querySelector('#main').scrollTo({ top: 0, behavior: 'smooth' })
+  document.querySelector('#navigation').scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>
 
-<style lang="less">
-.navigation {
-  @apply h-screen !pt-20;
-  background-image: url(~/images/navigator.jpeg);
-
-  .arco-affix {
-    @apply flex justify-end;
-    right: 4vw;
-  }
+<style>
+#navigation .arco-affix {
+  @apply flex justify-end;
+  right: 4vw;
 }
 </style>

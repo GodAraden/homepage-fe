@@ -1,5 +1,5 @@
 <template>
-  <main class="manage">
+  <main id="manage" class="h-screen !pt-20 !pb-6">
     <a-card class="w-full h-full rounded-2xl">
       <a-tabs
         lazy-load
@@ -34,10 +34,3 @@ import TypeList from './components/TypeList.vue'
 
 provideFetchData(10)
 </script>
-
-<style>
-.manage {
-  @apply h-screen !pt-20 !pb-6;
-  background-image: url(~/images/manage.jpg);
-}
-</style>

@@ -2,7 +2,6 @@
   <the-header />
 
   <router-view
-    id="main"
     class="bg-cover bg-no-repeat overflow-y-scroll overflow-x-hidden"
     v-slot="{ Component, route }"
   >

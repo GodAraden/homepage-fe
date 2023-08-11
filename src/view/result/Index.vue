@@ -1,5 +1,5 @@
 <template>
-  <main class="result h-screen !py-24">
+  <main id="result" class="h-screen !py-24">
     <a-result :status="status" class="g-ref-bgc rounded-xl">
       <template #subtitle>
         {{ $t(`result.${status}.subtitle`) }} {{ $route.query.path }}
@@ -29,9 +29,3 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 const status = computed(() => route.query.status as any) // 防止 TS 报错
 </script>
-
-<style>
-.result {
-  background-image: url(~/images/result.jpeg);
-}
-</style>

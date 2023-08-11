@@ -16,26 +16,38 @@ body {
   min-height: 100vh;
 }
 
-#header,
-#main {
-  padding-left: calc(50vw - 520px);
-  padding-right: calc(50vw - 520px);
-}
-
 @media (min-width: 1px) {
-  #app > * {
+  #header,
+  #home,
+  #blog,
+  #navigation,
+  #manage,
+  #write,
+  #result {
     padding: 0;
   }
 }
 
 @media (min-width: 768px) {
-  #app > * {
+  #header,
+  #home,
+  #blog,
+  #navigation,
+  #manage,
+  #write,
+  #result {
     padding: 0 calc(50vw - 480px);
   }
 }
 
 @media (min-width: 960px) {
-  #app > * {
+  #header,
+  #home,
+  #blog,
+  #navigation,
+  #manage,
+  #write,
+  #result {
     padding: 0 calc(50vw - 480px);
   }
   #footer {
@@ -44,7 +56,13 @@ body {
 }
 
 @media (min-width: 1280px) {
-  #app > * {
+  #header,
+  #home,
+  #blog,
+  #navigation,
+  #manage,
+  #write,
+  #result {
     padding: 0 calc(50vw - 520px);
   }
   #footer {
@@ -53,7 +71,13 @@ body {
 }
 
 @media (min-width: 1536px) {
-  #app > * {
+  #header,
+  #home,
+  #blog,
+  #navigation,
+  #manage,
+  #write,
+  #result {
     padding: 0 calc(50vw - 660px);
     @apply text-lg;
   }
@@ -63,7 +87,13 @@ body {
 }
 
 @media (min-width: 1920px) {
-  #app > * {
+  #header,
+  #home,
+  #blog,
+  #navigation,
+  #manage,
+  #write,
+  #result {
     padding: 0 calc(50vw - 760px);
     @apply text-xl;
   }
@@ -95,4 +125,57 @@ body {
 .page-leave-to {
   opacity: 0;
   filter: blur(1rem);
+}
+
+/* 各页面的背景图，统一管理，区分主题 */
+body[arco-theme=''] {
+  #home {
+    background-image: url(~/images/home-light.jpeg);
+  }
+
+  #blog {
+    background-image: url(~/images/blog-light.jpeg);
+  }
+
+  #navigation {
+    background-image: url(~/images/navigator-light.jpg);
+  }
+
+  #manage {
+    background-image: url(~/images/manage-light.jpeg);
+  }
+
+  #write {
+    background-image: url(~/images/write-light.jpg);
+  }
+
+  #result {
+    background-image: url(~/images/result-light.jpeg);
+  }
+}
+
+body[arco-theme='dark'] {
+  #home {
+    background-image: url(~/images/home-dark.jpeg);
+  }
+
+  #blog {
+    background-image: url(~/images/blog-dark.jpg);
+  }
+
+  #navigation {
+    background-image: url(~/images/navigator-dark.jpg);
+  }
+
+  #manage {
+    background-image: url(~/images/manage-dark.jpg);
+  }
+
+  #write {
+    background-image: url(~/images/write-dark.jpg);
+  }
+
+  #result {
+    background-image: url(~/images/result-dark.jpeg);
+  }
 }

@@ -1,8 +1,11 @@
 <template>
-  <main class="write">
+  <main id="write" class="h-screen !pt-20 !pb-6">
     <a-card class="w-full rounded-2xl">
-      <div class="write-header">
-        <div class="write-form">
+      <div class="flex">
+        <div
+          class="grid flex-1 gap-4"
+          style="grid-template-columns: repeat(3, 56px 1fr)"
+        >
           <span class="g-perfect-center"> 标题 </span>
           <a-input v-model="blog.title" />
 
@@ -38,7 +41,10 @@
           <span class="g-perfect-center"> 更新时间 </span>
           <a-date-picker v-model="blog.updateAt" />
 
-          <div class="write-description">
+          <div
+            class="grid flex-1 gap-4 col-span-6"
+            style="grid-template-columns: 56px 1fr"
+          >
             <span class="g-perfect-center">描述</span>
             <a-input v-model="blog.description" class="!w-full" />
           </div>
@@ -138,24 +144,3 @@ const init = async () => {
 
 init()
 </script>
-
-<style>
-.write {
-  @apply h-screen !pt-20 !pb-6;
-  background-image: url(~/images/write.jpg);
-}
-
-.write-header {
-  @apply flex;
-}
-
-.write-form {
-  @apply grid flex-1 gap-4;
-  grid-template-columns: repeat(3, 56px 1fr);
-}
-
-.write-description {
-  @apply grid flex-1 gap-4 col-start-1 col-end-7;
-  grid-template-columns: 56px 1fr;
-}
-</style>

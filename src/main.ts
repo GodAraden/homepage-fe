@@ -11,7 +11,7 @@ import i18n from './locale'
 import directive from './directive'
 import globalComponents from './components'
 
-import './index.css'
+import './index.less'
 import '~/style/global.less'
 import '~/style/md-editor.less'
 import './api/interceptor'

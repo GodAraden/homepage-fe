@@ -1,13 +1,14 @@
 <template>
   <main
-    class="home"
+    id="home"
+    class="h-screen"
     v-touch:swipeup="onWheel"
     v-touch:swipedown="onWheel"
     @wheel="onWheel"
   >
     <transition name="page" mode="out-in" appear>
       <keep-alive>
-        <component :is="currentPage" class="home-content" />
+        <component :is="currentPage" class="h-screen" />
       </keep-alive>
     </transition>
 
@@ -25,18 +26,3 @@ import { provideWheelPage } from './hooks/useWheelPage'
 
 const { currentPage, onWheel } = provideWheelPage()
 </script>
-
-<style>
-.home,
-.home-content {
-  height: 100vh;
-}
-
-body[arco-theme=''] .home {
-  background-image: url(~/images/home-light.jpeg);
-}
-
-body[arco-theme='dark'] .home {
-  background-image: url(~/images/home-dark.jpeg);
-}
-</style>

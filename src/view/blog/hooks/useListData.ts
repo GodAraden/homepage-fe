@@ -62,6 +62,6 @@ export function provideListData(): ListData {
   return result
 }
 
-export function useListData() {
+export function injectListData() {
   return inject(ListDataKey) as ListData
 }
