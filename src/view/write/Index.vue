@@ -1,5 +1,5 @@
 <template>
-  <main id="write" class="h-screen !pt-20 !pb-6">
+  <main id="write" class="h-screen !pt-20 !pb-6 !overflow-y-hidden">
     <a-card class="w-full rounded-2xl">
       <div class="flex">
         <div
@@ -70,7 +70,12 @@
       </div>
 
       <div class="!mt-4">
-        <v-md-editor v-model="blog.content" height="58vh"></v-md-editor>
+        <v-md-editor
+          v-model="blog.content"
+          height="58vh"
+          :disabled-menus="[]"
+          @upload-image="onUploadImage"
+        ></v-md-editor>
       </div>
     </a-card>
   </main>
@@ -84,7 +89,8 @@ import {
   UpdateBlogParams,
   createBlog,
   updateBlog,
-  getBlogById
+  getBlogById,
+  uploadImage
 } from '@/api/blog'
 import useCategory from '@/hooks/useCategory'
 import { Message } from '@arco-design/web-vue'
@@ -98,6 +104,16 @@ let originalBlog: CreateBlogParams = null
 const author = import.meta.env.VITE_BLOG_AUTHOR.split(',')
 
 const isUpdate = !!route.query.id
+
+const onUploadImage = async (_: any, insertImage: any, files: File[]) => {
+  const res = await uploadImage({ image: files[0] })
+  insertImage({
+    url: import.meta.env.VITE_BASE_URL + res.url,
+    desc: res.filename,
+    width: 'auto',
+    height: 'auto'
+  })
+}
 
 const onPostBlog = async () => {
   if (isUpdate) {

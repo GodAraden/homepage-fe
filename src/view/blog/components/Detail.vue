@@ -47,7 +47,7 @@
             {{ blog?.likeNum }}
           </span>
           <span>
-            <icon-heart />
+            <icon-message />
             {{ $t('blog.detail.title.commentNum') }}
             {{ blog?._count?.comments }}
           </span>
@@ -143,8 +143,8 @@ const { isMobile } = useScreenSize()
 const visible = ref(false)
 const directory = ref<DirectoryItem[]>([])
 
-getBlogById(route.params.blogId as string).then((val) => {
-  blog.value = val
+getBlogById(route.params.blogId as string).then((res) => {
+  blog.value = res
   nextTick(() => {
     for (const title of document.querySelectorAll(
       '.github-markdown-body *[data-v-md-heading]'

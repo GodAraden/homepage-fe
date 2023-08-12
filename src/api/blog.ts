@@ -11,6 +11,10 @@ export interface CreateBlogParams {
   updateAt?: Date
 }
 
+export interface UploadImageParams {
+  image: File
+}
+
 export interface UpdateBlogParams {
   title?: string
   description?: string
@@ -41,6 +45,10 @@ export type BlogListItem = Omit<Blog, 'content'> & {
 }
 
 export type CreateBlogRes = Blog
+export type UploadImageRes = {
+  filename: string
+  url: string
+}
 export type UpdateBlogRes = Blog
 export type DeleteBlogRes = Blog
 export type GetBlogListRes = {
@@ -71,6 +79,15 @@ export type LikeBlogRes = { likeNum: number }
 
 export async function createBlog(params: CreateBlogParams) {
   const { data } = await axios.post<CreateBlogRes>('/api/blog', params)
+  return data
+}
+
+export async function uploadImage(params: UploadImageParams) {
+  const formData = new FormData()
+  for (const key in params) {
+    formData.append(key, params[key])
+  }
+  const { data } = await axios.post<UploadImageRes>('/api/blog/image', formData)
   return data
 }
 
