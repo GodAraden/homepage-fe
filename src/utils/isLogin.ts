@@ -5,7 +5,7 @@ export function setLogin(value: string) {
 }
 
 export function isLogin() {
-  return localStorage.getItem(isLoginKey) !== void 0
+  return !!localStorage.getItem(isLoginKey)
 }
 
 export function removeLogin() {
