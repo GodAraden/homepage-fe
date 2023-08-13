@@ -84,14 +84,48 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { onBeforeRouteLeave, useRoute } from 'vue-router'
+import { watchDebounced } from '@vueuse/core'
+
+import { GetBlogListParams } from '@/api/blog'
+import useBlogList from '@/hooks/useBlogList'
 import Blog from '@/components/Blog.vue'
 import TheFooter from '@/components/TheFooter.vue'
-import { injectCommonData } from '../hooks/useCommonData'
-import { provideListData } from '../hooks/useListData'
 
+import { injectCommonData } from '../hooks/useCommonData'
+
+const route = useRoute()
+const filter = ref<Partial<GetBlogListParams>>({})
+const { renderData, catList, fetchData, pagination } = useBlogList(6)
 const { tagList, recommendList, initSearchAside } = injectCommonData()
-const { filter, renderData, catList, pagination, onPageChange } =
-  provideListData()
+
+const onPageChange = (current: number) => {
+  fetchData({ current })
+}
+
+const onFilterChange = async () => {
+  if (route.query.type) {
+    filter.value.typeName = route.query.type as string
+  } else {
+    delete filter.value.typeName
+  }
+  if (route.query.tag) {
+    filter.value.tags = (route.query.tag as string).split(',')
+  } else {
+    delete filter.value.tags
+  }
+  if (route.query.keyword) {
+    filter.value.keyword = route.query.keyword as string
+  } else {
+    delete filter.value.keyword
+  }
+  await fetchData(filter.value)
+}
+
+const unWatch = watchDebounced(route, onFilterChange)
+onBeforeRouteLeave(() => unWatch())
 
 initSearchAside()
+await onFilterChange()
 </script>

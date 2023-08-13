@@ -122,7 +122,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, nextTick } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { GetBlogByIdRes, getBlogById, likeBlog } from '@/api/blog'
 import TheFooter from '@/components/TheFooter.vue'
@@ -130,7 +130,7 @@ import Support from '@/components/article/Support.vue'
 import useScreenSize from '@/hooks/useScreenSize'
 
 interface DirectoryItem {
-  id: string
+  id: string // 来源为 MdEditor 生成的自定义属性，用作 key
   title: string
   tab: number
   onClick: () => void
@@ -143,29 +143,29 @@ const { isMobile } = useScreenSize()
 const visible = ref(false)
 const directory = ref<DirectoryItem[]>([])
 
-getBlogById(route.params.blogId as string).then((res) => {
-  blog.value = res
-  nextTick(() => {
-    for (const title of document.querySelectorAll(
-      '.github-markdown-body *[data-v-md-heading]'
-    )) {
-      directory.value.push({
-        id: title.getAttribute('data-v-md-line'),
-        title: title.innerHTML,
-        tab: parseInt(title.tagName.split('H')[1]),
-        onClick: () => {
-          title.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        }
-      })
-    }
-  })
-})
-
 const onLikeBlog = async () => {
   if (!blog.value) return
   blog.value.likeNum++
   await likeBlog(blog.value.id)
 }
+
+blog.value = await getBlogById(route.params.blogId as string)
+
+// 页面加载完毕，生成目录结构
+onMounted(() => {
+  for (const title of document.querySelectorAll(
+    '.github-markdown-body *[data-v-md-heading]'
+  )) {
+    directory.value.push({
+      id: title.getAttribute('data-v-md-line'),
+      title: title.innerHTML,
+      tab: parseInt(title.tagName.split('H')[1]),
+      onClick: () => {
+        title.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
+    })
+  }
+})
 </script>
 
 <style lang="less">
