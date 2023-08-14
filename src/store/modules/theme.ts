@@ -1,8 +1,9 @@
+import { defineStore } from 'pinia'
 import { useColorMode, useCycleList } from '@vueuse/core'
 import { theme } from '@/config/settings.json'
 
 // 将 主题变量 和 切换这个变量的函数 封装
-export default function useTheme() {
+export const useThemeStore = defineStore('theme', () => {
   const themes = ['light', 'dark', 'auto'] as const
   const initialValue = localStorage.getItem('arco-theme') || theme
 
@@ -31,4 +32,4 @@ export default function useTheme() {
     currentTheme: state,
     changeTheme
   }
-}
+})

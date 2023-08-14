@@ -38,7 +38,7 @@
 import { getBlogStats } from '@/api/blog'
 import { getStartOfDayString } from '@/utils/parse'
 import useChartOptions from '@/hooks/useChartOptions'
-// FIXME: 切换显示模式时 用 ComputedRef 配置的样式不会随之改变
+
 const res = await getBlogStats()
 
 const { chartOption: heatMapOption } = useChartOptions((isDark) => ({
@@ -71,11 +71,15 @@ const { chartOption: heatMapOption } = useChartOptions((isDark) => ({
     cellSize: 16,
     range: [getStartOfDayString(179), getStartOfDayString(0)],
     itemStyle: {
-      borderWidth: 0.5,
+      borderWidth: 0.2,
       color: isDark ? '#777' : '#fff'
     },
     yearLabel: { show: false },
-    dayLabel: { firstDay: 1 }
+    monthLabel: { color: isDark ? '#9C9DA0' : '#000' },
+    dayLabel: {
+      firstDay: 1,
+      color: isDark ? '#9C9DA0' : '#000'
+    }
   },
   series: {
     type: 'heatmap',

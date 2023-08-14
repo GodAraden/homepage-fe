@@ -35,10 +35,19 @@
     </div>
     <!-- 功能栏 -->
     <ul class="flex justify-end w-80 gap-2">
-      <li class="g-text-button navbar-btn" @click="changeTheme">
-        <icon-computer v-if="currentTheme === 'auto'" :size="ICON_SIZE" />
-        <icon-sun-fill v-if="currentTheme === 'light'" :size="ICON_SIZE" />
-        <icon-moon-fill v-if="currentTheme === 'dark'" :size="ICON_SIZE" />
+      <li class="g-text-button navbar-btn" @click="themeStore.changeTheme">
+        <icon-computer
+          v-if="themeStore.currentTheme === 'auto'"
+          :size="ICON_SIZE"
+        />
+        <icon-sun-fill
+          v-if="themeStore.currentTheme === 'light'"
+          :size="ICON_SIZE"
+        />
+        <icon-moon-fill
+          v-if="themeStore.currentTheme === 'dark'"
+          :size="ICON_SIZE"
+        />
       </li>
       <li class="g-text-button navbar-btn" @click="changeLocale">
         <icon-chinese-fill v-if="currentLocale === 'zh-CN'" :size="ICON_SIZE" />
@@ -117,18 +126,17 @@
 import { ref } from 'vue'
 import { MD5 } from 'crypto-js'
 import { appRoutes, adminRoutes } from '@/router/routes'
-import useTheme from '@/hooks/useTheme'
 import useLocale from '@/hooks/useLocale'
-import { useUserStore } from '@/store'
+import { useUserStore, useThemeStore } from '@/store'
 
 const ICON_SIZE = 24
 const visible = ref(false)
 const username = ref('')
 const password = ref('')
 
-const { currentTheme, changeTheme } = useTheme()
-const { currentLocale, changeLocale } = useLocale()
 const userStore = useUserStore()
+const themeStore = useThemeStore()
+const { currentLocale, changeLocale } = useLocale()
 
 const onUserLogin = () => {
   userStore.login({
