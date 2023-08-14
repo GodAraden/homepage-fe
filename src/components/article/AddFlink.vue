@@ -8,13 +8,13 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import useLocale from '@/hooks/useLocale'
 import { zhAddFlinkDescription, enAddFlinkDescription } from '@/locale/docs'
+import { useLocaleStore } from '@/store'
 
-const { currentLocale } = useLocale()
+const localeStore = useLocaleStore()
 
 const addFlinkDescription = computed(() => {
-  switch (currentLocale.value) {
+  switch (localeStore.currentLocale) {
     case 'zh-CN':
       return zhAddFlinkDescription
     case 'en-US':

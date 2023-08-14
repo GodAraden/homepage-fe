@@ -49,9 +49,15 @@
           :size="ICON_SIZE"
         />
       </li>
-      <li class="g-text-button navbar-btn" @click="changeLocale">
-        <icon-chinese-fill v-if="currentLocale === 'zh-CN'" :size="ICON_SIZE" />
-        <icon-english-fill v-if="currentLocale === 'en-US'" :size="ICON_SIZE" />
+      <li class="g-text-button navbar-btn" @click="localeStore.changeLocale">
+        <icon-chinese-fill
+          v-if="localeStore.currentLocale === 'zh-CN'"
+          :size="ICON_SIZE"
+        />
+        <icon-english-fill
+          v-if="localeStore.currentLocale === 'en-US'"
+          :size="ICON_SIZE"
+        />
       </li>
       <li
         class="g-text-button navbar-btn ml-1 gap-0.5"
@@ -126,8 +132,7 @@
 import { ref } from 'vue'
 import { MD5 } from 'crypto-js'
 import { appRoutes, adminRoutes } from '@/router/routes'
-import useLocale from '@/hooks/useLocale'
-import { useUserStore, useThemeStore } from '@/store'
+import { useUserStore, useThemeStore, useLocaleStore } from '@/store'
 
 const ICON_SIZE = 24
 const visible = ref(false)
@@ -136,7 +141,7 @@ const password = ref('')
 
 const userStore = useUserStore()
 const themeStore = useThemeStore()
-const { currentLocale, changeLocale } = useLocale()
+const localeStore = useLocaleStore()
 
 const onUserLogin = () => {
   userStore.login({

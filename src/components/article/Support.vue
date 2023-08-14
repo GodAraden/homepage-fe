@@ -26,12 +26,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { zhSupportDescription, enSupportDescription } from '@/locale/docs'
-import useLocale from '@/hooks/useLocale'
+import { useLocaleStore } from '@/store'
 
-const { currentLocale } = useLocale()
+const localeStore = useLocaleStore()
 
 const supportDescription = computed(() => {
-  switch (currentLocale.value) {
+  switch (localeStore.currentLocale) {
     case 'zh-CN':
       return zhSupportDescription
     case 'en-US':

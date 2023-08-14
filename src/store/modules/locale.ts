@@ -1,9 +1,10 @@
 import { computed } from 'vue'
+import { defineStore } from 'pinia'
 import { useI18n } from 'vue-i18n'
 import { useCycleList } from '@vueuse/core'
 
-// 将 国际化locale变量 和 切换这个变量的函数 封装
-export default function useLocale() {
+// 将 主题变量 和 切换这个变量的函数 封装
+export const useLocaleStore = defineStore('locale', () => {
   const locales = ['zh-CN', 'en-US'] as const
   const { locale } = useI18n()
 
@@ -25,4 +26,4 @@ export default function useLocale() {
     currentLocale,
     changeLocale
   }
-}
+})
