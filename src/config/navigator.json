@@ -30,8 +30,8 @@
       {
         "title": "后端",
         "children": [
-          { "title": "nestjs (en)", "uri": "https://nestjs.com/" },
-          { "title": "nestjs", "uri": "https://docs.nestjs.cn/9/introduction" },
+          { "title": "NestJS (en)", "uri": "https://nestjs.com/" },
+          { "title": "NestJS", "uri": "https://docs.nestjs.cn/9/introduction" },
           { "title": "Prisma (en)", "uri": "https://www.prisma.io/" },
           { "title": "Prisma", "uri": "https://prisma.yoga/" },
           {
@@ -39,8 +39,7 @@
             "uri": "https://docs.djangoproject.com/zh-hans/3.2/"
           },
           { "title": "koa.js", "uri": "https://koajs.com/" },
-          { "title": "Express", "uri": "https://www.expressjs.com.cn/" },
-          { "title": "Strapi", "uri": "https://strapi.io/" }
+          { "title": "Express", "uri": "https://www.expressjs.com.cn/" }
         ]
       },
       {
@@ -67,17 +66,26 @@
           }
         ]
       },
+      {
+        "title": "跨端",
+        "children": [
+          { "title": "Electron", "uri": "https://www.electronjs.org/zh/" },
+          { "title": "React Native", "uri": "https://www.reactnative.cn/" },
+          { "title": "Ionic (移动端）", "uri": "https://ionicframework.com/" },
+          { "title": "WEEX", "uri": "https://weexapp.com/zh/" },
+          { "title": "Auto.js Pro", "uri": "https://pro.autojs.org/" },
+          { "title": "uni-app", "uri": "https://uniapp.dcloud.net.cn/" },
+          {
+            "title": "微信开放文档",
+            "uri": "https://developers.weixin.qq.com/miniprogram/dev/framework/"
+          },
+          { "title": "Flutter", "uri": "https://flutter.cn/" }
+        ]
+      },
       { "title": "Vite中文网", "uri": "https://cn.vitejs.dev/" },
       { "title": "Vitest", "uri": "https://cn.vitest.dev/" },
-      {
-        "title": "微信开放文档",
-        "uri": "https://developers.weixin.qq.com/miniprogram/dev/framework/"
-      },
-      { "title": "Auto.js Pro", "uri": "https://pro.autojs.org/" },
-      { "title": "uni-app", "uri": "https://uniapp.dcloud.net.cn/" },
-      { "title": "Electron", "uri": "https://www.electronjs.org/zh/" },
-      { "title": "Windi CSS", "uri": "https://windicss.org/" },
-      { "title": "Tailwind CSS", "uri": "https://tailwindcss.com/" }
+      { "title": "Tailwind CSS", "uri": "https://tailwindcss.com/" },
+      { "title": "Windi CSS", "uri": "https://windicss.org/" }
     ]
   },
   {
@@ -155,7 +163,8 @@
             "title": "Beautiful HTML5 Charts & Graphs",
             "uri": "https://canvasjs.com/"
           },
-          { "title": "AntV", "uri": "https://antv.antgroup.com/" }
+          { "title": "AntV", "uri": "https://antv.antgroup.com/" },
+          { "title": "Vue-ECharts", "uri": "https://vue-echarts.dev/" }
         ]
       },
       {
@@ -205,30 +214,22 @@
       { "title": "Puppeteer", "uri": "https://pptr.dev/" },
       { "title": "Puppeteer zh", "uri": "http://www.puppeteerjs.com/" },
       { "title": "SVG generators", "uri": "https://fffuel.co/" },
-      { "title": "Lodash", "uri": "https://www.lodashjs.com/" }
+      { "title": "Lodash", "uri": "https://www.lodashjs.com/" },
+      { "title": "Type Challenges", "uri": "https://tsch.js.org/" },
+      { "title": "RegExr", "uri": "https://regexr-cn.com/" }
     ]
   },
   {
     "title": "平台",
     "children": [
       { "title": "GitHub", "uri": "https://github.com/" },
-      { "title": "Gist", "uri": "https://gist.github.com/" },
       { "title": "gitee", "uri": "https://gitee.com/" },
-      { "title": "RegExr", "uri": "https://regexr-cn.com/" },
       { "title": "牛客网", "uri": "https://www.nowcoder.com/home" },
+      { "title": "Google 翻译", "uri": "https://translate.google.com/" },
+      { "title": "百度翻译", "uri": "https://fanyi.baidu.com/" },
       { "title": "iconfont", "uri": "https://www.iconfont.cn/" },
-      {
-        "title": "Icon Sets • Iconify",
-        "uri": "https://icon-sets.iconify.design/"
-      },
-      {
-        "title": "Gravatar - 全球互联网公共头像服务",
-        "uri": "https://cn.gravatar.com/"
-      },
-      {
-        "title": "Cravatar - 互联网公共头像服务",
-        "uri": "https://cravatar.cn/"
-      },
+      { "title": "Gravatar", "uri": "https://cn.gravatar.com/" },
+      { "title": "Cravatar", "uri": "https://cravatar.cn/" },
       { "title": "The Cat API", "uri": "https://thecatapi.com/" },
       { "title": "The Dog API", "uri": "https://thedogapi.com/" }
     ]
@@ -236,27 +237,23 @@
   {
     "title": "面试用",
     "children": [
-      { "title": "鱼皮 - 编程学习路线", "uri": "https://luxian.yupi.icu/#/" },
+      {
+        "title": "labuladong 的算法小抄",
+        "uri": "https://labuladong.gitee.io/algo/"
+      },
       {
         "title": "「2021」高频前端面试题汇总之HTML篇 - 掘金",
         "uri": "https://juejin.cn/post/6905294475539513352#heading-0"
       },
-      { "title": "被删的前端游乐场", "uri": "http://www.godbasin.com/" },
-      {
-        "title": "web前端面试 - 面试官系列",
-        "uri": "https://vue3js.cn/interview/"
-      },
-      { "title": "小林coding", "uri": "https://xiaolincoding.com/" },
       {
         "title": "🔥 连八股文都不懂还指望在前端混下去么 - 掘金",
         "uri": "https://juejin.cn/post/7016593221815910408"
       },
       {
-        "title": "labuladong 的算法小抄",
-        "uri": "https://labuladong.gitee.io/algo/"
+        "title": "web前端面试 - 面试官系列",
+        "uri": "https://vue3js.cn/interview/"
       },
-      { "title": "题库 - 力扣", "uri": "https://leetcode.cn/problemset/all/" },
-      { "title": "web全栈体系", "uri": "https://senior-frontend.pages.dev/" }
+      { "title": "小林coding", "uri": "https://xiaolincoding.com/" }
     ]
   },
   {
@@ -282,7 +279,9 @@
       {
         "title": "前端工程化入门",
         "uri": "https://woai3c.github.io/introduction-to-front-end-engineering/#%E7%AE%80%E4%BB%8B"
-      }
+      },
+      { "title": "web全栈体系", "uri": "https://senior-frontend.pages.dev/" },
+      { "title": "被删的前端游乐场", "uri": "http://www.godbasin.com/" }
     ]
   }
 ]
