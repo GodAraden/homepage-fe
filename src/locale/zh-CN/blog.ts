@@ -36,5 +36,7 @@ export default {
   'blog.detail.support.wechatpay': '我的微信赞赏码',
 
   'blog.detail.function.support': '打赏',
-  'blog.detail.function.like': '赞 {likeNum}'
+  'blog.detail.function.like': '赞 {likeNum}',
+
+  'blog.detail.comments.title': '评论区正在施工中...'
 }

@@ -14,9 +14,9 @@
           </div>
           <div
             style="width: calc(100% - 5rem)"
-            class="g-main-center flex-col flex-1"
+            class="g-main-center flex-col flex-1 max-sm:!hidden"
           >
-            <p class="text-2xl font-black font-sans max-sm:hidden">
+            <p class="text-2xl font-black font-sans">
               {{ $t('home.friend.add') }}
             </p>
           </div>
@@ -36,7 +36,7 @@
           </div>
           <div
             style="width: calc(100% - 5rem)"
-            class="g-main-center flex-col flex-1"
+            class="g-main-center flex-col flex-1 max-sm:!hidden"
           >
             <p
               class="g-single-ellipsis text-lg font-black font-sans"
@@ -50,10 +50,6 @@
           </div>
         </a>
       </div>
-    </div>
-
-    <div id="footer" class="absolute bottom-0 w-screen">
-      <the-footer />
     </div>
 
     <!-- 模态框，Arco 自带 Teleport -->
@@ -75,7 +71,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import PageTitle from './Base/Title.vue'
-import TheFooter from '@/components/TheFooter.vue'
 import AddFlink from '@/components/article/AddFlink.vue'
 import { FriendLinks } from '@/config/friendLink'
 
@@ -94,7 +89,7 @@ const { isMobile } = useScreenSize()
 }
 
 .flink {
-  @apply flex border h-20 p-2 rounded-lg overflow-hidden;
+  @apply flex justify-center border h-20 p-2 rounded-lg overflow-hidden;
 }
 .flink-logo-container {
   @apply w-20 max-sm:flex max-sm:justify-center;

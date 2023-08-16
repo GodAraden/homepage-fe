@@ -1,28 +1,22 @@
 <template>
-  <main
-    id="home"
-    class="h-screen"
-    v-touch:swipeup="onWheel"
-    v-touch:swipedown="onWheel"
-    @wheel="onWheel"
-  >
-    <transition name="page" mode="out-in" appear>
-      <keep-alive>
-        <component :is="currentPage" class="h-screen" />
-      </keep-alive>
-    </transition>
+  <main id="home" class="h-screen">
+    <template v-for="item in 5" :key="item">
+      <component :is="PageMap[item - 1]" class="h-screen" />
+    </template>
 
-    <div
-      class="g-ref-bgc g-perfect-center fixed flex-col w-12 h-12 bottom-6 right-6 rounded-full"
-    >
-      {{ PageMap.indexOf(currentPage) + 1 }} / {{ PageMap.length }}
+    <div id="footer" class="w-screen">
+      <the-footer />
     </div>
   </main>
 </template>
 
 <script lang="ts" setup>
-import { PageMap } from './components'
-import { provideWheelPage } from './hooks/useWheelPage'
+import Home from './components/Home.vue'
+import About from './components/About.vue'
+import Stack from './components/Stack.vue'
+import Recent from './components/Recent.vue'
+import Friend from './components/Friend.vue'
+import TheFooter from '@/components/TheFooter.vue'
 
-const { currentPage, onWheel } = provideWheelPage()
+const PageMap = [Home, About, Stack, Recent, Friend]
 </script>

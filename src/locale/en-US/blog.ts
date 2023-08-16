@@ -38,5 +38,7 @@ export default {
   'blog.detail.support.wechatpay': 'My WeChat appreciation code',
 
   'blog.detail.function.support': 'Support Me',
-  'blog.detail.function.like': 'Like {likeNum}'
+  'blog.detail.function.like': 'Like {likeNum}',
+
+  'blog.detail.comments.title': 'The comment section is under construction...'
 }

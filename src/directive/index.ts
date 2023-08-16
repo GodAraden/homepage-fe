@@ -1,10 +1,13 @@
-import { App } from 'vue'
-import permission from './permission'
-import touch from './touch'
+import { App, Directive } from 'vue'
+
+const modules = import.meta.glob('./**/*.ts', { eager: true })
 
 export default {
   install(Vue: App) {
-    Vue.directive('permission', permission)
-    Vue.directive('touch', touch)
+    for (const [key, value] of Object.entries(modules)) {
+      const [_, name] = key.split('/')
+      const { default: directive } = value as { default: Directive }
+      Vue.directive(name, directive)
+    }
   }
 }

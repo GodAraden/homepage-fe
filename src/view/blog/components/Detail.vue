@@ -79,7 +79,9 @@
       </div>
     </article>
 
-    <div class="g-ref-bgc text-center p-4 text-xl"> 评论区正在施工中... </div>
+    <div class="g-ref-bgc text-center p-4 text-xl">
+      {{ $t('blog.detail.comments.title') }}
+    </div>
     <the-footer></the-footer>
   </section>
 
