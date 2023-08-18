@@ -1,3 +1,4 @@
+import { computed } from 'vue'
 import { defineStore } from 'pinia'
 import { useColorMode, useCycleList } from '@vueuse/core'
 import { theme } from '@/config/settings.json'
@@ -6,8 +7,9 @@ import { theme } from '@/config/settings.json'
 export const useThemeStore = defineStore('theme', () => {
   const themes = ['light', 'dark', 'auto'] as const
   const initialValue = localStorage.getItem('arco-theme') || theme
+  const { next } = useCycleList([...themes], { initialValue })
 
-  const modes = useColorMode({
+  const { system, store: currentTheme } = useColorMode({
     selector: 'body',
     attribute: 'arco-theme',
     storageKey: 'arco-theme',
@@ -15,21 +17,22 @@ export const useThemeStore = defineStore('theme', () => {
     modes: {
       light: '',
       dark: 'dark',
-      auto: ''
+      auto: 'auto'
     }
-  })
-
-  const { next, state } = useCycleList([...themes], {
-    initialValue: modes.store.value
   })
 
   const changeTheme = () => {
     const newVal = next()
-    modes.value = newVal
+    currentTheme.value = newVal
   }
 
+  const shownTheme = computed(() =>
+    currentTheme.value === 'auto' ? system.value : currentTheme.value
+  )
+
   return {
-    currentTheme: state,
+    currentTheme,
+    shownTheme,
     changeTheme
   }
 })
