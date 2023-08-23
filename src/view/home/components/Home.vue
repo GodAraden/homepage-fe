@@ -3,12 +3,12 @@
     <div
       id="welcome"
       style="font-family: Alimama_DaoLiTi"
-      class="g-perfect-center relative flex-col w-2/3 h-64 p-2 text-center bg-black bg-opacity-10 bg-clip-content max-sm:w-11/12"
+      class="g-perfect-center relative flex-col w-2/3 h-64 p-2 text-center bg-black bg-opacity-10 bg-clip-content max-sm:w-11/12 max-sm:h-96"
     >
       <a-typography-title :heading="1" class="!font-black">
         {{ $t('home.welcome.title') }}
       </a-typography-title>
-      <a-typography-title :heading="2">
+      <a-typography-title :heading="2" class="max-sm:hidden">
         {{ $t('home.welcome.description') }}
       </a-typography-title>
     </div>

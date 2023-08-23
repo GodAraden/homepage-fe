@@ -15,7 +15,7 @@
       </a-typography-title>
     </a>
     <!-- 导航栏 -->
-    <div class="flex justify-evenly flex-1 text-lg font-bold">
+    <div class="flex justify-center flex-1 gap-4 text-lg font-bold">
       <router-link
         v-for="item in appRoutes"
         :key="item.path"

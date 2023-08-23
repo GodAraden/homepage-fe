@@ -1,6 +1,6 @@
 <template>
   <a-list
-    :scrollbar="false"
+    :scrollbar="true"
     :bordered="false"
     :max-height="420"
     :pagination-props="pagination"

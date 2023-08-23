@@ -43,6 +43,15 @@
   @apply h-10 py-2 px-4 bg-slate-400 bg-opacity-20 focus:outline-none focus:border focus:border-amber-500 focus:shadow;
 }
 
+/* 自定义滚动条样式 - 暂定为不显示 */
+.g-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+}
+
 body[arco-theme=''] {
   .g-text-button {
     @apply hover:bg-opacity-10 hover:bg-black;

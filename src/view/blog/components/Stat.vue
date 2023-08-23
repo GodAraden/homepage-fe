@@ -1,5 +1,5 @@
 <template>
-  <div class="g-ref-bgc flex-1 h-screen overflow-y-scroll">
+  <div class="g-ref-bgc g-scrollbar flex-1 h-screen overflow-y-scroll">
     <div class="grid grid-cols-3 grid-rows-2 h-full pt-20 pb-28 px-4">
       <div
         class="stat-chart col-span-2"

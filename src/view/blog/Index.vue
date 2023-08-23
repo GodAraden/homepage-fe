@@ -1,5 +1,5 @@
 <template>
-  <main id="blog" class="flex h-screen overflow-hidden">
+  <main id="blog" class="g-scrollbar flex h-screen overflow-hidden">
     <blog-aside />
 
     <router-view v-slot="{ Component, route }">

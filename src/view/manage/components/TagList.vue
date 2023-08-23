@@ -1,5 +1,5 @@
 <template>
-  <a-list :scrollbar="false" :bordered="false" :max-height="460">
+  <a-list :scrollbar="true" :bordered="false" :max-height="460">
     <a-list-item v-for="item in tagList" :key="item.id">
       <a-list-item-meta>
         <template #title>
