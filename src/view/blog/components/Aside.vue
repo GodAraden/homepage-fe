@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="g-ref-gradient-bgc w-1/4 h-full flex-shrink-0 select-none overflow-y-scroll max-sm:hidden"
+    class="g-ref-gradient-bgc g-scrollbar w-1/4 h-full flex-shrink-0 select-none overflow-y-scroll max-sm:hidden"
   >
     <div class="h-16"> <!-- 占位用 --> </div>
     <!-- 个人信息 -->

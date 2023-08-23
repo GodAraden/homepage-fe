@@ -20,16 +20,19 @@
         <p class="g-single-ellipsis" :title="blog?.description">
           {{ blog?.description }}
         </p>
-        <span class="whitespace-nowrap">
-          <span class="iconfont icon-rili"></span>
-          {{ $t('home.recent.col.postAt') }}
-          {{ new Date(blog?.postAt).toLocaleDateString() }}
-          &nbsp;
-          <span class="iconfont icon-app_icons--"></span>
-          {{ $t('home.recent.col.updateAt') }}
-          {{ new Date(blog?.updateAt).toLocaleDateString() }}
+        <span class="whitespace-nowrap flex gap-4">
+          <span>
+            <span class="iconfont icon-rili"></span>
+            {{ $t('home.recent.col.postAt') }}
+            {{ new Date(blog?.postAt).toLocaleDateString() }}
+          </span>
+          <span class="max-sm:hidden">
+            <span class="iconfont icon-app_icons--"></span>
+            {{ $t('home.recent.col.updateAt') }}
+            {{ new Date(blog?.updateAt).toLocaleDateString() }}
+          </span>
         </span>
-        <span class="flex gap-2 cursor-pointer">
+        <span class="flex gap-2 cursor-pointer max-sm:hidden">
           <span
             v-for="item in blog?.tags"
             :key="item.id"
@@ -65,7 +68,8 @@ defineProps<{
 }
 
 .blog-abstract {
-  @apply h-2/5 rounded-xl rounded-t-none;
+  @apply rounded-xl rounded-t-none;
+  height: 44%;
   transition: all 0.5s ease-in-out;
 }
 </style>

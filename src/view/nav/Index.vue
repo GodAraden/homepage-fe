@@ -1,5 +1,5 @@
 <template>
-  <main id="navigation" class="h-screen !pt-20">
+  <main id="navigation" class="g-scrollbar h-screen !pt-20">
     <search />
     <!-- 根据 settings 中的变量，渲染每一组导航及其内部 -->
     <navigator :data="navigator" :path="['/navigator']" />

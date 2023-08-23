@@ -1,5 +1,5 @@
 <template>
-  <main id="manage" class="h-screen !pt-20 !pb-6">
+  <main id="manage" class="g-scrollbar h-screen !pt-20 !pb-6">
     <a-card class="w-full h-full rounded-2xl">
       <a-tabs
         lazy-load

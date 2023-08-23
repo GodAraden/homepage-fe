@@ -1,5 +1,7 @@
 <template>
-  <section class="g-ref-bgc flex-1 h-screen select-none overflow-y-scroll">
+  <section
+    class="g-ref-bgc g-scrollbar flex-1 h-screen select-none overflow-y-scroll"
+  >
     <article class="g-ref-deep-bgc flex flex-col px-4 pt-20 min-h-screen">
       <div class="flex flex-col cursor-default">
         <p class="text-4xl mt-1 mb-2">
@@ -86,7 +88,7 @@
   </section>
 
   <aside
-    class="g-ref-bgc w-64 h-full flex-shrink-0 select-none overflow-y-scroll max-md:hidden"
+    class="g-ref-bgc g-scrollbar w-64 h-full flex-shrink-0 select-none overflow-y-scroll max-md:hidden"
   >
     <div class="h-16 pl-2 pl-4 pl-6 pl-8 pl-10 pl-12">
       <!-- 占位符，同时添加一堆 pl-x 保证 tailwind 打包产物中有这些，不会让下面的动态类名失效 -->

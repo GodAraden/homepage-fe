@@ -1,5 +1,5 @@
 <template>
-  <a-list :scrollbar="false" :bordered="false" :max-height="460">
+  <a-list :scrollbar="true" :bordered="false" :max-height="460">
     <a-list-item v-for="item in typeList" :key="item.id">
       <a-list-item-meta
         :description="`此分类下共有 ${item._count.blogs} 条博客`"

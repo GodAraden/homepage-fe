@@ -1,5 +1,5 @@
 <template>
-  <div class="g-ref-bgc flex-1 h-screen overflow-y-scroll">
+  <div class="g-ref-bgc g-scrollbar flex-1 h-screen overflow-y-scroll">
     <article class="g-ref-deep-bgc min-h-screen p-4 pt-20">
       <p class="text-3xl mb-4">
         <template v-if="filter.typeName">
@@ -32,7 +32,7 @@
   </div>
 
   <aside
-    class="g-ref-bgc w-1/4 h-full flex-shrink-0 select-none overflow-y-scroll max-md:hidden"
+    class="g-ref-bgc g-scrollbar w-1/4 h-full flex-shrink-0 select-none overflow-y-scroll max-md:hidden"
   >
     <div class="h-16"> <!-- 占位用 --> </div>
     <!-- 文章推荐 -->

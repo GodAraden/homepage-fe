@@ -12,7 +12,7 @@
         <div class="avatar-frame avatar-frame-rb"></div>
         <img src="/avatar.jpg" alt="avatar" />
       </div>
-      <div id="info" class="grid grid-cols-2 my-6 gap-y-2 max-sm:gap-y-0">
+      <div id="info" class="grid grid-cols-2 my-6 gap-y-2 max-sm:gap-y-6">
         <template v-for="item in PersonalInfo" :key="item.key">
           <span>{{ $t(`home.about.col.${item.key}`) }}</span>
           <span>{{ item.value || $t(`home.about.val.${item.key}`) }}</span>

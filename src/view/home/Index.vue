@@ -1,5 +1,5 @@
 <template>
-  <main id="home" class="h-screen">
+  <main id="home" class="g-scrollbar h-screen">
     <template v-for="item in 5" :key="item">
       <component :is="PageMap[item - 1]" class="h-screen" />
     </template>
