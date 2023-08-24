@@ -1,20 +1,15 @@
-import { CustomRouteRecordNormalized } from './types'
+import { AppRouteRecordRaw } from './types'
 
-const modules = import.meta.glob('./modules/*.ts', { eager: true })
+const modules = import.meta.glob<{ default: AppRouteRecordRaw }>(
+  './modules/*.ts',
+  { eager: true }
+)
 
-function formatModules(_modules: any) {
-  const result: CustomRouteRecordNormalized[] = []
-  Object.keys(_modules).forEach((key) => {
-    const defaultModule = _modules[key].default
-    if (!defaultModule) return
-    const moduleList = Array.isArray(defaultModule)
-      ? [...defaultModule]
-      : [defaultModule]
-    result.push(...moduleList)
-  })
-  return result.sort((a, b) => a.meta.order - b.meta.order)
+const allRoutes = []
+for (const module of Object.values(modules)) {
+  allRoutes.push(module.default)
 }
+allRoutes.sort((a, b) => a.meta.order - b.meta.order)
 
-const allRoutes = formatModules(modules)
 export const appRoutes = allRoutes.filter((route) => !route.meta.requiresAuth)
 export const adminRoutes = allRoutes.filter((route) => route.meta.requiresAuth)

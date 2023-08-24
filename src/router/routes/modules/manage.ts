@@ -7,7 +7,7 @@ const MANAGE: AppRouteRecordRaw = {
   meta: {
     requiresAuth: true,
     icon: 'icon-shebeiguanli',
-    order: 0,
+    order: 3,
     routerViewKey: 'manage'
   }
 }

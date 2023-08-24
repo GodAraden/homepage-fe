@@ -7,7 +7,7 @@ const WRITE: AppRouteRecordRaw = {
   meta: {
     requiresAuth: true,
     icon: 'icon-xiezi',
-    order: 1,
+    order: 4,
     routerViewKey: 'write'
   }
 }

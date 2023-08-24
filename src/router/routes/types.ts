@@ -1,5 +1,5 @@
 import { Component } from 'vue'
-import { NavigationGuard, RouteMeta, RouteRecordNormalized } from 'vue-router'
+import { NavigationGuard, RouteMeta } from 'vue-router'
 
 export interface CustomRouteMeta extends RouteMeta {
   order?: number
@@ -19,9 +19,4 @@ export interface AppRouteRecordRaw {
   props?: boolean | Record<string, any>
   beforeEnter?: NavigationGuard | NavigationGuard[]
   fullPath?: string
-}
-
-export interface CustomRouteRecordNormalized extends RouteRecordNormalized {
-  name: string
-  meta: CustomRouteMeta
 }
