@@ -26,7 +26,10 @@ export default function useBlogList(pageSize: number, fetchCatList = true) {
     pagination.value.total = res.total
 
     if (fetchCatList && renderData.value?.length) {
-      catList.value = await getCatList(renderData.value.length)
+      // 背景图片的加载不能是 await 异步，否则容易导致加载不出来
+      getCatList(renderData.value.length).then((res) => {
+        catList.value = res
+      })
     }
   }
 

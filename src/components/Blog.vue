@@ -4,6 +4,9 @@
     :style="{ backgroundImage: url ? `url(${url})` : null }"
     @click="$router.push(`/blog/${blog?.id}`)"
   >
+    <div v-if="!url" class="g-perfect-center w-full h-full">
+      <icon-loading :size="64" />
+    </div>
     <!-- 左上角的分类标签 -->
     <div
       class="g-tag absolute top-3 left-3"
