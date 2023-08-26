@@ -1,7 +1,7 @@
 import { computed } from 'vue'
 import { defineStore } from 'pinia'
 import { useColorMode, useCycleList } from '@vueuse/core'
-import { theme } from '@/config/settings.json'
+import { theme } from '@/config/settings'
 
 // 将 主题变量 和 切换这个变量的函数 封装
 export const useThemeStore = defineStore('theme', () => {

@@ -1,5 +1,5 @@
 import { createI18n } from 'vue-i18n'
-import { locale } from '@/config/settings.json'
+import { locale } from '@/config/settings'
 import zhCN from './zh-CN'
 import enUS from './en-US'
 
