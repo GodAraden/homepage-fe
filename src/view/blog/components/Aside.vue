@@ -27,7 +27,7 @@
       </p>
       <div
         @click="$router.replace({ path: 'search' })"
-        class="g-ref-gradient-bgc g-cross-center pl-10 pr-1 py-3 hover:border-r-4 hover:pr-0 border-amber-100 cursor-pointer"
+        class="g-ref-gradient-bgc g-cross-center blog-nav"
       >
         <span class="flex-1"> {{ $t('blog.aside.type.total') }} </span>
         <span
@@ -42,7 +42,7 @@
         @click="
           $router.replace({ path: 'search', query: { type: item.typeName } })
         "
-        class="g-ref-gradient-bgc g-cross-center pl-10 pr-1 py-3 hover:border-r-4 hover:pr-0 border-amber-100 cursor-pointer"
+        class="g-ref-gradient-bgc g-cross-center blog-nav"
       >
         <span class="flex-1"> {{ item.typeName }} </span>
         <span
@@ -59,7 +59,7 @@
       </p>
       <div
         @click="$router.push('/blog/stat')"
-        class="g-ref-gradient-bgc g-cross-center pl-10 pr-1 py-3 hover:border-r-4 hover:pr-0 border-amber-100 cursor-pointer"
+        class="g-ref-gradient-bgc g-cross-center blog-nav"
       >
         <span class="flex-1"> {{ $t('blog.aside.nav.stat') }} </span>
       </div>
@@ -103,6 +103,17 @@ const onSearch = (keyword: string) => {
   &:hover {
     @apply shadow-2xl;
     transform: rotate(1turn) scale(1.2);
+  }
+}
+
+.blog-nav {
+  @apply relative pl-10 py-3 pr-1 cursor-pointer;
+  &::after {
+    @apply absolute right-0 block w-1 h-full;
+    content: '';
+  }
+  &:hover::after {
+    @apply bg-amber-300;
   }
 }
 

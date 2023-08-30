@@ -1,7 +1,6 @@
 export default {
   'blog.aside.title': "GodAraden's Blog",
-  'blog.aside.description':
-    "This person hasn't figured out how to introduce himself...",
+  'blog.aside.description': 'Chance passes easily. Rush in speed',
   'blog.aside.description.hidden': 'No details here',
   'blog.aside.nav.title': 'Navigation',
   'blog.aside.nav.stat': 'Statistics',
