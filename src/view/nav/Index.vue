@@ -7,7 +7,7 @@
     <a-button
       type="primary"
       shape="round"
-      class="fixed text-right right-12 bottom-20"
+      class="!fixed text-right right-12 bottom-20"
       @click="onScrollToTop"
       :title="$t('nav.aside.scrollToTop')"
     >
