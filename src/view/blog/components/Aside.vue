@@ -6,7 +6,12 @@
     <!-- 个人信息 -->
     <div class="blog-info">
       <div class="blog-avatar">
-        <img src="/avatar.jpg" class="w-full h-full rounded-full" />
+        <img
+          src="/avatar.jpg"
+          class="w-full h-full rounded-full"
+          width="64"
+          height="64"
+        />
       </div>
       <div>
         <div class="text-center text-lg" style="font-family: Alimama_DaoLiTi">

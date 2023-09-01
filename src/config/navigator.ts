@@ -13,7 +13,10 @@ export const navigator = {
             { title: 'Vue I18n (en)', uri: 'https://vue-i18n.intlify.dev/' },
             { title: 'VuePress', uri: 'https://v2.vuepress.vuejs.org/zh/' },
             { title: 'VueUse', uri: 'https://vueuse.org/' },
-            { title: 'v-md-editor', uri: 'https://ckang1229.gitee.io/vue-markdown-editor/zh/' },
+            {
+              title: 'v-md-editor',
+              uri: 'https://ckang1229.gitee.io/vue-markdown-editor/zh/'
+            },
             { title: 'Nuxt', uri: 'https://nuxt.com/' },
             { title: 'Vue Apollo', uri: 'https://v4.apollo.vuejs.org/zh-cn/' },
             { title: 'Nuxt Image', uri: 'https://v1.image.nuxtjs.org/' },
@@ -27,7 +30,10 @@ export const navigator = {
             { title: 'NestJS', uri: 'https://docs.nestjs.cn/10/introduction' },
             { title: 'Prisma (en)', uri: 'https://www.prisma.io/' },
             { title: 'Prisma', uri: 'https://prisma.yoga/' },
-            { title: 'Django', uri: 'https://docs.djangoproject.com/zh-hans/3.2/' },
+            {
+              title: 'Django',
+              uri: 'https://docs.djangoproject.com/zh-hans/3.2/'
+            },
             { title: 'koa.js', uri: 'https://koajs.com/' },
             { title: 'Express', uri: 'https://www.expressjs.com.cn/' }
           ]
@@ -36,12 +42,24 @@ export const navigator = {
           title: 'react',
           children: [
             { title: 'React', uri: 'https://zh-hans.reactjs.org/' },
-            { title: 'React Router', uri: 'http://react-guide.github.io/react-router-cn/' },
-            { title: 'React Router DOM', uri: 'https://reactrouter.com/en/main' },
+            {
+              title: 'React Router',
+              uri: 'http://react-guide.github.io/react-router-cn/'
+            },
+            {
+              title: 'React Router DOM',
+              uri: 'https://reactrouter.com/en/main'
+            },
             { title: 'React Redux', uri: 'https://cn.react-redux.js.org/' },
-            { title: 'ahooks - React Hooks', uri: 'https://ahooks.js.org/zh-CN' },
+            {
+              title: 'ahooks - React Hooks',
+              uri: 'https://ahooks.js.org/zh-CN'
+            },
             { title: 'Next.js', uri: 'https://nextjs.org/' },
-            { title: 'react-use', uri: 'https://github.com/zenghongtu/react-use-chinese' }
+            {
+              title: 'react-use',
+              uri: 'https://github.com/zenghongtu/react-use-chinese'
+            }
           ]
         },
         {
@@ -53,7 +71,10 @@ export const navigator = {
             { title: 'WEEX', uri: 'https://weexapp.com/zh/' },
             { title: 'Auto.js Pro', uri: 'https://pro.autojs.org/' },
             { title: 'uni-app', uri: 'https://uniapp.dcloud.net.cn/' },
-            { title: '微信开放文档', uri: 'https://developers.weixin.qq.com/miniprogram/dev/framework/' },
+            {
+              title: '微信开放文档',
+              uri: 'https://developers.weixin.qq.com/miniprogram/dev/framework/'
+            },
             { title: 'Flutter', uri: 'https://flutter.cn/' }
           ]
         },
@@ -70,20 +91,38 @@ export const navigator = {
           title: '组件库',
           children: [
             { title: 'TDesign', uri: 'https://tdesign.tencent.com/' },
-            { title: 'Arco Design Vue', uri: 'https://arco.design/vue/docs/start' },
+            {
+              title: 'Arco Design Vue',
+              uri: 'https://arco.design/vue/docs/start'
+            },
             { title: 'Naive UI', uri: 'https://www.naiveui.com/zh-CN/light' },
-            { title: 'Element Plus', uri: 'https://element-plus.gitee.io/zh-CN/component/button.html' },
-            { title: 'Ant Design Vue', uri: 'https://www.antdv.com/components/overview-cn' },
+            {
+              title: 'Element Plus',
+              uri: 'https://element-plus.gitee.io/zh-CN/component/button.html'
+            },
+            {
+              title: 'Ant Design Vue',
+              uri: 'https://www.antdv.com/components/overview-cn'
+            },
             { title: 'Ant Design', uri: 'https://ant.design/index-cn' },
-            { title: 'Arco Design React', uri: 'https://arco.design/react/docs/start' },
-            { title: 'Vant Weapp', uri: 'https://vant-contrib.gitee.io/vant-weapp/#/home' }
+            {
+              title: 'Arco Design React',
+              uri: 'https://arco.design/react/docs/start'
+            },
+            {
+              title: 'Vant Weapp',
+              uri: 'https://vant-contrib.gitee.io/vant-weapp/#/home'
+            }
           ]
         },
         {
           title: '时间库',
           children: [
             { title: 'Moment.js 中文网', uri: 'http://momentjs.cn/' },
-            { title: '安装 · Day.js', uri: 'https://dayjs.gitee.io/docs/zh-CN/installation/installation' }
+            {
+              title: '安装 · Day.js',
+              uri: 'https://dayjs.gitee.io/docs/zh-CN/installation/installation'
+            }
           ]
         },
         {
@@ -92,19 +131,30 @@ export const navigator = {
             { title: 'axios中文网', uri: 'http://www.axios-js.com/' },
             { title: 'GraphQL', uri: 'https://graphql.cn/learn/' },
             { title: 'Apollo GraphQl', uri: 'https://www.apollographql.com/' },
-            { title: 'Mockjs', uri: 'https://github.com/nuysoft/Mock/wiki/Getting-Started' },
-            { title: 'Socket.IO', uri: 'https://socket.io/zh-CN/' },
-            { title: '腾讯 APIJSON', uri: 'http://apijson.cn/' }
+            {
+              title: 'Mockjs',
+              uri: 'https://github.com/nuysoft/Mock/wiki/Getting-Started'
+            },
+            { title: 'Socket.IO', uri: 'https://socket.io/zh-CN/' }
           ]
         },
         {
           title: '可视化库',
           children: [
-            { title: 'Apache ECharts', uri: 'https://echarts.apache.org/zh/index.html' },
+            {
+              title: 'Apache ECharts',
+              uri: 'https://echarts.apache.org/zh/index.html'
+            },
             { title: 'vis.js', uri: 'https://visjs.org/' },
-            { title: 'three.js docs', uri: 'https://threejs.org/docs/index.html#manual/zh/introduction/Creating-a-scene' },
+            {
+              title: 'three.js docs',
+              uri: 'https://threejs.org/docs/index.html#manual/zh/introduction/Creating-a-scene'
+            },
             { title: 'Chart.js', uri: 'https://www.chartjs.org/' },
-            { title: 'Beautiful HTML5 Charts & Graphs', uri: 'https://canvasjs.com/' },
+            {
+              title: 'Beautiful HTML5 Charts & Graphs',
+              uri: 'https://canvasjs.com/'
+            },
             { title: 'AntV', uri: 'https://antv.antgroup.com/' },
             { title: 'Vue-ECharts', uri: 'https://vue-echarts.dev/' }
           ]
@@ -134,8 +184,14 @@ export const navigator = {
           title: '工程化工具',
           children: [
             { title: 'Git - Book', uri: 'https://git-scm.com/book/zh/v2' },
-            { title: '约定式提交', uri: 'https://www.conventionalcommits.org/zh-hans/v1.0.0/#%e7%ba%a6%e5%ae%9a%e5%bc%8f%e6%8f%90%e4%ba%a4%e8%a7%84%e8%8c%83' },
-            { title: 'Husky - Git hooks', uri: 'https://typicode.github.io/husky/#/' },
+            {
+              title: '约定式提交',
+              uri: 'https://www.conventionalcommits.org/zh-hans/v1.0.0/#%e7%ba%a6%e5%ae%9a%e5%bc%8f%e6%8f%90%e4%ba%a4%e8%a7%84%e8%8c%83'
+            },
+            {
+              title: 'Husky - Git hooks',
+              uri: 'https://typicode.github.io/husky/#/'
+            },
             { title: 'gulp.js', uri: 'https://gulpjs.com/plugins/' },
             { title: 'Prettier', uri: 'https://prettier.io/' },
             { title: 'ESLint', uri: 'https://zh-hans.eslint.org/' },
@@ -145,7 +201,10 @@ export const navigator = {
             { title: 'webpack', uri: 'https://webpack.docschina.org/' }
           ]
         },
-        { title: 'Patterns 设计模式（en）', uri: 'https://www.patterns.dev/posts' },
+        {
+          title: 'Patterns 设计模式（en）',
+          uri: 'https://www.patterns.dev/posts'
+        },
         { title: 'Puppeteer', uri: 'https://pptr.dev/' },
         { title: 'Puppeteer zh', uri: 'http://www.puppeteerjs.com/' },
         { title: 'SVG generators', uri: 'https://fffuel.co/' },
@@ -167,27 +226,55 @@ export const navigator = {
         { title: 'Cravatar', uri: 'https://cravatar.cn/' },
         { title: 'The Cat API', uri: 'https://thecatapi.com/' },
         { title: 'The Dog API', uri: 'https://thedogapi.com/' },
+        {
+          title: 'TypeScript PlayGround',
+          uri: 'https://www.typescriptlang.org/play'
+        },
         { title: '飞援（私活）', uri: 'https://www.freetalen.com/' }
       ]
     },
     {
       title: '面试用',
       children: [
-        { title: '「2021」高频前端面试题汇总之HTML篇 - 掘金', uri: 'https://juejin.cn/post/6905294475539513352#heading-0' },
-        { title: 'web前端面试 - 面试官系列', uri: 'https://vue3js.cn/interview/' },
-        { title: 'labuladong 的算法小抄', uri: 'https://labuladong.gitee.io/algo/' },
+        {
+          title: '「2021」高频前端面试题汇总之HTML篇 - 掘金',
+          uri: 'https://juejin.cn/post/6905294475539513352#heading-0'
+        },
+        {
+          title: 'web前端面试 - 面试官系列',
+          uri: 'https://vue3js.cn/interview/'
+        },
+        {
+          title: 'labuladong 的算法小抄',
+          uri: 'https://labuladong.gitee.io/algo/'
+        },
         { title: '小林coding', uri: 'https://xiaolincoding.com/' }
       ]
     },
     {
       title: '博文精选',
       children: [
-        { title: 'VS Code常用快捷键', uri: 'https://blog.csdn.net/sunscheung/article/details/71158609' },
+        {
+          title: 'VS Code常用快捷键',
+          uri: 'https://blog.csdn.net/sunscheung/article/details/71158609'
+        },
         { title: 'git - 朱双印博客', uri: 'https://www.zsythink.net/?s=git' },
-        { title: 'CSS Tricks', uri: 'https://lhammer.cn/You-need-to-know-css/#/zh-cn/' },
-        { title: '72个炫酷的CSS技巧', uri: 'https://juejin.cn/post/6844904031513477128' },
-        { title: '前端项目中的 CICD 实践', uri: 'https://blog.csdn.net/marshmallow_/article/details/124194274' },
-        { title: '前端工程化入门', uri: 'https://woai3c.github.io/introduction-to-front-end-engineering/#%E7%AE%80%E4%BB%8B' },
+        {
+          title: 'CSS Tricks',
+          uri: 'https://lhammer.cn/You-need-to-know-css/#/zh-cn/'
+        },
+        {
+          title: '72个炫酷的CSS技巧',
+          uri: 'https://juejin.cn/post/6844904031513477128'
+        },
+        {
+          title: '前端项目中的 CICD 实践',
+          uri: 'https://blog.csdn.net/marshmallow_/article/details/124194274'
+        },
+        {
+          title: '前端工程化入门',
+          uri: 'https://woai3c.github.io/introduction-to-front-end-engineering/#%E7%AE%80%E4%BB%8B'
+        },
         { title: 'web全栈体系', uri: 'https://senior-frontend.pages.dev/' },
         { title: '被删的前端游乐场', uri: 'http://www.godbasin.com/' }
       ]

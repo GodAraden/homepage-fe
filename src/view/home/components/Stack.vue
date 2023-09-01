@@ -46,6 +46,7 @@
         class="g-ref-bgc rounded-full"
         :color="item.color"
         :percent="item.value"
+        :title="$t(`home.stack.col.${item.key}`)"
       >
         <template v-slot:text="{ percent }">
           <span

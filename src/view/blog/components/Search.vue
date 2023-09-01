@@ -43,6 +43,8 @@
           <img
             :src="`https://cravatar.cn/avatar/${item.id}?d=robohash`"
             class="rounded"
+            width="56"
+            height="56"
           />
         </div>
         <div class="g-main-center flex-col p-1 w-40 flex-1">

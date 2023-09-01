@@ -10,7 +10,7 @@
         <div class="avatar-frame avatar-frame-rt"></div>
         <div class="avatar-frame avatar-frame-lb"></div>
         <div class="avatar-frame avatar-frame-rb"></div>
-        <img src="/avatar.jpg" alt="avatar" />
+        <img src="/avatar.jpg" alt="avatar" width="144" height="144" />
       </div>
       <div id="info" class="grid grid-cols-2 my-6 gap-y-2 max-sm:gap-y-6">
         <template v-for="item in PersonalInfo" :key="item.key">

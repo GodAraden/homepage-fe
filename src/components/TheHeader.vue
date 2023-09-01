@@ -6,7 +6,13 @@
   >
     <!-- Logo & 标题 -->
     <a href="/" class="g-cross-center w-80">
-      <img src="/logo.svg" alt="logo" class="h-12" />
+      <img
+        src="/logo.svg"
+        alt="logo"
+        class="h-12 w-12"
+        width="48"
+        height="48"
+      />
       <a-typography-title
         :heading="4"
         class="!mb-0 !font-black ml-2 max-sm:!hidden"
@@ -95,6 +101,8 @@
               src="/avatar.jpg"
               alt="avatar"
               class="rounded-full w-16 h-16 mx-auto"
+              width="100%"
+              height="100%"
             />
             <span class="g-perfect-center flex-1 text-2xl">
               {{ $t(`header.user.welcome`) }}

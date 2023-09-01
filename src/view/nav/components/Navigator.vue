@@ -23,7 +23,8 @@
       <a :href="item.uri" target="_blank" class="flex-1">
         <img
           :src="`${path.join('/')}/${item.title}.png`"
-          class="w-full h-full"
+          :alt="item.title"
+          class="h-full w-full"
         />
       </a>
       <p

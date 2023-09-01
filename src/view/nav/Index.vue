@@ -4,11 +4,15 @@
     <!-- 根据 settings 中的变量，渲染每一组导航及其内部 -->
     <navigator :data="navigator.children" :path="[`/${navigator.title}`]" />
 
-    <a-affix :offsetBottom="80" class="text-left">
-      <a-button type="primary" shape="round" @click="onScrollToTop">
-        <template #icon><icon-double-up /></template>
-      </a-button>
-    </a-affix>
+    <a-button
+      type="primary"
+      shape="round"
+      class="fixed text-right right-12 bottom-20"
+      @click="onScrollToTop"
+      :title="$t('nav.aside.scrollToTop')"
+    >
+      <template #icon><icon-double-up /></template>
+    </a-button>
   </main>
 </template>
 
@@ -21,10 +25,3 @@ const onScrollToTop = () => {
   document.querySelector('#navigation').scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>
-
-<style>
-#navigation .arco-affix {
-  @apply flex justify-end;
-  right: 4vw;
-}
-</style>
