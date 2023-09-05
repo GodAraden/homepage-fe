@@ -31,13 +31,21 @@ axios.interceptors.response.use(
     return response.data
   },
   async (error: AxiosError<any>) => {
+    // 第三方图片 API 请求超时的情况
+    if (error?.config?.url === '/cat/images/search') {
+      throw 'Failed to fetch blog background image'
+    }
+
     if (!error.response) return {}
+
     const { statusCode = error.response.status, message = error.message } =
       error.response.data
+
     if (statusCode === 500) {
       Message.error('服务端异常，请联系管理员')
       return {}
     }
+
     Message.error('Error: ' + statusCode + ' ' + message)
     // `${statusCode}: ${i18n.global.t('tips.http.error.' + message)}`
     return error.response.data
