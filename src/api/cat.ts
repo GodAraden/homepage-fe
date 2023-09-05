@@ -61,7 +61,7 @@ export function getCatList(count: number): Promise<CatListItem[]> {
       // 自己的前后端统一了响应格式与处理模式，换到第三方 API 还得迁就一下
       const data = (await axios.get('/cat/images/search', {
         withCredentials: false,
-        timeout: 5000,
+        timeout: 3000,
         headers: { 'x-api-key': import.meta.env.VITE_X_API_KEY },
         params: {
           limit: count,

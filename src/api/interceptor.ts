@@ -32,8 +32,8 @@ axios.interceptors.response.use(
   },
   async (error: AxiosError<any>) => {
     // 第三方图片 API 请求超时的情况
-    if (error?.config?.url === '/cat/images/search') {
-      throw 'Failed to fetch blog background image'
+    if (error?.config?.url.includes('/images/search')) {
+      throw 'Failed to fetch images'
     }
 
     if (!error.response) return {}
