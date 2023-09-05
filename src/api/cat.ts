@@ -50,7 +50,7 @@ export type CatListItem = {
 const failedImg = {
   breads: [],
   id: 'failed',
-  url: 'failed.jpg',
+  url: '/failed.jpg',
   width: 474,
   height: 296
 }
