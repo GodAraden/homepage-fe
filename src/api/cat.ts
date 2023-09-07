@@ -55,24 +55,21 @@ const failedImg = {
   height: 296
 }
 
-export function getCatList(count: number): Promise<CatListItem[]> {
-  return new Promise(async (resolve, reject) => {
-    try {
-      // 自己的前后端统一了响应格式与处理模式，换到第三方 API 还得迁就一下
-      const data = (await axios.get('/cat/images/search', {
-        withCredentials: false,
-        timeout: 5000,
-        headers: { 'x-api-key': import.meta.env.VITE_X_API_KEY },
-        params: {
-          limit: count,
-          mime_types: 'jpg,png',
-          size: 'small',
-          has_breeds: 1
-        }
-      })) as CatListItem[]
-      resolve(data)
-    } catch (err) {
-      resolve(new Array(count).fill(failedImg))
-    }
-  })
+// 自己的前后端统一了响应格式与处理模式，换到第三方 API 还得迁就一下
+export async function getCatList(count: number): Promise<CatListItem[]> {
+  try {
+    return (await axios.get('/cat/images/search', {
+      withCredentials: false,
+      timeout: 5000,
+      headers: { 'x-api-key': import.meta.env.VITE_X_API_KEY },
+      params: {
+        limit: count,
+        mime_types: 'jpg,png',
+        size: 'small',
+        has_breeds: 1
+      }
+    })) as CatListItem[]
+  } catch (err) {
+    return new Array(count).fill(failedImg)
+  }
 }
