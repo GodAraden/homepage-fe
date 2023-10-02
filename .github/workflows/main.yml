@@ -6,7 +6,7 @@ on:
 env:
   PACKED_PATH: # 打包出的文件夹位置，正常为空，vuepress 中为 docs/.vuepress/
   TARGET_DIR: /www/wwwroot/ # 打包好的项目目录上传位置
-  PROJECT_DIR: araden.top # 打包好的项目目录要改成的名字
+  PROJECT_DIR: www.araden.top # 打包好的项目目录要改成的名字
   NODE_VERSION: 18
   PNPM_VERSION: 8
   REMOTE_USER: root
