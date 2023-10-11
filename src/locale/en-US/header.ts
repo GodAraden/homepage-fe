@@ -1,5 +1,5 @@
 export default {
-  'header.title': "GodAraden's HomePage",
+  'header.title': `${import.meta.env.VITE_APP_OWNER}'s HomePage`,
   'header.navbar.HomePage': 'Home',
   'header.navbar.Blog': 'Blog',
   'header.navbar.Nav': 'Coding Navi',
@@ -11,5 +11,5 @@ export default {
   'header.login.submit': 'Login',
 
   'header.user.logout': 'Logout',
-  'header.user.welcome': 'Welcome, GodAraden'
+  'header.user.welcome': `Welcome, ${import.meta.env.VITE_APP_OWNER}`
 }

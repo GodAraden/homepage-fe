@@ -12,6 +12,7 @@ declare module 'vue' {
     ACol: typeof import('@arco-design/web-vue')['Col']
     ADatePicker: typeof import('@arco-design/web-vue')['DatePicker']
     ADivider: typeof import('@arco-design/web-vue')['Divider']
+    AEmpty: typeof import('@arco-design/web-vue')['Empty']
     AInput: typeof import('@arco-design/web-vue')['Input']
     AInputSearch: typeof import('@arco-design/web-vue')['InputSearch']
     AList: typeof import('@arco-design/web-vue')['List']

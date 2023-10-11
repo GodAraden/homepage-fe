@@ -1,5 +1,5 @@
 export default {
-  'header.title': 'GodAraden 的主页',
+  'header.title': `${import.meta.env.VITE_APP_OWNER} 的主页`,
   'header.navbar.HomePage': '主页',
   'header.navbar.Blog': '个人博客',
   'header.navbar.Nav': '编程导航',
@@ -11,5 +11,5 @@ export default {
   'header.login.submit': '登录',
 
   'header.user.logout': '退出登录',
-  'header.user.welcome': '欢迎, GodAraden'
+  'header.user.welcome': `欢迎, ${import.meta.env.VITE_APP_OWNER}`
 }

@@ -1,5 +1,5 @@
 export default {
-  'home.welcome.title': '欢迎来访 GodAraden 的个人主页',
+  'home.welcome.title': `欢迎来访 ${import.meta.env.VITE_APP_OWNER} 的个人主页`,
   'home.welcome.description': '寒舍简陋，不足恭迎，还望海涵',
   // House is rough, maybe inconsiderate hospitality, hope for tolerance
   'home.about.title': '关于我',
@@ -18,8 +18,6 @@ export default {
 
   'home.about.val.school': '哈尔滨工业大学（威海）',
   'home.about.val.direction': '前端开发',
-  'home.about.val.from': '吉林省长春市',
-  'home.about.val.nowAt': '山东省威海市',
   'home.about.val.like': '运动健身，但仅限于跑步之类的单人运动',
   'home.about.val.games': '偶尔玩，偏向于沙盒生存类：饥荒、我的世界、缺氧...',
   'home.about.val.singer': '（有且仅有）河图',

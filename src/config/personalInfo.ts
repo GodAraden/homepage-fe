@@ -1,11 +1,12 @@
 export const PersonalInfo: KeyValuePair<any>[] = [
   {
     key: 'nickname',
-    value: 'GodAraden'
+    value: import.meta.env.VITE_APP_OWNER
   },
   {
     key: 'age',
-    value: new Date().getFullYear() - 2003
+    value:
+      new Date().getFullYear() - parseInt(import.meta.env.VITE_APP_OWNER_BIRTH)
   },
   {
     key: 'school',
@@ -13,14 +14,6 @@ export const PersonalInfo: KeyValuePair<any>[] = [
   },
   {
     key: 'direction',
-    value: null
-  },
-  {
-    key: 'from',
-    value: null
-  },
-  {
-    key: 'nowAt',
     value: null
   },
   {
@@ -37,7 +30,7 @@ export const PersonalInfo: KeyValuePair<any>[] = [
   },
   {
     key: 'email',
-    value: 'hitwh_gyh@qq.com'
+    value: 'me@araden.top'
   },
   {
     key: 'github',

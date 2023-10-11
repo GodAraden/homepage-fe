@@ -1,6 +1,6 @@
 export default {
-  'blog.aside.title': "GodAraden's Blog",
-  'blog.aside.description': 'Chance passes easily. Rush in speed',
+  'blog.aside.title': `${import.meta.env.VITE_APP_OWNER}'s Blog`,
+  'blog.aside.description': import.meta.env.VITE_SIGNATURE_EN,
   'blog.aside.description.hidden': 'No details here',
   'blog.aside.nav.title': 'Navigation',
   'blog.aside.nav.stat': 'Statistics',

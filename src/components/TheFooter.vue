@@ -13,7 +13,7 @@
 import { onBeforeUnmount } from 'vue'
 import { ref } from 'vue'
 
-const begin = import.meta.env.VITE_RUN_BEGIN
+const begin = import.meta.env.VITE_APP_START
 
 const currentYear = new Date().getFullYear()
 const beginYear = new Date(begin).getFullYear()

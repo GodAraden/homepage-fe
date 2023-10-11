@@ -1,5 +1,7 @@
 export default {
-  'home.welcome.title': "Welcome to GodAraden's personal homepage",
+  'home.welcome.title': `Welcome to  ${
+    import.meta.env.VITE_APP_OWNER
+  }'s personal homepage`,
   'home.welcome.description':
     'House is rough, maybe inconsiderate hospitality, hope for tolerance',
   'home.about.title': 'About me',
@@ -18,8 +20,6 @@ export default {
 
   'home.about.val.school': 'Harbin Institute of Technology (Weihai)',
   'home.about.val.direction': 'Front-end development',
-  'home.about.val.from': 'Changchun, Jilin',
-  'home.about.val.nowAt': 'Weihai, Shandong',
   'home.about.val.like':
     'Exercise and fitness, but only for individual sports like running',
   'home.about.val.games':
