@@ -19,7 +19,6 @@ export const navigator = {
             },
             { title: 'Nuxt', uri: 'https://nuxt.com/' },
             { title: 'Vue Apollo', uri: 'https://v4.apollo.vuejs.org/zh-cn/' },
-            { title: 'Nuxt Image', uri: 'https://v1.image.nuxtjs.org/' },
             { title: 'Vuex', uri: 'https://next.vuex.vuejs.org/zh/index.html' }
           ]
         },
@@ -36,6 +35,22 @@ export const navigator = {
             },
             { title: 'koa.js', uri: 'https://koajs.com/' },
             { title: 'Express', uri: 'https://www.expressjs.com.cn/' }
+          ]
+        },
+        {
+          title: '跨端',
+          children: [
+            { title: 'Electron', uri: 'https://www.electronjs.org/zh/' },
+            { title: 'React Native', uri: 'https://www.reactnative.cn/' },
+            { title: 'Ionic (移动端）', uri: 'https://ionicframework.com/' },
+            { title: 'WEEX', uri: 'https://weexapp.com/zh/' },
+            { title: 'Auto.js Pro', uri: 'https://pro.autojs.org/' },
+            { title: 'uni-app', uri: 'https://uniapp.dcloud.net.cn/' },
+            {
+              title: '微信开放文档',
+              uri: 'https://developers.weixin.qq.com/miniprogram/dev/framework/'
+            },
+            { title: 'Flutter', uri: 'https://flutter.cn/' }
           ]
         },
         {
@@ -60,22 +75,6 @@ export const navigator = {
               title: 'react-use',
               uri: 'https://github.com/zenghongtu/react-use-chinese'
             }
-          ]
-        },
-        {
-          title: '跨端',
-          children: [
-            { title: 'Electron', uri: 'https://www.electronjs.org/zh/' },
-            { title: 'React Native', uri: 'https://www.reactnative.cn/' },
-            { title: 'Ionic (移动端）', uri: 'https://ionicframework.com/' },
-            { title: 'WEEX', uri: 'https://weexapp.com/zh/' },
-            { title: 'Auto.js Pro', uri: 'https://pro.autojs.org/' },
-            { title: 'uni-app', uri: 'https://uniapp.dcloud.net.cn/' },
-            {
-              title: '微信开放文档',
-              uri: 'https://developers.weixin.qq.com/miniprogram/dev/framework/'
-            },
-            { title: 'Flutter', uri: 'https://flutter.cn/' }
           ]
         },
         { title: 'Angular', uri: 'https://angular.cn/' },
@@ -151,10 +150,6 @@ export const navigator = {
               uri: 'https://threejs.org/docs/index.html#manual/zh/introduction/Creating-a-scene'
             },
             { title: 'Chart.js', uri: 'https://www.chartjs.org/' },
-            {
-              title: 'Beautiful HTML5 Charts & Graphs',
-              uri: 'https://canvasjs.com/'
-            },
             { title: 'AntV', uri: 'https://antv.antgroup.com/' },
             { title: 'Vue-ECharts', uri: 'https://vue-echarts.dev/' }
           ]
@@ -209,7 +204,6 @@ export const navigator = {
         { title: 'Puppeteer zh', uri: 'http://www.puppeteerjs.com/' },
         { title: 'SVG generators', uri: 'https://fffuel.co/' },
         { title: 'Lodash', uri: 'https://www.lodashjs.com/' },
-        { title: 'Type Challenges', uri: 'https://tsch.js.org/' },
         { title: 'RegExr', uri: 'https://regexr-cn.com/' }
       ]
     },
@@ -230,35 +224,46 @@ export const navigator = {
           title: 'TypeScript PlayGround',
           uri: 'https://www.typescriptlang.org/play'
         },
-        { title: '飞援（私活）', uri: 'https://www.freetalen.com/' }
-      ]
-    },
-    {
-      title: '面试用',
-      children: [
-        {
-          title: '「2021」高频前端面试题汇总之HTML篇 - 掘金',
-          uri: 'https://juejin.cn/post/6905294475539513352#heading-0'
-        },
-        {
-          title: 'web前端面试 - 面试官系列',
-          uri: 'https://vue3js.cn/interview/'
-        },
-        {
-          title: 'labuladong 的算法小抄',
-          uri: 'https://labuladong.gitee.io/algo/'
-        },
-        { title: '小林coding', uri: 'https://xiaolincoding.com/' }
+        { title: '文心一言', uri: 'https://chat.baidu.com/' },
+        { title: 'Dummy Image Generator', uri: 'https://dummyimage.com/' }
       ]
     },
     {
       title: '博文精选',
       children: [
         {
+          title: '面试用',
+          children: [
+            { title: '小林coding', uri: 'https://xiaolincoding.com/' },
+            {
+              title: 'labuladong 的算法小抄',
+              uri: 'https://labuladong.gitee.io/algo/'
+            },
+            {
+              title: 'web前端面试 - 面试官系列',
+              uri: 'https://vue3js.cn/interview/'
+            },
+            {
+              title: '高频前端面试题汇总之HTML篇',
+              uri: 'https://juejin.cn/post/6905294475539513352'
+            }
+          ]
+        },
+        { title: '被删的前端游乐场', uri: 'http://www.godbasin.com/' },
+        {
+          title: '前端工程化入门',
+          uri: 'https://woai3c.github.io/introduction-to-front-end-engineering/#%E7%AE%80%E4%BB%8B'
+        },
+        { title: 'web全栈体系', uri: 'https://senior-frontend.pages.dev/' },
+        { title: 'git - 朱双印博客', uri: 'https://www.zsythink.net/?s=git' },
+        {
+          title: '前端项目中的 CICD 实践',
+          uri: 'https://blog.csdn.net/marshmallow_/article/details/124194274'
+        },
+        {
           title: 'VS Code常用快捷键',
           uri: 'https://blog.csdn.net/sunscheung/article/details/71158609'
         },
-        { title: 'git - 朱双印博客', uri: 'https://www.zsythink.net/?s=git' },
         {
           title: 'CSS Tricks',
           uri: 'https://lhammer.cn/You-need-to-know-css/#/zh-cn/'
@@ -268,15 +273,25 @@ export const navigator = {
           uri: 'https://juejin.cn/post/6844904031513477128'
         },
         {
-          title: '前端项目中的 CICD 实践',
-          uri: 'https://blog.csdn.net/marshmallow_/article/details/124194274'
+          title: '🌝 重学 TS - 掘金',
+          uri: 'https://juejin.cn/post/7211358106629750841#heading-0'
         },
         {
-          title: '前端工程化入门',
-          uri: 'https://woai3c.github.io/introduction-to-front-end-engineering/#%E7%AE%80%E4%BB%8B'
+          title: 'type challenges - TypeScript 类型体操姿势合集',
+          uri: 'https://github.com/type-challenges/type-challenges/blob/main/README.zh-CN.md'
         },
-        { title: 'web全栈体系', uri: 'https://senior-frontend.pages.dev/' },
-        { title: '被删的前端游乐场', uri: 'http://www.godbasin.com/' }
+        {
+          title: 'TypeScript 高级教程1 – 把 TypeScript 当强类型语言使用',
+          uri: 'https://www.cnblogs.com/keatkeat/p/16817229.html'
+        },
+        {
+          title: 'TypeScript 高级教程2 – 把 TypeScript 当编程语言使用',
+          uri: 'https://www.cnblogs.com/keatkeat/p/16830664.html'
+        },
+        {
+          title: 'TypeScript 高级教程3 – TypeScript 类型体操',
+          uri: 'https://www.cnblogs.com/keatkeat/p/16905910.html'
+        }
       ]
     }
   ]

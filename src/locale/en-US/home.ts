@@ -19,12 +19,12 @@ export default {
   'home.about.col.github': 'Github',
 
   'home.about.val.school': 'Harbin Institute of Technology (Weihai)',
-  'home.about.val.direction': 'Front-end development',
+  'home.about.val.direction': 'Frontend development',
   'home.about.val.like':
     'Exercise and fitness, but only for individual sports like running',
   'home.about.val.games':
-    'Occasionally play, prefer sandbox survival: famine, minecraft, hypoxia...',
-  'home.about.val.singer': '(There is and only) river map',
+    "Occasionally play, prefer sandbox survival: Don't Starve, minecraft, Oxygen Not Included...",
+  'home.about.val.singer': '(There is and only) HeTu',
 
   'home.stack.title': 'Technology Stack',
   'home.stack.col.engineering': 'FE Engineering',

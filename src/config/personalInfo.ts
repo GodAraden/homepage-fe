@@ -30,10 +30,10 @@ export const PersonalInfo: KeyValuePair<any>[] = [
   },
   {
     key: 'email',
-    value: 'me@araden.top'
+    value: import.meta.env.VITE_APP_OWNER_EMAIL
   },
   {
     key: 'github',
-    value: 'https://github.com/GodAraden'
+    value: import.meta.env.VITE_APP_OWNER_GITHUB
   }
 ]

@@ -12,15 +12,17 @@ export const zhAddFlinkDescription = `
 
 \`\`\`json 
 {
-  "title": "GodAraden 的主页",
-  "description": "24 年毕业的前端程序猿，正在准备今年下半年的秋招",
-  "logo": "https://cravatar.cn/avatar/0011681f8b59101b59a4234213975308",
-  "link":  "https://www.araden.top/",
-  "color": "rgba(255, 125, 0, 0.2)"
+  "title": "${import.meta.env.VITE_APP_OWNER} 的主页",
+  "description": "${import.meta.env.VITE_SIGNATURE_ZH}",
+  "logo": "${import.meta.env.VITE_APP_OWNER_LOGO}",
+  "link":  "${import.meta.env.VITE_APP_OWNER_LINK}",
+  "color": "${import.meta.env.VITE_APP_OWNER_COLOR}"
 }
 \`\`\`
 
-添加友链可以发送个人网站信息至我的邮箱：\`hitwh_gyh@qq.com\`
+添加友链可以发送个人网站信息至我的邮箱：\`${
+  import.meta.env.VITE_APP_OWNER_EMAIL
+}\`
 
 ::: tip 提交信息
 
@@ -51,15 +53,17 @@ My friend link:
 
 \`\`\`json
 {
-  "title": "GodAraden's homepage",
-  "description": "The front-end programmer who graduated in 24 years is preparing for the autumn recruitment in the second half of this year",
-  "logo": "https://cravatar.cn/avatar/0011681f8b59101b59a4234213975308",
-  "link": "https://www.araden.top/",
-  "color": "rgba(255, 125, 0, 0.2)"
+  "title": "${import.meta.env.VITE_APP_OWNER}'s homepage",
+  "description": "${import.meta.env.VITE_SIGNATURE_EN}",
+  "logo":  "${import.meta.env.VITE_APP_OWNER_LOGO}",
+  "link": "${import.meta.env.VITE_APP_OWNER_LINK}",
+  "color": "${import.meta.env.VITE_APP_OWNER_COLOR}"
 }
 \`\`\`
 
-Add a friend link to send personal website information to my email: \`hitwh_gyh@qq.com\`
+Add a friend link to send personal website information to my email: \`${
+  import.meta.env.VITE_APP_OWNER_EMAIL
+}\`
 
 ::: tip Commit message
 
