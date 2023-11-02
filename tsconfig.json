@@ -18,6 +18,13 @@
     "noEmit": true,
     "jsx": "preserve"
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue",
+    "types/vite-env.d.ts",
+    "types/global.d.ts",
+    "config/**/*.ts"
+  ],
   "exclude": ["node_modules", "public"]
 }

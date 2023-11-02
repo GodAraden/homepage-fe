@@ -27,3 +27,13 @@ QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'，的主页个人博客编
 1. 在书写 HTML 类的时候，总体遵循：全局类 - 组件类 - tailwindcss 类 - tailwindcss 响应式类
 
 2. 每种类的书写顺序同 CSS，即布局宽高在前、文本背景在后
+
+# TheCatAPI's KEY
+
+本项目中博客的封面图是通过 [The Cat API](https://thecatapi.com/) 获取到的，发送请求时需在请求头中携带密钥
+
+本项目的密钥存储在项目根目录下的 `.env.local` 文件中（未加入 Git 版本管理），如有 clone 此项目请自行申请 Key 并按以下格式存储：
+
+```bash
+VITE_X_API_KEY=xxxxxxxxxxx
+```

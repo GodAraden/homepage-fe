@@ -1,24 +1,23 @@
 import axios, { AxiosResponse, AxiosError } from 'axios'
 import { Message } from '@arco-design/web-vue'
 
-const BaseUrl = import.meta.env.VITE_BASE_URL
-
 axios.defaults.withCredentials = true
 
-if (import.meta.env.PROD) {
-  axios.defaults.baseURL = BaseUrl
+const envs = import.meta.env
+const proxies: ProxyConfig[] = []
+for (const key in envs) {
+  if (key.startsWith('VITE_PROXY')) {
+    proxies.push(JSON.parse(envs[key]))
+  }
 }
 
 // 拦截 request，在生产环境下替换请求的前缀
 axios.interceptors.request.use((config) => {
   if (import.meta.env.PROD) {
-    const proxy = import.meta.env.VITE_APP_PROXY.split('~').map((value) => {
-      return value.split(',')
-    })
-    for (const [regStr, baseUrl, target] of proxy) {
-      const reg = new RegExp(regStr)
+    for (const { suffix, domain, path } of proxies) {
+      const reg = new RegExp(suffix)
       if (reg.test(config.url)) {
-        config.url = baseUrl + config.url.replace(reg, target)
+        config.url = domain + config.url.replace(reg, path)
       }
     }
   }
