@@ -95,6 +95,8 @@ import {
 import useCategory from '@/hooks/useCategory'
 import { Message } from '@arco-design/web-vue'
 
+const backend = JSON.parse(import.meta.env.VITE_PROXY_BACKEND) as ProxyConfig
+
 const blog = ref({} as CreateBlogParams)
 const route = useRoute()
 const router = useRouter()
@@ -108,7 +110,7 @@ const isUpdate = !!route.query.id
 const onUploadImage = async (_: any, insertImage: any, files: File[]) => {
   const res = await uploadImage({ image: files[0] })
   insertImage({
-    url: import.meta.env.VITE_BASE_URL + res.url,
+    url: backend.domain + res.url,
     desc: res.filename,
     width: 'auto',
     height: 'auto'

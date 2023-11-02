@@ -11,7 +11,7 @@ const createHistory = import.meta.env.PROD
   : createWebHashHistory
 
 const router = createRouter({
-  history: createHistory(import.meta.env.BASE_URL),
+  history: createHistory(),
   routes: [
     ...appRoutes,
     ...adminRoutes,
