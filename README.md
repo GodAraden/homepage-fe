@@ -15,7 +15,7 @@
 目前的文字有：
 
 ```
-QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'，的主页个人博客编程导航欢迎来访寒舍简陋不足恭迎还望海涵关于我技术栈友情链接最新标签管理写
+QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'，的主页个人博客编程导航实用工具欢迎来访寒舍简陋不足恭迎还望海涵关于我技术栈友情链接最新标签管理写
 ```
 
 # 语法命名规范

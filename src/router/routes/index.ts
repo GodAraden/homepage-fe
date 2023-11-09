@@ -5,7 +5,7 @@ const modules = import.meta.glob<{ default: AppRouteRecordRaw }>(
   { eager: true }
 )
 
-const allRoutes = []
+const allRoutes: AppRouteRecordRaw[] = []
 for (const module of Object.values(modules)) {
   allRoutes.push(module.default)
 }

@@ -3,6 +3,7 @@ export default {
   'header.navbar.HomePage': '主页',
   'header.navbar.Blog': '个人博客',
   'header.navbar.Nav': '编程导航',
+  'header.navbar.Utility': '实用工具',
   'header.navbar.Write': '写博客',
   'header.navbar.Manage': '博客管理',
 

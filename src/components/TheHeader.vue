@@ -21,20 +21,22 @@
       </a-typography-title>
     </a>
     <!-- 导航栏 -->
-    <div class="flex justify-center flex-1 gap-4 text-lg font-bold">
+    <div
+      class="flex justify-center flex-1 gap-4 text-lg font-bold max-sm:gap-1"
+    >
       <router-link
         v-for="item in appRoutes"
         :key="item.path"
         :to="item.path"
         :class="
-          'g-text-button relative py-1 px-3 ' +
+          'g-text-button navbar-route relative py-1 px-3 rounded-full ' +
           ($route.meta.routerViewKey === item.meta.routerViewKey
             ? 'navbar-route-active'
             : '')
         "
       >
         <span :class="'iconfont ' + item.meta.icon + ' max-sm:text-xl'"></span>
-        <span class="max-sm:!hidden ml-1">
+        <span class="max-sm:!hidden ml-1 hidden">
           {{ $t(`header.navbar.${item.name}`) }}
         </span>
       </router-link>
@@ -66,7 +68,7 @@
         />
       </li>
       <li
-        class="g-text-button navbar-btn ml-1 gap-0.5"
+        class="g-text-button navbar-btn ml-1 gap-0.5 max-sm:hidden"
         @click="visible = !visible"
       >
         <icon-user :size="ICON_SIZE" />
@@ -174,9 +176,13 @@ const onUserLogin = () => {
   height: @navbar-btn-size;
 }
 
+.navbar-route:hover > .hidden {
+  @apply inline-block;
+}
+
 .navbar-route-active::before {
   @apply block absolute -left-1;
-  content: '> ';
+  content: '>';
   animation: flicker 1s steps(1) infinite;
 }
 

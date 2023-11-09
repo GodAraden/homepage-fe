@@ -2,7 +2,8 @@ export default {
   'header.title': `${import.meta.env.VITE_APP_OWNER}'s HomePage`,
   'header.navbar.HomePage': 'Home',
   'header.navbar.Blog': 'Blog',
-  'header.navbar.Nav': 'Coding Navi',
+  'header.navbar.Nav': 'Programming Navi',
+  'header.navbar.Utility': 'Utilities',
   'header.navbar.Write': 'Write a blog',
   'header.navbar.Manage': 'Blog Management',
 
