@@ -9,7 +9,25 @@ const UTILITY: AppRouteRecordRaw = {
     icon: 'icon-gongju',
     order: 3,
     routerViewKey: 'Utility'
-  }
+  },
+  children: [
+    {
+      path: '',
+      name: 'Contents',
+      component: () => import('@/view/utility/components/Contents.vue'),
+      meta: {
+        routerViewKey: 'Utility'
+      }
+    },
+    {
+      path: 'RMB-Conversion',
+      name: 'RMB-Conversion',
+      component: () => import('@/view/utility/pages/RMBConversion.vue'),
+      meta: {
+        routerViewKey: 'Utility'
+      }
+    }
+  ]
 }
 
 export default UTILITY

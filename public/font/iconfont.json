@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "34858211",
+      "name": "交易额",
+      "font_class": "xingzhuangjiehe",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
       "icon_id": "2571131",
       "name": "工具",
       "font_class": "gongju",
