@@ -1,6 +1,12 @@
 <template>
   <main id="utility" class="h-screen !pt-16 !pb-4">
-    <RouterView></RouterView>
+    <RouterView v-slot="{ Component }">
+      <transition name="slide-fade" mode="out-in" appear>
+        <KeepAlive>
+          <component :is="Component" />
+        </KeepAlive>
+      </transition>
+    </RouterView>
   </main>
 </template>
 

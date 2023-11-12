@@ -5,7 +5,11 @@
     </a-button>
     <a-divider direction="vertical" />
     <a-typography-title :heading="6" class="!mb-0 !font-black">
-      {{ $t(`utility.title.${String($route.name)}`) }}
+      {{
+        $route.path === '/utility'
+          ? ''
+          : $t(`utility.title.${String($route.name)}`)
+      }}
     </a-typography-title>
   </div>
   <a-divider />

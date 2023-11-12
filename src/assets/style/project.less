@@ -140,6 +140,20 @@ body {
   filter: blur(1rem);
 }
 
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.3s linear;
+}
+
+.slide-fade-enter-from {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
 /* 各页面的背景图，统一管理，区分主题 */
 body[arco-theme=''] {
   #home {

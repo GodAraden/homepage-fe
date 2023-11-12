@@ -24,7 +24,8 @@ const UTILITY: AppRouteRecordRaw = {
       name: 'RMB-Conversion',
       component: () => import('@/view/utility/pages/RMBConversion.vue'),
       meta: {
-        routerViewKey: 'Utility'
+        routerViewKey: 'Utility',
+        icon: 'icon-xingzhuangjiehe'
       }
     }
   ]

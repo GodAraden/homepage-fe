@@ -1,15 +1,22 @@
 <template>
-  <div class="utility-contents-row sm:grid-cols-4">
+  <div class="grid gap-4 m-4 sm:grid-cols-4">
+    <!-- 动态类名会被 tree-shaking 掉，所以添加一个 hidden 元素帮忙引入一下 -->
+    <div
+      class="hidden sm:col-span-1 sm:col-span-2 sm:col-span-3 sm:col-span-4"
+    ></div>
+
     <RouterLink
-      to="/utility/RMB-Conversion"
-      class="g-ref-bgc utility-contents-card sm:col-span-3"
+      v-for="(item, index) in utilityRoutes"
+      :key="item.name"
+      :to="`/utility/${item.path}`"
+      :class="`g-ref-bgc flex flex-col justify-center items-center gap-3 p-12 rounded-2xl text-lg italic font-black select-none sm:col-span-${itemSpan[index]}`"
     >
-      <span class="iconfont icon-xingzhuangjiehe"></span>
-      {{ $t(`utility.title.RMB-Conversion`) }}
+      <span :class="`iconfont ${item.meta.icon} !text-4xl`"></span>
+      {{ $t(`utility.title.${item.name}`) }}
     </RouterLink>
     <RouterLink
       to="/utility"
-      class="g-ref-bgc utility-contents-card sm:col-span-1"
+      class="g-ref-bgc flex flex-col justify-center items-center gap-3 p-12 rounded-2xl text-lg italic font-black select-none"
     >
       正在施工中...<br />
       Under construction...
@@ -17,17 +24,26 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { utilityRoutes } from '@/router/routes'
 
-<style lang="less">
-.utility-contents-row {
-  @apply grid gap-4 m-4;
-}
-
-.utility-contents-card {
-  @apply flex flex-col justify-center items-center gap-3 p-12 rounded-2xl text-lg italic font-black select-none;
-  .iconfont {
-    @apply text-4xl;
+const generateItemSpan = (col = 4, length = utilityRoutes.length) => {
+  const result: number[] = []
+  for (let i = 0; i < length; ) {
+    let restCol = col
+    for (; restCol > 0 && i < length; i++) {
+      const currCol = Math.floor(Math.random() * col) + 1
+      if (restCol < currCol) {
+        result.push(restCol)
+        restCol = 0
+      } else {
+        result.push(currCol)
+        restCol -= currCol
+      }
+    }
   }
+  return result
 }
-</style>
+
+const itemSpan = generateItemSpan()
+</script>
