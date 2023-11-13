@@ -12,7 +12,7 @@
       :class="`g-ref-bgc flex flex-col justify-center items-center gap-3 p-12 rounded-2xl text-lg italic font-black select-none sm:col-span-${itemSpan[index]}`"
     >
       <span :class="`iconfont ${item.meta.icon} !text-4xl`"></span>
-      {{ $t(`utility.title.${item.name}`) }}
+      <span class="text-center"> {{ $t(`utility.title.${item.name}`) }} </span>
     </RouterLink>
     <RouterLink
       to="/utility"

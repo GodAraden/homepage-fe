@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "909425",
+      "name": "i-颜色",
+      "font_class": "yanse",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "12029631",
+      "name": "hash",
+      "font_class": "hash",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
       "icon_id": "34858211",
       "name": "交易额",
       "font_class": "xingzhuangjiehe",

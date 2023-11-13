@@ -1,8 +1,10 @@
 export default {
-  'utility.title.RMB-Conversion': '人民币大小写转换',
+  'utility.title.RMBConversion': '人民币大小写转换',
+  'utility.title.ColorConversion': '颜色值转换',
+  'utility.title.HashCalculation': '哈希值计算',
 
-  'utility.RMB-Conversion.lowercase': '小写',
-  'utility.RMB-Conversion.uppercase': '大写',
+  'utility.RMBConversion.lowercase': '小写',
+  'utility.RMBConversion.uppercase': '大写',
 
   'utility.common.input': '输入',
   'utility.common.result': '结果',

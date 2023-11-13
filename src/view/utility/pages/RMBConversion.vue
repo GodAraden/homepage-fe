@@ -2,8 +2,8 @@
   <section class="utility-item-card">
     <page-header />
     <!-- 输入栏 -->
-    <div class="form-row">
-      <div class="form-col-title">
+    <div class="utility-form-row">
+      <div class="utility-form-title-col">
         {{ $t('utility.common.input') }}
         <a-switch
           v-model="mode"
@@ -14,10 +14,10 @@
           @change=";[input, result] = [result, input]"
         >
           <template #checked>
-            {{ $t('utility.RMB-Conversion.lowercase') }}
+            {{ $t('utility.RMBConversion.lowercase') }}
           </template>
           <template #unchecked>
-            {{ $t('utility.RMB-Conversion.uppercase') }}
+            {{ $t('utility.RMBConversion.uppercase') }}
           </template>
         </a-switch>
       </div>
@@ -30,8 +30,8 @@
       />
     </div>
     <!-- 结果展示 -->
-    <div class="form-row">
-      <div class="form-col-title">
+    <div class="utility-form-row">
+      <div class="utility-form-title-col">
         {{ $t('utility.common.result') }}
         <a-switch
           disabled
@@ -42,10 +42,10 @@
           unchecked-value="upperToLower"
         >
           <template #checked>
-            {{ $t('utility.RMB-Conversion.uppercase') }}
+            {{ $t('utility.RMBConversion.uppercase') }}
           </template>
           <template #unchecked>
-            {{ $t('utility.RMB-Conversion.lowercase') }}
+            {{ $t('utility.RMBConversion.lowercase') }}
           </template>
         </a-switch>
       </div>
@@ -136,13 +136,3 @@ const onInputChange = (str: string) => {
   }
 }
 </script>
-
-<style lang="less" scoped>
-.form-row {
-  @apply grid gap-4 mb-4 sm:grid-cols-8;
-}
-
-.form-col-title {
-  @apply flex items-center justify-between gap-1 text-base select-none;
-}
-</style>

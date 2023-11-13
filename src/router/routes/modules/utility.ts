@@ -20,12 +20,30 @@ const UTILITY: AppRouteRecordRaw = {
       }
     },
     {
-      path: 'RMB-Conversion',
-      name: 'RMB-Conversion',
+      path: 'RMB-conversion',
+      name: 'RMBConversion',
       component: () => import('@/view/utility/pages/RMBConversion.vue'),
       meta: {
         routerViewKey: 'Utility',
         icon: 'icon-xingzhuangjiehe'
+      }
+    },
+    {
+      path: 'hash-calculation',
+      name: 'HashCalculation',
+      component: () => import('@/view/utility/pages/HashCalculation.vue'),
+      meta: {
+        routerViewKey: 'Utility',
+        icon: 'icon-hash'
+      }
+    },
+    {
+      path: 'color-conversion',
+      name: 'ColorConversion',
+      component: () => import('@/view/utility/pages/ColorConversion.vue'),
+      meta: {
+        routerViewKey: 'Utility',
+        icon: 'icon-yanse'
       }
     }
   ]
