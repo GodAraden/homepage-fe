@@ -10,8 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount } from 'vue'
-import { ref } from 'vue'
+import { ref, onBeforeUnmount } from 'vue'
 
 const begin = import.meta.env.VITE_APP_START
 
