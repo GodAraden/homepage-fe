@@ -6,6 +6,9 @@ export default {
   'utility.RMBConversion.lowercase': 'lowercase',
   'utility.RMBConversion.uppercase': 'uppercase',
 
+  'utility.ColorConversion.selectColor': 'color',
+  'utility.ColorConversion.selectTransparency': 'transparency',
+
   'utility.common.input': 'input',
   'utility.common.result': 'result',
   'utility.common.copy': 'copy'

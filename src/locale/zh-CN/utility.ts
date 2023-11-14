@@ -6,6 +6,9 @@ export default {
   'utility.RMBConversion.lowercase': '小写',
   'utility.RMBConversion.uppercase': '大写',
 
+  'utility.ColorConversion.selectColor': '选择颜色',
+  'utility.ColorConversion.selectTransparency': '输入透明度',
+
   'utility.common.input': '输入',
   'utility.common.result': '结果',
   'utility.common.copy': '复制'
