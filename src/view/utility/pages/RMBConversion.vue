@@ -50,7 +50,9 @@
         </a-switch>
       </div>
       <a-typography-paragraph class="!mb-0 sm:col-span-7" copyable>
-        {{ result }}
+        {{
+          result === errorTip ? $t('utility.RMBConversion.errorTip') : result
+        }}
       </a-typography-paragraph>
     </div>
   </section>
@@ -68,7 +70,7 @@ const dictionary = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌
 const integerUnit = ['元', '拾', '佰', '仟', '万', '拾', '佰', '仟', '亿']
 const decimalUnit = ['角', '分', '厘']
 
-const errorTip = '转换出错（Conversion Error）'
+const errorTip = 'ERROR'
 const lowercaseReg = /^\d+(\.\d+)?$/
 
 const lowerToUpper = (str: string) => {

@@ -5,9 +5,11 @@ export default {
 
   'utility.RMBConversion.lowercase': 'lowercase',
   'utility.RMBConversion.uppercase': 'uppercase',
+  'utility.RMBConversion.errorTip': 'Conversion Error',
 
   'utility.ColorConversion.selectColor': 'color',
   'utility.ColorConversion.selectTransparency': 'transparency',
+  'utility.ColorConversion.errorTip': 'Incorrect color format',
 
   'utility.common.input': 'input',
   'utility.common.result': 'result',

@@ -42,8 +42,10 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import PageHeader from '../components/PageHeader.vue'
 
+const { t } = useI18n()
 const hexColorReg = /^#[\da-fA-F]{6}$/
 
 const color = ref<string>('#000000')
@@ -51,7 +53,7 @@ const transparency = ref<number>(1)
 
 const wrap = (str: string) => {
   if (hexColorReg.test(color.value)) return str
-  else return '颜色格式有误（Incorrect color format）'
+  else return t('utility.ColorConversion.errorTip')
 }
 
 const rgbTuple = computed(() => {
