@@ -68,7 +68,7 @@ const mode = ref<'lowerToUpper' | 'upperToLower'>('lowerToUpper')
 
 const dictionary = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']
 const integerUnit = ['元', '拾', '佰', '仟', '万', '拾', '佰', '仟', '亿']
-const decimalUnit = ['角', '分', '厘']
+const decimalUnit = ['角', '分', '毫', '厘']
 
 const errorTip = 'ERROR'
 const lowercaseReg = /^\d+(\.\d+)?$/
