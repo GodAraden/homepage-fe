@@ -1,66 +1,60 @@
 <template>
-  <section class="utility-item-card">
-    <page-header />
-    <!-- 输入栏 -->
-    <div class="utility-form-row">
-      <div class="utility-form-title-col">
-        {{ $t('utility.common.input') }}
-        <a-switch
-          v-model="mode"
-          checked-color="#ffb300"
-          unchecked-color="#fd9b13"
-          checked-value="lowerToUpper"
-          unchecked-value="upperToLower"
-          @change=";[input, result] = [result, input]"
-        >
-          <template #checked>
-            {{ $t('utility.RMBConversion.lowercase') }}
-          </template>
-          <template #unchecked>
-            {{ $t('utility.RMBConversion.uppercase') }}
-          </template>
-        </a-switch>
-      </div>
-      <a-textarea
-        allow-clear
-        class="sm:col-span-7"
-        v-model:model-value="input"
-        :auto-size="{ minRows: 1, maxRows: 5 }"
-        @input="onInputChange"
-      />
+  <!-- 输入栏 -->
+  <div class="utility-form-row">
+    <div class="utility-form-title-col">
+      {{ $t('utility.common.input') }}
+      <a-switch
+        v-model="mode"
+        checked-color="#ffb300"
+        unchecked-color="#fd9b13"
+        checked-value="lowerToUpper"
+        unchecked-value="upperToLower"
+        @change=";[input, result] = [result, input]"
+      >
+        <template #checked>
+          {{ $t('utility.RMBConversion.lowercase') }}
+        </template>
+        <template #unchecked>
+          {{ $t('utility.RMBConversion.uppercase') }}
+        </template>
+      </a-switch>
     </div>
-    <!-- 结果展示 -->
-    <div class="utility-form-row">
-      <div class="utility-form-title-col">
-        {{ $t('utility.common.result') }}
-        <a-switch
-          disabled
-          v-model="mode"
-          checked-color="#ffe5a7"
-          unchecked-color="#ffc36f"
-          checked-value="lowerToUpper"
-          unchecked-value="upperToLower"
-        >
-          <template #checked>
-            {{ $t('utility.RMBConversion.uppercase') }}
-          </template>
-          <template #unchecked>
-            {{ $t('utility.RMBConversion.lowercase') }}
-          </template>
-        </a-switch>
-      </div>
-      <a-typography-paragraph class="!mb-0 sm:col-span-7" copyable>
-        {{
-          result === errorTip ? $t('utility.RMBConversion.errorTip') : result
-        }}
-      </a-typography-paragraph>
+    <a-textarea
+      allow-clear
+      class="sm:col-span-7"
+      v-model:model-value="input"
+      :auto-size="{ minRows: 1, maxRows: 5 }"
+      @input="onInputChange"
+    />
+  </div>
+  <!-- 结果展示 -->
+  <div class="utility-form-row">
+    <div class="utility-form-title-col">
+      {{ $t('utility.common.result') }}
+      <a-switch
+        disabled
+        v-model="mode"
+        checked-color="#ffe5a7"
+        unchecked-color="#ffc36f"
+        checked-value="lowerToUpper"
+        unchecked-value="upperToLower"
+      >
+        <template #checked>
+          {{ $t('utility.RMBConversion.uppercase') }}
+        </template>
+        <template #unchecked>
+          {{ $t('utility.RMBConversion.lowercase') }}
+        </template>
+      </a-switch>
     </div>
-  </section>
+    <a-typography-paragraph class="!mb-0 sm:col-span-7" copyable>
+      {{ result === errorTip ? $t('utility.RMBConversion.errorTip') : result }}
+    </a-typography-paragraph>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import PageHeader from '../components/PageHeader.vue'
 
 const input = ref<string>('')
 const result = ref<string>('')

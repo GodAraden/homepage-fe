@@ -14,7 +14,7 @@ const UTILITY: AppRouteRecordRaw = {
     {
       path: '',
       name: 'Contents',
-      component: () => import('@/view/utility/components/Contents.vue'),
+      component: () => import('@/view/utility/pages/Contents.vue'),
       meta: {
         routerViewKey: 'Utility'
       }

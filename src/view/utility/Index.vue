@@ -3,7 +3,24 @@
     <RouterView v-slot="{ Component }">
       <transition name="slide-fade" mode="out-in" appear>
         <KeepAlive>
-          <component :is="Component" />
+          <component v-if="$route.path === '/utility'" :is="Component" />
+          <section v-else class="utility-item-card">
+            <div class="flex items-center">
+              <a-button
+                type="dashed"
+                shape="circle"
+                @click="$router.push('/utility')"
+              >
+                <icon-arrow-left />
+              </a-button>
+              <a-divider direction="vertical" />
+              <a-typography-title :heading="6" class="!mb-0 !font-black">
+                {{ $t(`utility.title.${String($route.name)}`) }}
+              </a-typography-title>
+            </div>
+            <a-divider />
+            <component :is="Component" />
+          </section>
         </KeepAlive>
       </transition>
     </RouterView>

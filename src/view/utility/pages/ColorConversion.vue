@@ -1,49 +1,44 @@
 <template>
-  <section class="utility-item-card">
-    <page-header />
+  <div class="utility-form-row">
+    <div class="utility-form-title-col">
+      {{ $t('utility.ColorConversion.selectColor') }}
+    </div>
+    <a-input :error="!hexColorReg.test(color)" v-model="color" />
+    <input type="color" class="w-full" v-model="color" />
+  </div>
 
-    <div class="utility-form-row">
-      <div class="utility-form-title-col">
-        {{ $t('utility.ColorConversion.selectColor') }}
-      </div>
-      <a-input :error="!hexColorReg.test(color)" v-model="color" />
-      <input type="color" class="w-full" v-model="color" />
+  <div class="utility-form-row">
+    <div class="utility-form-title-col">
+      {{ $t('utility.ColorConversion.selectTransparency') }}
     </div>
-
-    <div class="utility-form-row">
-      <div class="utility-form-title-col">
-        {{ $t('utility.ColorConversion.selectTransparency') }}
-      </div>
-      <a-input-number
-        :min="0"
-        :max="1"
-        :precision="2"
-        v-model="transparency"
-        model-event="input"
-        hide-button
-      />
-      <a-slider :min="0" :max="1" :step="0.01" v-model="transparency" />
+    <a-input-number
+      :min="0"
+      :max="1"
+      :precision="2"
+      v-model="transparency"
+      model-event="input"
+      hide-button
+    />
+    <a-slider :min="0" :max="1" :step="0.01" v-model="transparency" />
+  </div>
+  <!-- 结果展示 -->
+  <div v-for="item in formats" :key="item.type" class="utility-form-row">
+    <div class="utility-form-title-col">
+      {{ item.type }}
+      <div class="w-8 h-4" :style="{ backgroundColor: item.ref.value }"></div>
     </div>
-    <!-- 结果展示 -->
-    <div v-for="item in formats" :key="item.type" class="utility-form-row">
-      <div class="utility-form-title-col">
-        {{ item.type }}
-        <div class="w-8 h-4" :style="{ backgroundColor: item.ref.value }"></div>
-      </div>
-      <a-typography-paragraph
-        class="!mb-0 w-full break-all sm:col-span-7"
-        copyable
-      >
-        {{ item.ref.value }}
-      </a-typography-paragraph>
-    </div>
-  </section>
+    <a-typography-paragraph
+      class="!mb-0 w-full break-all sm:col-span-7"
+      copyable
+    >
+      {{ item.ref.value }}
+    </a-typography-paragraph>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import PageHeader from '../components/PageHeader.vue'
 
 const { t } = useI18n()
 const hexColorReg = /^#[\da-fA-F]{6}$/
