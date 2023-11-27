@@ -25,7 +25,8 @@ const UTILITY: AppRouteRecordRaw = {
       component: () => import('@/view/utility/pages/RMBConversion.vue'),
       meta: {
         routerViewKey: 'Utility',
-        icon: 'icon-xingzhuangjiehe'
+        icon: 'icon-xingzhuangjiehe',
+        size: 2
       }
     },
     {
@@ -34,7 +35,8 @@ const UTILITY: AppRouteRecordRaw = {
       component: () => import('@/view/utility/pages/HashCalculation.vue'),
       meta: {
         routerViewKey: 'Utility',
-        icon: 'icon-hash'
+        icon: 'icon-hash',
+        size: 1
       }
     },
     {
@@ -43,7 +45,8 @@ const UTILITY: AppRouteRecordRaw = {
       component: () => import('@/view/utility/pages/ColorConversion.vue'),
       meta: {
         routerViewKey: 'Utility',
-        icon: 'icon-yanse'
+        icon: 'icon-yanse',
+        size: 1
       }
     }
   ]

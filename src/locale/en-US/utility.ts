@@ -1,7 +1,7 @@
 export default {
-  'utility.title.RMBConversion': "Conversion of RMB's uppercase and lowercase",
-  'utility.title.ColorConversion': 'Color value conversion',
-  'utility.title.HashCalculation': 'Hash value calculation',
+  'utility.title.RMBConversion': "Converter of RMB's uppercase and lowercase",
+  'utility.title.ColorConversion': 'Color converter',
+  'utility.title.HashCalculation': 'Hash calculator',
 
   'utility.RMBConversion.lowercase': 'lowercase',
   'utility.RMBConversion.uppercase': 'uppercase',

@@ -2,6 +2,7 @@ import { Component } from 'vue'
 import { NavigationGuard, RouteMeta } from 'vue-router'
 
 export interface CustomRouteMeta extends RouteMeta {
+  size?: number
   order?: number
   icon?: string
   requiresAuth?: boolean

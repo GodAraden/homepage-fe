@@ -6,13 +6,16 @@
     ></div>
 
     <RouterLink
-      v-for="(item, index) in utilityRoutes"
+      v-for="item in utilityRoutes"
       :key="item.name"
       :to="`/utility/${item.path}`"
-      :class="`g-ref-bgc flex flex-col justify-center items-center gap-3 p-12 rounded-2xl text-lg italic font-black select-none sm:col-span-${itemSpan[index]}`"
+      :class="`g-ref-bgc flex flex-col justify-center items-center gap-3 p-12 rounded-2xl text-lg italic font-black select-none sm:col-span-${item.meta.size}`"
+      :title="$t(`utility.title.${item.name}`)"
     >
       <span :class="`iconfont ${item.meta.icon} !text-4xl`"></span>
-      <span class="text-center"> {{ $t(`utility.title.${item.name}`) }} </span>
+      <p class="w-full text-center truncate">
+        {{ $t(`utility.title.${item.name}`) }}
+      </p>
     </RouterLink>
     <RouterLink
       to="/utility"
@@ -26,24 +29,4 @@
 
 <script setup lang="ts">
 import { utilityRoutes } from '@/router/routes'
-
-const generateItemSpan = (col = 4, length = utilityRoutes.length) => {
-  const result: number[] = []
-  for (let i = 0; i < length; ) {
-    let restCol = col
-    for (; restCol > 0 && i < length; i++) {
-      const currCol = Math.floor(Math.random() * col) + 1
-      if (restCol < currCol) {
-        result.push(restCol)
-        restCol = 0
-      } else {
-        result.push(currCol)
-        restCol -= currCol
-      }
-    }
-  }
-  return result
-}
-
-const itemSpan = generateItemSpan()
 </script>
