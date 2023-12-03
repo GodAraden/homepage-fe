@@ -20,6 +20,16 @@ const UTILITY: AppRouteRecordRaw = {
       }
     },
     {
+      path: 'HITwh-eval',
+      name: 'HITwhEval',
+      component: () => import('@/view/utility/pages/HITwhEval.vue'),
+      meta: {
+        routerViewKey: 'Utility',
+        icon: 'icon-pingjiao',
+        size: 3
+      }
+    },
+    {
       path: 'RMB-conversion',
       name: 'RMBConversion',
       component: () => import('@/view/utility/pages/RMBConversion.vue'),
