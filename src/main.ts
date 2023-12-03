@@ -15,6 +15,7 @@ import '~/style/project.less'
 import '~/style/global.less'
 import '~/style/md-editor.less'
 import './api/interceptor'
+import './plugin/dayjs'
 
 const app = createApp(App)
 

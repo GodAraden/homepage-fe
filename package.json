@@ -24,6 +24,7 @@
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",
     "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.10",
     "echarts": "^5.4.3",
     "highlight.js": "^11.8.0",
     "less": "^4.1.3",

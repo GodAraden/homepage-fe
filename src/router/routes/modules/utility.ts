@@ -30,6 +30,16 @@ const UTILITY: AppRouteRecordRaw = {
       }
     },
     {
+      path: 'date-transformer',
+      name: 'DateTransformer',
+      component: () => import('@/view/utility/pages/DateTransformer.vue'),
+      meta: {
+        routerViewKey: 'Utility',
+        icon: 'icon-riqi',
+        size: 1
+      }
+    },
+    {
       path: 'RMB-conversion',
       name: 'RMBConversion',
       component: () => import('@/view/utility/pages/RMBConversion.vue'),
