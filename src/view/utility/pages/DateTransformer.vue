@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import * as dayjs from 'dayjs'
+import dayjs from 'dayjs'
 
 const DateFormatter = 'YYYY-MM-DD'
 
