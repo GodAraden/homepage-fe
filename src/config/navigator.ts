@@ -273,7 +273,7 @@ export const navigator = {
           uri: 'https://juejin.cn/post/6844904031513477128'
         },
         {
-          title: '🌝 重学 TS - 掘金',
+          title: '重学 TS - 掘金',
           uri: 'https://juejin.cn/post/7211358106629750841#heading-0'
         },
         {
