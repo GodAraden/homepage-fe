@@ -31,23 +31,19 @@ axios.interceptors.response.use(
   },
   async (error: AxiosError<any>) => {
     // 第三方图片 API 请求超时的情况
-    if (error?.config?.url.includes('/images/search')) {
-      throw 'Failed to fetch images'
+    if (error.config?.url.includes('/images/search')) {
+      throw '[Resource Load Failed]: The Cat API is not available'
     }
 
-    if (!error.response) return {}
+    const { data, status } = error.response
+    const { message = 'Request Failed: Unknown Server Error' } = data
 
-    const { statusCode = error.response.status, message = error.message } =
-      error.response.data
+    Message.error(message)
 
-    if (statusCode === 500) {
-      Message.error('服务端异常，请联系管理员')
-      return {}
+    if (status === 500) {
+      throw '[Server Side Error]: Unknown server error'
     }
-
-    Message.error('Error: ' + statusCode + ' ' + message)
-    // `${statusCode}: ${i18n.global.t('tips.http.error.' + message)}`
-    return error.response.data
+    return data
   }
 )
 
