@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 const text = `## 代码本体
+
 \`\`\`javascript
 function genRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -19,6 +20,7 @@ function classAndBook() {
   const iDocument = document.querySelector('#iframename').contentDocument
   const queryform = iDocument.querySelector('#queryform')
   const allSelect = queryform.querySelectorAll('select')
+
   for (const select of allSelect) {
     switch (select.children[1].innerHTML) {
       case '很重要':
@@ -34,9 +36,11 @@ function classAndBook() {
         select.value = select.children[genRandomInteger(1, 2)].value
         break
       default:
-        alert('难道评教改版了？自己填吧😂')
+        return -1
     }
   }
+
+  return 0
 }
 
 function teachAndStudy() {
@@ -46,15 +50,17 @@ function teachAndStudy() {
   const allInput = queryform.querySelectorAll('textarea')
   const advantages = ['教的总体感觉挺好', '讲课生动形象', '认真负责', '老师学识渊博', '很注重方法论的讲解', '授人以渔', '幽默风趣']
   const disadvantage = '无'
+
   for (const select of allSelect) {
     switch (select.children[1].innerHTML) {
       case '5':
         select.value = select.children[genRandomInteger(1, 2)].value
         break
       default:
-        alert('难道评教改版了？自己填吧😂')
+        return -1
     }
   }
+
   for (const input of allInput) {
     switch (input.name.slice(-4)) {
       case 'yxzc':
@@ -64,9 +70,11 @@ function teachAndStudy() {
         input.value = disadvantage
         break
       default:
-        alert('难道评教改版了？自己填吧😂')
+        return -1
     }
   }
+
+  return 0
 }
 
 function evalTeacher() {
@@ -101,22 +109,39 @@ function evalTeacher() {
   for (let i = 0; i < inputGroup.length; i++) {
     inputGroup[i][select[i]].click()
   }
+
+  return 0
 }
 
-function addBtns(strs = ['评课评教材', '评价教与学状态', '综合评价教师'], funcs = [classAndBook, teachAndStudy, evalTeacher]) {
-  for (let i = 0; i < strs.length; i++) {
+function addBtns() {
+  const entries = [
+    [0, '评课评教材', classAndBook],
+    [1, '评价教与学状态', teachAndStudy],
+    [2, '综合评价教师', evalTeacher]
+  ]
+
+  for (const [index, text, func] of entries) {
     const btn = document.createElement('button')
-    btn.innerHTML = strs[i]
+    btn.innerHTML = text
     btn.style.position = 'fixed'
     btn.style.width = '120px'
     btn.style.top = '24px'
-    btn.style.left = \`\$\{i * 140 + 24\}px\`
-    btn.addEventListener('click', funcs[i])
+    btn.style.left = \`\$\{index * 140 + 24\}px\`
+    btn.addEventListener('click', () => {
+      try {
+        const result = func()
+        if (result === -1) {
+          alert('评教失败，可能系统改版，烦请手动填写🙏')
+        }
+      } catch (e) {
+        alert('啊哦，出错了，请参照文档检查是否在正确的页面点击按钮🙌')
+      }
+    })
     document.body.appendChild(btn)
   }
 }
 
-addBtns(['评课评教材', '评价教与学状态', '综合评价教师'])
+addBtns()
 \`\`\`
 
 ## 食用方法
@@ -126,19 +151,5 @@ addBtns(['评课评教材', '评价教与学状态', '综合评价教师'])
     - [vpn 访问：http://172-26-64-16.ivpn.hitwh.edu.cn:8118/loginCAS](http://172-26-64-16.ivpn.hitwh.edu.cn:8118/loginCAS)
 1. 主题风格**使用原风格**（使用其他主体可能因为页面结构不同导致脚本失效）
 2. F12 打开浏览器控制台，点击 Tab 栏中的控制台，粘贴代码
-3. 可以看到界面的左上角多了三个按钮，**进入按钮对应的评教界面**，点击按钮即可评教
-
-## 报错自查
-
-这段脚本其实逻辑很简单，无非是拿到表单元素，模拟选中或填写。故报错翻来覆去也就这么两种：
-
-### 1. 无法读取到 null 的 querySelectorAll 属性？
-
-解决方案：请检查是不是在首页直接点击的评教按钮，一定要**在按钮对应的评教表单页面**点击啊
-
-### 2. 无法读取到 null 的 contentDocument 属性？
-
-解决方案：请检查是否使用**原色主题**，使用其他颜色主题会导致脚本获取不到容器元素从而报错
-
-> 原色主题切换方法请上滑至食用方法第一步`
+3. 可以看到界面的左上角多了三个按钮，**进入按钮对应的评教界面**，点击按钮即可评教`
 </script>
