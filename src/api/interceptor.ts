@@ -1,5 +1,5 @@
 import axios, { AxiosResponse, AxiosError } from 'axios'
-import { Message } from '@arco-design/web-vue'
+import { showErrorTip } from '@/utils/tools'
 
 axios.defaults.withCredentials = true
 
@@ -30,19 +30,24 @@ axios.interceptors.response.use(
     return response.data
   },
   async (error: AxiosError<any>) => {
-    // 第三方图片 API 请求超时的情况
-    if (error.config?.url.includes('/images/search')) {
-      throw '[Resource Load Failed]: The Cat API is not available'
-    }
-
     const { data, status } = error.response
-    const { message = 'Request Failed: Unknown Server Error' } = data
+    const { message = '[Request Failed]: Unknown Server Error' } = data
 
-    Message.error(message)
+    try {
+      // 第三方图片 API 请求超时的情况
+      if (error.config?.url.includes('/images/search')) {
+        throw '[Resource Load Failed]: The Cat API is not available'
+      }
 
-    if (status === 500) {
-      throw '[Server Side Error]: Unknown server error'
+      if (status === 500) {
+        throw '[Server Side Error]: Unknown server error'
+      }
+
+      throw message
+    } catch (error) {
+      showErrorTip(error)
     }
+
     return data
   }
 )
