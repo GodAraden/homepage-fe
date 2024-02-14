@@ -23,15 +23,12 @@ interface ImportMetaEnv {
 
   readonly VITE_SIGNATURE_ZH: string
   readonly VITE_SIGNATURE_EN: string
-  // LOCAL ENV
-  readonly VITE_X_API_KEY: string
 
   // DEV ONLY ENV
   readonly VITE_APP_PORT: string
 
   // DEV & PROD ENV
   readonly VITE_PROXY_BACKEND: string
-  readonly VITE_PROXY_CAT_API: string
 }
 
 interface ImportMeta {

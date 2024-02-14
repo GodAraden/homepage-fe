@@ -1,10 +1,15 @@
 import { ref } from 'vue'
-import { BlogListItem, GetBlogListParams, getBlogList } from '@/api/blog'
-import { CatListItem, getCatList } from '@/api/cat'
+import {
+  BlogListItem,
+  GetBlogListParams,
+  getBlogList,
+  getCoverList,
+  CoverListItem
+} from '@/api/blog'
 
 export default function useBlogList(pageSize: number, fetchCatList = true) {
   const renderData = ref<BlogListItem[]>()
-  const catList = ref<CatListItem[]>()
+  const catList = ref<CoverListItem[]>()
 
   const pagination = ref({
     current: 1,
@@ -27,7 +32,7 @@ export default function useBlogList(pageSize: number, fetchCatList = true) {
 
     if (fetchCatList && renderData.value?.length) {
       // 背景图片的加载不能是 await 异步，否则容易导致加载不出来
-      getCatList(renderData.value.length).then((res) => {
+      getCoverList({ count: renderData.value.length }).then((res) => {
         catList.value = res
       })
     }

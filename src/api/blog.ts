@@ -120,3 +120,22 @@ export async function likeBlog(id: string) {
   const { data } = await axios.post<LikeBlogRes>('/api/blog/like', { id })
   return data
 }
+
+export type CoverListItem = {
+  breads: unknown[]
+  id: string
+  url: string
+  width: number
+  height: number
+}
+
+export type GetCoverListParams = {
+  count: number
+}
+export type GetCoverListRes = CoverListItem[]
+export async function getCoverList(params: GetCoverListParams) {
+  const { data } = await axios.get<GetCoverListRes>('/api/blog/cover', {
+    params
+  })
+  return data
+}

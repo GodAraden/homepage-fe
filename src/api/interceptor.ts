@@ -34,11 +34,6 @@ axios.interceptors.response.use(
     const { message = '[Request Failed]: Unknown Server Error' } = data
 
     try {
-      // 第三方图片 API 请求超时的情况
-      if (error.config?.url.includes('/images/search')) {
-        throw '[Resource Load Failed]: The Cat API is not available'
-      }
-
       if (status === 500) {
         throw '[Server Side Error]: Unknown server error'
       }
