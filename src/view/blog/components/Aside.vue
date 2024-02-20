@@ -14,7 +14,7 @@
         />
       </div>
       <div>
-        <div class="text-center text-lg" style="font-family: Alimama_DaoLiTi">
+        <div class="text-center text-lg" style="font-family: DingTalk_Progress">
           {{ $t('blog.aside.title') }}
         </div>
         <p

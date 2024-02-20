@@ -1,7 +1,7 @@
 <template>
   <div
     class="mt-24 text-center text-lg select-none"
-    style="font-family: Alimama_DaoLiTi"
+    style="font-family: DingTalk_Progress"
   >
     <icon-caret-right class="left-float" />
     {{ title }}

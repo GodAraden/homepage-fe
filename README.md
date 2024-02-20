@@ -8,14 +8,16 @@
 
 # 项目使用的自定义字体？
 
-字体源：[阿里妈妈刀隶体](https://www.iconfont.cn/fonts/detail?spm=a313x.7781069.1998910419.d9df05512&cnid=1ntUmJ7Q4Jhw)
+字体源：[钉钉进步体](https://www.iconfont.cn/fonts/detail?spm=a313x.fonts_index.i1.d9df05512.635c3a81JRttvn&cnid=clpB5hhpYWUN)
 
 根据需要装饰的文字按需下载，本地存储在 src/assets/font 文件夹下
 
 目前的文字有：
 
 ```
-QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'，的主页个人博客编程导航实用工具欢迎来访寒舍简陋不足恭迎还望海涵关于我技术栈友情链接最新标签管理写
+QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm'，
+个人博客 编程导航 实用工具 博客管理 写博客 用户名 密码
+你好，这里是 欢迎来到我的主页 关于我 技术栈 最新博客 友情链接
 ```
 
 # 语法命名规范

@@ -1,7 +1,6 @@
 export default {
-  'home.welcome.title': `欢迎来访 ${import.meta.env.VITE_APP_OWNER} 的个人主页`,
-  'home.welcome.description': '寒舍简陋，不足恭迎，还望海涵',
-  // House is rough, maybe inconsiderate hospitality, hope for tolerance
+  'home.welcome.title': `你好，这里是 ${import.meta.env.VITE_APP_OWNER}`,
+  'home.welcome.description': '欢迎来到我的主页',
   'home.about.title': '关于我',
 
   'home.about.col.nickname': '昵称',

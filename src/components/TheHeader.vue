@@ -2,10 +2,10 @@
   <header
     id="header"
     class="g-cross-center g-ground-glass h-16 select-none"
-    style="font-family: Alimama_DaoLiTi"
+    style="font-family: DingTalk_Progress"
   >
     <!-- Logo & 标题 -->
-    <a href="/" class="g-cross-center w-80">
+    <a href="/" class="g-cross-center w-96">
       <img
         src="/logo.svg"
         alt="logo"

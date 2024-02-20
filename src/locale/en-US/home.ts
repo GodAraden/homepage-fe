@@ -1,9 +1,6 @@
 export default {
-  'home.welcome.title': `Welcome to  ${
-    import.meta.env.VITE_APP_OWNER
-  }'s personal homepage`,
-  'home.welcome.description':
-    'House is rough, maybe inconsiderate hospitality, hope for tolerance',
+  'home.welcome.title': `Hello, I'm ${import.meta.env.VITE_APP_OWNER}`,
+  'home.welcome.description': 'Welcome to my homepage',
   'home.about.title': 'About me',
 
   'home.about.col.nickname': 'Nickname',
